@@ -3,4 +3,6 @@ data <- ihpdr::ihpd_get("raw") %>%
   select(Date, country, rhpi) %>% 
   pivot_wider(values_from = rhpi, names_from = country)
 
-jsonlite::write_json(data, here::here("int", "rhpi.json"))
+
+
+jsonlite::write_json(c("int", "uk"), here::here("public", "datasets.json"))
