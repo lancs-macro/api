@@ -1,7 +1,2 @@
 [build]
   publish = "public"
-
-[[redirects]]
-  from = "/"
-  to = "/datasets.json"
-  status = 302
