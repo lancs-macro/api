@@ -5,4 +5,4 @@ data <- ihpdr::ihpd_get("raw") %>%
 
 
 
-jsonlite::write_json(c("int", "uk"), here::here("public", "datasets.json"))
+jsonlite::write_json(mtcars, here::here("public", "index.json"))

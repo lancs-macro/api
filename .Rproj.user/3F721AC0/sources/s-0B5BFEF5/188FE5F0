@@ -1,24 +1,26 @@
 {
-    "id": "65463B8A",
+    "id": "188FE5F0",
     "path": "~/Housing Observatory/api/public/index.json",
     "project_path": "public/index.json",
     "type": "json",
-    "hash": "2901626970",
+    "hash": "1849649905",
     "contents": "",
     "dirty": false,
-    "created": 1618063447460.0,
+    "created": 1618066198952.0,
     "source_on_save": false,
     "relative_order": 3,
     "properties": {
         "source_window_id": "",
-        "Source": "Source"
+        "Source": "Source",
+        "cursorPosition": "0,0",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1618063335,
+    "lastKnownWriteTime": 1618066195,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1618063335,
+    "last_content_update": 1618066195,
     "read_only": false,
     "read_only_alternatives": []
 }
