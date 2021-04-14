@@ -76,10 +76,43 @@ stat_table <- function(stat = "gsadf") {
 adf_table <- stat_table("adf")
 sadf_table <- stat_table("sadf")
 gsadf_table <- stat_table("gsadf")
-  
 
-# write json files --------------------------------------------------------
+# desc <- c(
+#   "Real House Prices",
+#   "House-Price-to-Income-Ratio",
+#   "Exuberance Statistics and Critical Values (GSADF)",
+#   "Real House Prices Exuberance Statistics (BSADF)",
+#   "House-Price-to-Income Exuberance Statistics (BSADF)",
+#   "BSADF Critical Value Sequence Statistics"
+# )
+# ids <- c("rhpi", "pti", "seq-rhpi", "seq-pti", "seq-cv", "stat")
+# write_json(data.frame(Description = desc, ID = ids), here("public", "datasets", "int", "index.json"))
 
 
-autoplot(radf_price, select_series = "Australia")
-ggsave(here("public", "visualizations", "australia.png"))
+if(yesno::yesno2("Would you like update?")) {
+  library(jsonlite)
+  write_json(
+    price,
+    here("public", "datasets", "int", "rhpi.json")
+  )
+  write_json(
+    price_income, 
+    here("public", "datasets", "int", "pti.json")
+  )
+  write_json(
+    estimation_price,
+    here("public", "datasets", "int", "seq-rhpi.json")
+  )
+  write_json(
+    estimation_income,
+    here("public", "datasets", "int", "seq-pti.json")
+  )
+  write_json(
+    cv_seq,
+    here("public", "datasets", "int", "seq-cv.json")
+  )
+  write_json(
+    gsadf_table, 
+    here("public", "datasets", "int", "stat.json")
+  )
+}
