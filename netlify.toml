@@ -5,3 +5,9 @@
   from = "/"
   to = "/index.json"
   status = 302
+  
+  
+[[redirects]]
+  from = "/datasets/int/"
+  to = "/datasets/int/index.json"
+  status = 302
