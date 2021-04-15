@@ -1,0 +1,114 @@
+[
+  {
+    "Countries": "East Anglia",
+    "Real House Prices": 5.1977,
+    "House-Price-Income": 3.1378,
+    "90% Critical Values": 1.591,
+    "95% Critical Values": 1.8536,
+    "99% Critical Values": 2.2875
+  },
+  {
+    "Countries": "East Midlands",
+    "Real House Prices": 6.5705,
+    "House-Price-Income": 3.9065,
+    "90% Critical Values": 1.591,
+    "95% Critical Values": 1.8536,
+    "99% Critical Values": 2.2875
+  },
+  {
+    "Countries": "Greater London",
+    "Real House Prices": 3.4057,
+    "House-Price-Income": 1.8116,
+    "90% Critical Values": 1.591,
+    "95% Critical Values": 1.8536,
+    "99% Critical Values": 2.2875
+  },
+  {
+    "Countries": "North",
+    "Real House Prices": 6.8615,
+    "House-Price-Income": 3.7641,
+    "90% Critical Values": 1.591,
+    "95% Critical Values": 1.8536,
+    "99% Critical Values": 2.2875
+  },
+  {
+    "Countries": "North West",
+    "Real House Prices": 5.9675,
+    "House-Price-Income": 3.7743,
+    "90% Critical Values": 1.591,
+    "95% Critical Values": 1.8536,
+    "99% Critical Values": 2.2875
+  },
+  {
+    "Countries": "Northern Ireland",
+    "Real House Prices": 7.4546,
+    "House-Price-Income": 6.8919,
+    "90% Critical Values": 1.591,
+    "95% Critical Values": 1.8536,
+    "99% Critical Values": 2.2875
+  },
+  {
+    "Countries": "Outer Metropolitan",
+    "Real House Prices": 2.9049,
+    "House-Price-Income": 3.1277,
+    "90% Critical Values": 1.591,
+    "95% Critical Values": 1.8536,
+    "99% Critical Values": 2.2875
+  },
+  {
+    "Countries": "Outer South East",
+    "Real House Prices": 3.9845,
+    "House-Price-Income": 4.043,
+    "90% Critical Values": 1.591,
+    "95% Critical Values": 1.8536,
+    "99% Critical Values": 2.2875
+  },
+  {
+    "Countries": "Scotland",
+    "Real House Prices": 6.2919,
+    "House-Price-Income": 2.9806,
+    "90% Critical Values": 1.591,
+    "95% Critical Values": 1.8536,
+    "99% Critical Values": 2.2875
+  },
+  {
+    "Countries": "South West",
+    "Real House Prices": 4.55,
+    "House-Price-Income": 3.0618,
+    "90% Critical Values": 1.591,
+    "95% Critical Values": 1.8536,
+    "99% Critical Values": 2.2875
+  },
+  {
+    "Countries": "United Kingdom",
+    "Real House Prices": 3.2458,
+    "House-Price-Income": 1.9551,
+    "90% Critical Values": 1.591,
+    "95% Critical Values": 1.8536,
+    "99% Critical Values": 2.2875
+  },
+  {
+    "Countries": "Wales",
+    "Real House Prices": 8.1207,
+    "House-Price-Income": 4.4013,
+    "90% Critical Values": 1.591,
+    "95% Critical Values": 1.8536,
+    "99% Critical Values": 2.2875
+  },
+  {
+    "Countries": "West Midlands",
+    "Real House Prices": 5.2851,
+    "House-Price-Income": 3.5411,
+    "90% Critical Values": 1.591,
+    "95% Critical Values": 1.8536,
+    "99% Critical Values": 2.2875
+  },
+  {
+    "Countries": "Yorkshire & Humberside",
+    "Real House Prices": 5.1345,
+    "House-Price-Income": 2.9011,
+    "90% Critical Values": 1.591,
+    "95% Critical Values": 1.8536,
+    "99% Critical Values": 2.2875
+  }
+]

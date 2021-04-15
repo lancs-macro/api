@@ -23,9 +23,29 @@
     {
       "Description": "BSADF Critical Value Sequence Statistics",
       "ID": "stat"
+    },
+    {
+      "Description": "House Price Uncertainty",
+      "ID": "hpu"
+    },
+    {
+      "Description": "Housing Observatory Price Indices - Aggregate",
+      "ID": "hopi-aggregate"
+    },
+    {
+      "Description": "Housing Observatory Price Indices - NUTS 1",
+      "ID": "hopi-nuts1"
+    },
+    {
+      "Description": "Housing Observatory Price Indices - NUTS 2",
+      "ID": "hopi-nuts2"
+    },
+    {
+      "Description": "Housing Observatory Price Indices - NUTS 3",
+      "ID": "hopi-nuts3"
     }
   ],
   "meta": {
-    "count": [6]
+    "count": [11]
   }
 }

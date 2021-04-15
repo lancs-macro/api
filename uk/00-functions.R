@@ -143,8 +143,15 @@ to_yq <- function(ds, radf_var, cv_var){
     ds[, 2] <- end_label
     ds
   }
-  
-  ds %>% 
-    ds_yq()
+  ds_yq(ds)
 }
 
+
+# fetch data from HOPI ----------------------------------------------------
+
+
+ukhp_get <- function(release = "2020-Q3", frequency = "monthly", classification = "nuts1") {
+  endpoint <- "https://raw.githubusercontent.com/lancs-macro/hopi/master/data"
+  query <- paste(endpoint, release, frequency, paste0(classification, ".csv"), sep = "/")
+  readr::read_csv(query)
+}
