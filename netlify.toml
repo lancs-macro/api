@@ -6,8 +6,18 @@
   to = "/index.json"
   status = 302
   
+[[redirects]]
+  from = "/datasets/"
+  to = "/datasets/index.json"
+  status = 302
   
 [[redirects]]
   from = "/datasets/int/"
   to = "/datasets/int/index.json"
+  status = 302
+  
+    
+[[redirects]]
+  from = "/datasets/uk/"
+  to = "/datasets/uk/index.json"
   status = 302
