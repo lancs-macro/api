@@ -1,4 +1,6 @@
 
+source("uk/00-functions.R")
+
 library(tidyverse)
 library(readxl)
 
@@ -58,9 +60,10 @@ ntwd_to_names <- c(
 
 # Download CPI index ------------------------------------------------------
 
-download.file("https://stats.oecd.org/sdmx-json/data/DP_LIVE/.CPI.TOT.IDX2015.Q/OECD?contentType=csv&detail=code&separator=comma&csv-lang=en&startPeriod=1973-Q1",
-              "data-raw/cpi.csv")
-
+download.file(
+  "https://stats.oecd.org/sdmx-json/data/DP_LIVE/.CPI.TOT.IDX2015.Q/OECD?contentType=csv&detail=code&separator=comma&csv-lang=en&startPeriod=1973-Q1",
+  "data-raw/uk-cpi.csv"
+  )
 
 # Reading ntwd ------------------------------------------------------------
 
@@ -75,7 +78,7 @@ last_obs <- select(hpi, Date, region)
 
 cpi <- 
   readr::read_csv(
-    "data-raw/cpi.csv", 
+    "data-raw/uk-cpi.csv", 
     col_types = 
       cols_only(LOCATION = col_guess(), 
                 TIME = col_guess(), 
@@ -104,50 +107,90 @@ rpdi <- read_excel("data-raw/rpdi.xlsx") %>%
 ntwd_data <- right_join(hpi, rpdi, by = c("region" ,"Date")) %>%
   right_join(cpi, by = "Date") %>% 
   drop_na() %>% 
-  mutate(rhpi = hpi/cpi, afford = rhpi/rpdi) 
+  mutate(rhpi = hpi/cpi, pti = rhpi/rpdi) 
 
 
-price <- ntwd_data %>% 
+rhpi <- ntwd_data %>% 
   select(Date, region, rhpi) %>% 
   spread(region, rhpi)
 
-afford <- ntwd_data %>% 
-  select(Date, region, afford) %>% 
-  spread(region, afford)
+pti <- ntwd_data %>% 
+  select(Date, region, pti) %>% 
+  spread(region, pti)
 
-release_date <- price %>%
-  tail(1) %>% 
-  mutate(version = paste0(lubridate::year(Date), " Q",lubridate::quarter(Date))) %>% 
-  pull(version)
+
+# estmation ---------------------------------------------------------------
+
+library(exuber)
+
+radf_rhpi <- rhpi %>%
+  radf(lag = 1, minw = 37)
+
+radf_pti <- pti %>%
+  radf(lag = 1, minw = 37)
+
+mc_cv <- radf_mc_cv(NROW(price), minw = 37)
+
+# data export -------------------------------------------------------------
+
+estimation_rhpi <- 
+  radf_rhpi %>%
+  .$bsadf %>% 
+  as_tibble() %>% 
+  mutate(Date = index(radf_price, trunc = TRUE)) %>% 
+  select(Date, everything())
+
+estimation_pti <- 
+  radf_pti %>%
+  .$bsadf %>% 
+  as_tibble() %>% 
+  mutate(Date = index(radf_price, trunc = TRUE)) %>% 
+  select(Date, everything())
+
+cv_seq <- mc_cv %>% 
+  .$bsadf_cv %>% 
+  as_tibble() %>% 
+  "["(-1,) %>% 
+  bind_cols(Date = index(radf_price, trunc = TRUE)) %>% 
+  select(Date, everything())
+
+stat_table <- function(stat = "gsadf") {
+  stat_cv <- paste0(stat, "_cv")
+  tibble(
+    Countries = names(price)[-1],
+    `Real House Prices` = radf_rhpi[[stat]],
+    `House-Price-Income` = radf_pti[[stat]],
+    `90% Critical Values` = mc_cv[[stat_cv]][1],
+    `95% Critical Values` = mc_cv[[stat_cv]][2],
+    `99% Critical Values` = mc_cv[[stat_cv]][3]
+  )
+}
+
+adf_table <- stat_table("adf")
+sadf_table <- stat_table("sadf")
+gsadf_table <- stat_table("gsadf")
 
 # hopi --------------------------------------------------------------------
 
-
-ukhp_get(frequency = "quarterly", classification = "aggregate") %>% 
+hopi_aggregate <- ukhp_get(frequency = "quarterly", classification = "aggregate") %>% 
   select(Date, `England and Wales`) %>% 
-  saveRDS("data/aggregate_data.rds")
+  mutate(Date = lubridate::yq(Date))
 
-ukhp_get(frequency = "quarterly", classification = "nuts1") %>% 
-  saveRDS("data/nuts1_data.rds")
+hopi_nuts1 <- ukhp_get(frequency = "quarterly", classification = "nuts1") %>% 
+  mutate(Date = lubridate::yq(Date))
 
-ukhp_get(frequency = "quarterly", classification = "nuts2") %>% 
-  saveRDS("data/nuts2_data.rds")
+hopi_nuts2 <- ukhp_get(frequency = "quarterly", classification = "nuts2") %>% 
+  mutate(Date = lubridate::yq(Date))
 
-ukhp_get(frequency = "quarterly", classification = "nuts3") %>% 
-  saveRDS("data/nuts3_data.rds")
+hopi_nuts3 <- ukhp_get(frequency = "quarterly", classification = "nuts3") %>% 
+  mutate(Date = lubridate::yq(Date))
+
+
 
 # Download EPU Index ------------------------------------------------------
 
 download.file("https://www.policyuncertainty.com/media/UK_Policy_Uncertainty_Data.xlsx",
               "data-raw/epu.xlsx", mode = 'wb')
-
-# HPU ---------------------------------------------------------------------
-
-hpu_index <-
-  readxl::read_excel("data-raw/hpu.xlsx") %>% 
-  mutate(year_quarter = paste(Year, Quarter)) %>% 
-  mutate(year_quarter = lubridate::yq(year_quarter)) %>% 
-  select(Date = year_quarter, HPU)
 
 # EPU ---------------------------------------------------------------------
 
@@ -161,4 +204,11 @@ epu_index <-
   summarise_all(mean) %>% 
   drop_na()
 
+# HPU ---------------------------------------------------------------------
 
+hpu_index <-
+  readxl::read_excel("data-raw/hpu.xlsx") %>% 
+  mutate(year_quarter = paste(Year, Quarter)) %>% 
+  mutate(year_quarter = lubridate::yq(year_quarter)) %>% 
+  select(Date = year_quarter, HPU) %>% 
+  full_join(epu_index, by = "Date")
