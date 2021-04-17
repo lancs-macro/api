@@ -32,7 +32,10 @@ write_json2(
 )
 
 write_json2(
-  price,
+  list(
+    results = price,
+    meta = list(count = NROW(price), release = "mpla")
+    ),
   here("public", "datasets", "int", "rhpi.json")
 )
 write_json2(
