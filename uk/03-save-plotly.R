@@ -7,7 +7,9 @@ for(i in 1:length(snames)) {
     widget = plotly::partial_bundle(aplt), 
     file = paste0("public/visualizations/", file_snames[i], ".html"),
     selfcontained = TRUE,
-    libdir = "libs"
+    libdir = "libs",
+    selfcontained = FALSE,
+    title = snames[i]
   )
 }
 
