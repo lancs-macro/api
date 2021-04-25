@@ -129,7 +129,7 @@ radf_rhpi <- rhpi %>%
 radf_pti <- pti %>%
   radf(lag = 1, minw = 37)
 
-mc_cv <- radf_mc_cv(NROW(price), minw = 37)
+mc_cv <- radf_mc_cv(NROW(rhpi), minw = 37)
 
 # data export -------------------------------------------------------------
 
@@ -137,27 +137,27 @@ estimation_rhpi <-
   radf_rhpi %>%
   .$bsadf %>% 
   as_tibble() %>% 
-  mutate(Date = index(radf_price, trunc = TRUE)) %>% 
+  mutate(Date = index(radf_rhpi, trunc = TRUE)) %>% 
   select(Date, everything())
 
 estimation_pti <- 
   radf_pti %>%
   .$bsadf %>% 
   as_tibble() %>% 
-  mutate(Date = index(radf_price, trunc = TRUE)) %>% 
+  mutate(Date = index(radf_rhpi, trunc = TRUE)) %>% 
   select(Date, everything())
 
 cv_seq <- mc_cv %>% 
   .$bsadf_cv %>% 
   as_tibble() %>% 
   "["(-1,) %>% 
-  bind_cols(Date = index(radf_price, trunc = TRUE)) %>% 
+  bind_cols(Date = index(radf_rhpi, trunc = TRUE)) %>% 
   select(Date, everything())
 
 stat_table <- function(stat = "gsadf") {
   stat_cv <- paste0(stat, "_cv")
   tibble(
-    Countries = names(price)[-1],
+    Countries = names(rhpi)[-1],
     `Real House Prices` = radf_rhpi[[stat]],
     `House-Price-Income` = radf_pti[[stat]],
     `90% Critical Values` = mc_cv[[stat_cv]][1],
@@ -212,3 +212,4 @@ hpu_index <-
   mutate(year_quarter = lubridate::yq(year_quarter)) %>% 
   select(Date = year_quarter, HPU) %>% 
   full_join(epu_index, by = "Date")
+

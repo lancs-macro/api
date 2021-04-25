@@ -32,7 +32,7 @@ write_json2(
 )
 
 write_json2(
-  list(
+  list(-
     results = price,
     meta = list(count = NROW(price), release = "mpla")
     ),
