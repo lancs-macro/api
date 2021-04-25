@@ -1,7 +1,14 @@
 
-for(ctry in series_names(radf_rhpi)) {
-  aplt <- plotly::ggplotly(autoplot(radf_rhpi, mc_cv, select_series = ctry))
-  htmlwidgets::saveWidget(aplt, paste0("public/visualizations/", ctry, ".html"))
+snames <- series_names(radf_rhpi)
+file_snames <- janitor::make_clean_names(snames)
+for(i in 1:length(snames)) {
+  aplt <- plotly::ggplotly(autoplot(radf_rhpi, mc_cv, select_series = snames[i]))
+  htmlwidgets::saveWidget(
+    widget = plotly::partial_bundle(aplt), 
+    file = paste0("public/visualizations/", file_snames[i], ".html"),
+    selfcontained = TRUE,
+    libdir = "libs"
+  )
 }
 
 
