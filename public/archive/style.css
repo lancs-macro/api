@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+body {
+    margin: 0;
+}
+
+#title {
+    background-color: yellow;
+    font-family: 'Quicksand', serif;
+    text-align: center;
+    padding: 20px;
+}
+
+#description {
+    text-align: center;
+    font-family: 'Quicksand', serif;
+}
+
+#grid-dt-api {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    grid-template-areas:
+        "desc-dt-api dt-api dt-api"
+}
+
+#description-dt-api {
+    grid-area: desc-dt-api;
+    text-align: center;
+    font-family: 'Quicksand', serif;
+    display: flex;
+    align-items: center;
+}
+
+#dt-api {
+    grid-area: dt-api;
+    margin: 2px;
+}
+
+/*======================*/
+#grid-dt {
+    display: grid;
+    grid-templates-column: repeat(3, 1fr);
+    grid-template-areas:
+        "dt dt description-dt"
+}
+
+#dt {
+    grid-area: dt;
+    margin: 2px;
+}
+
+#description-dt {
+    grid-area: description-dt;
+    font-family: 'Quicksand', serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
