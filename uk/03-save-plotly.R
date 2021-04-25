@@ -11,7 +11,6 @@ for(i in 1:length(snames)) {
     title = snames[i]
   )
 }
-
 for(i in 1:length(snames)) {
   aplt <- plotly::ggplotly(autoplot(radf_pti, mc_cv, select_series = snames[i]))
   htmlwidgets::saveWidget(
