@@ -20,16 +20,10 @@ library(plotly)
 library(transx)
 options(transx.display = FALSE)
 
-line = list(color=seq(0, 1), colorscale='Viridis')
-
-
-
-
-
 plot_index_uk <- function(data, returns = FALSE, save = FALSE) {
   ret <- if(returns) "%,.2f" else ".2f"
   ret_title <- if(returns) "Real House Prices (Year on Year, %)" else "Real House Prices"
-  ret_filename <- if(returns) "rhpi" else "rhpi_yoy"
+  ret_filename <- if(returns)  "rhpi_yoy" else "rhpi"
   
   plt <- data %>% 
     pivot_longer(c(`Greater London`, `United Kingdom`), names_to = "vars1", values_to = "vals1") %>% 
