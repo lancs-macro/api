@@ -21,9 +21,9 @@ library(transx)
 options(transx.display = FALSE)
 
 plot_index_uk <- function(data, returns = FALSE, save = FALSE) {
-  ret <- if(returns) "%,.2f" else ".2f"
-  ret_title <- if(returns) "Real House Prices (Year on Year, %)" else "Real House Prices"
-  ret_filename <- if(returns)  "rhpi_yoy" else "rhpi"
+  ret <- if(returns) ".2f%" else ".2f"
+  ret_title <- if(returns) "Year on Year (%)" else "Index (Q1 1993 = 100)"
+  ret_filename <- if(returns) "rhpi_yoy" else "rhpi"
   
   plt <- data %>% 
     pivot_longer(c(`Greater London`, `United Kingdom`), names_to = "vars1", values_to = "vals1") %>% 
@@ -31,10 +31,12 @@ plot_index_uk <- function(data, returns = FALSE, save = FALSE) {
     plot_ly(x = ~ Date, y = ~ vals1, color = ~ vars1, type = "scatter", mode = "line", colors = "viridis")%>% 
     add_trace(y= ~ vals2, color = ~ vars2,  mode = "line", visible = "legendonly") %>% 
     plotly::layout(
+      title = "Real House Prices",
       hovermode = 'x unified',
       yaxis = list( hoverformat = ret, title = ret_title),
       xaxis = list(type = "date", tickformat="%Y-Q%q", title = "", showgrid = FALSE),
-      hoverlabel = list(namelength = -1)
+      hoverlabel = list(namelength = -1),
+      legend = list(orientation = "h", xanchor = "center",  x = 0.5)
     ) %>% 
     config(
       displaylogo = FALSE,
@@ -52,10 +54,11 @@ plot_index_uk <- function(data, returns = FALSE, save = FALSE) {
 }
 
 rhpi %>% 
-  plot_index_uk(save = TRUE)
+  plot_index_uk(returns = TRUE, save = FALSE)
 rhpi %>% 
-  mutate(across(-Date, ldiffx, 4)) %>% 
-  plot_index_uk(returns = TRUE, save = TRUE)
+  mutate(across(-Date, ldiffx, 4)*100) %>% 
+  drop_na() %>% 
+  plot_index_uk(returns = TRUE, save = FALSE)
 
 
 # uklr-hopi ---------------------------------------------------------------
