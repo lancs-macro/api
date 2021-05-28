@@ -54,17 +54,17 @@ plot_index_uk <- function(data, returns = FALSE, save = FALSE) {
 }
 
 rhpi %>% 
-  plot_index_uk(returns = TRUE, save = FALSE)
+  plot_index_uk(returns = TRUE, save = T)
 rhpi %>% 
   mutate(across(-Date, ldiffx, 4)*100) %>% 
   drop_na() %>% 
-  plot_index_uk(returns = TRUE, save = FALSE)
+  plot_index_uk(returns = TRUE, save = T)
 
 
 # uklr-hopi ---------------------------------------------------------------
 
 
-lr <- uklr::ukhp_get("england") %>% 
+lr <- uklr::ukhp_get("england-and-wales") %>% 
   mutate(region = str_to_title(region)) %>% 
   select(Date = date, region, "Land Registry (HPI)" = housePriceIndex)
 
@@ -76,21 +76,16 @@ ho <- ukhp_get(classification = "aggregate") %>%
 lr_ho <- full_join(lr, ho, by = c("Date", "region")) %>% 
   filter(Date >= "1995-02-01") %>% 
   select(-region) %>% 
-  mutate(across(-Date, ldiffx, 4))
+  mutate(across(-Date, ldiffx, 4)*100)
 
 
-lr_ho %>% 
+plt <- lr_ho %>% 
   plot_ly(x = ~Date, y = ~`Land Registry (HPI)`, type = 'scatter', mode = 'lines', name = "Land Registry (HPI)", line = list(color = "#a6d71c")) %>% 
   add_trace(y = ~`Housing Observatory (HOPI)`, name = "Housing Observatory (HOPI)", line = list(color = "#992F2F")) %>% 
   plotly::layout(
-    title = list(text = 'England and Wales', font = list(size = 30, family = "bold"), 
-                x = 0, y = 1.0, xref = "paper", yref = "paper"),
-    # annotations = list(
-    #   text = "England and Wales", font = list(size = 18, family = "bold"), 
-    #   align = "left", x = 0, y = 1, xref = "paper", yref = "paper", showarrow = FALSE
-    # ),
+    title = "England & Wales",
     hovermode = 'x unified',
-    yaxis = list(title = "House Price Growth (Annual)"),
+    yaxis = list(hoverformat = ".2f%",title = "House Price Growth (YoY, %)"),
     xaxis = list(title = "", showgrid = FALSE),
     legend = list(y = 0.10, x = 0.1),
     hoverlabel = list(namelength = -1)
@@ -99,10 +94,12 @@ lr_ho %>%
     displaylogo = FALSE,
     modeBarButtonsToRemove = c("pan2d", "toggleSpikelines")
   )
-
-
-an
-  
+htmlwidgets::saveWidget(
+  widget = plotly::partial_bundle(plt), 
+  file = paste0("public/visualizations/uk/comparison.html"),
+  selfcontained = FALSE,
+  libdir = "libs"
+)
   
   
   
