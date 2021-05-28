@@ -186,7 +186,6 @@ hopi_nuts3 <- ukhp_get(frequency = "quarterly", classification = "nuts3") %>%
   mutate(Date = lubridate::yq(Date))
 
 
-
 # Download EPU Index ------------------------------------------------------
 
 download.file("https://www.policyuncertainty.com/media/UK_Policy_Uncertainty_Data.xlsx",
