@@ -22,7 +22,7 @@ options(transx.display = FALSE)
 
 plot_index_uk <- function(data, returns = FALSE, save = FALSE) {
   ret <- if(returns) ".2f%" else ".2f"
-  ret_title <- if(returns) "Year on Year (%)" else "Index (Q1 1993 = 100)"
+  ret_title <- if(returns) "Year on Year (%)" else "Index"
   ret_filename <- if(returns) "rhpi_yoy" else "rhpi"
   
   plt <- data %>% 

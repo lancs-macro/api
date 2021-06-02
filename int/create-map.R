@@ -31,7 +31,7 @@ plt <- plotly::ggplotly(gg, tooltip = c("text")) %>%
 
 htmlwidgets::saveWidget(
   widget = plotly::partial_bundle(plt), 
-  file = paste0("public/visualizations/int/", ret_filename, ".html"),
+  file = paste0("public/visualizations/int/map.html"),
   selfcontained = FALSE,
   libdir = "libs"
 )
