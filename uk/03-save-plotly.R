@@ -54,7 +54,7 @@ plot_index_uk <- function(data, returns = FALSE, save = FALSE) {
 }
 
 rhpi %>% 
-  plot_index_uk(returns = TRUE, save = T)
+  plot_index_uk(save = T)
 rhpi %>% 
   mutate(across(-Date, ldiffx, 4)*100) %>% 
   drop_na() %>% 
@@ -79,7 +79,7 @@ lr_ho <- full_join(lr, ho, by = c("Date", "region")) %>%
   mutate(across(-Date, ldiffx, 4)*100)
 
 
-plt <- lr_ho %>% 
+comparsison_plt <- lr_ho %>% 
   plot_ly(x = ~Date, y = ~`Land Registry (HPI)`, type = 'scatter', mode = 'lines', name = "Land Registry (HPI)", line = list(color = "#a6d71c")) %>% 
   add_trace(y = ~`Housing Observatory (HOPI)`, name = "Housing Observatory (HOPI)", line = list(color = "#992F2F")) %>% 
   plotly::layout(
@@ -87,7 +87,7 @@ plt <- lr_ho %>%
     hovermode = 'x unified',
     yaxis = list(hoverformat = ".2f%",title = "House Price Growth (YoY, %)"),
     xaxis = list(title = "", showgrid = FALSE),
-    legend = list(y = 0.10, x = 0.1),
+    legend = list(y = 0.10, x = 0.01),
     hoverlabel = list(namelength = -1)
   ) %>% 
   config(
@@ -95,7 +95,7 @@ plt <- lr_ho %>%
     modeBarButtonsToRemove = c("pan2d", "toggleSpikelines")
   )
 htmlwidgets::saveWidget(
-  widget = plotly::partial_bundle(plt), 
+  widget = plotly::partial_bundle(comparsison_plt), 
   file = paste0("public/visualizations/uk/comparison.html"),
   selfcontained = FALSE,
   libdir = "libs"

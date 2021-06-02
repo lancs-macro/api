@@ -131,21 +131,31 @@ radf_pti <- pti %>%
 
 mc_cv <- radf_mc_cv(NROW(rhpi), minw = 37)
 
+
+# dummies -----------------------------------------------------------------
+
+radf_rhpi_dummy <- datestamp(radf_rhpi, mc_cv) %>%
+  attr("dummy") %>% 
+  as_tibble() %>% 
+  add_column(Date = index(radf_rhpi)) %>% 
+  select(Date, everything())
+
+radf_pti_dummy <- datestamp(radf_pti, mc_cv) %>%
+  attr("dummy") %>% 
+  as_tibble() %>% 
+  add_column(Date = index(radf_pti)) %>% 
+  select(Date, everything())
+
+
 # data export -------------------------------------------------------------
 
-estimation_rhpi <- 
-  radf_rhpi %>%
-  .$bsadf %>% 
-  as_tibble() %>% 
-  mutate(Date = index(radf_rhpi, trunc = TRUE)) %>% 
-  select(Date, everything())
+estimation_rhpi <-  augment(radf_rhpi) %>% 
+  select(-badf, -key) %>% 
+  pivot_wider(names_from = "id", values_from = "bsadf")
 
-estimation_pti <- 
-  radf_pti %>%
-  .$bsadf %>% 
-  as_tibble() %>% 
-  mutate(Date = index(radf_rhpi, trunc = TRUE)) %>% 
-  select(Date, everything())
+estimation_pti <- augment(radf_pti) %>% 
+  select(-badf, -key) %>% 
+  pivot_wider(names_from = "id", values_from = "bsadf")
 
 cv_seq <- mc_cv %>% 
   .$bsadf_cv %>% 
