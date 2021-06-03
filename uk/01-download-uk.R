@@ -132,7 +132,7 @@ radf_pti <- pti %>%
 mc_cv <- radf_mc_cv(NROW(rhpi), minw = 37)
 
 
-# dummies -----------------------------------------------------------------
+# * dummies ----
 
 radf_rhpi_dummy <- datestamp(radf_rhpi, mc_cv) %>%
   attr("dummy") %>% 

@@ -1,4 +1,5 @@
 {
+  "release": ["2020 Q4"],
   "results": [
     {
       "Description": "Real House Prices",
@@ -14,10 +15,18 @@
     },
     {
       "Description": "Real House Prices Exuberance Statistics (BSADF)",
+      "ID": "dummy-rhpi"
+    },
+    {
+      "Description": "Real House Prices Exuberance Statistics (Dummy)",
       "ID": "seq-pti"
     },
     {
       "Description": "House-Price-to-Income Exuberance Statistics (BSADF)",
+      "ID": "dummy-pti"
+    },
+    {
+      "Description": "Real House Prices Exuberance Statistics (Dummy)",
       "ID": "seq-cv"
     },
     {
@@ -26,6 +35,6 @@
     }
   ],
   "meta": {
-    "count": [6]
+    "count": [8]
   }
 }
