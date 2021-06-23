@@ -21,7 +21,7 @@ desc <- c(
   "PSYIVX Data",
   "PSYIVX Datestamping"
 )
-ids <- c("rhpi", "pti", "seq-rhpi", "dummy-rhpi","seq-pti", "dummy-pti", "seq-cv", "stat", "psyivx_data", "psy_ds")
+ids <- c("rhpi", "pti", "seq-rhpi", "dummy-rhpi","seq-pti", "dummy-pti", "seq-cv", "stat", "psyivx_data", "psyivx_ds")
 
 write_json2(
   list(
@@ -72,7 +72,7 @@ write_json2(
 )
 write_json2(
   psy_ds, 
-  here("public", "datasets", "int", "psy_ds.json")
+  here("public", "datasets", "int", "psyivx_ds.json")
 )
 
 
