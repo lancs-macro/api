@@ -71,7 +71,7 @@ write_json2(
   here("public", "datasets", "int", "psyivx_data.json")
 )
 write_json2(
-  psy_ds, 
+  psyivx_ds, 
   here("public", "datasets", "int", "psyivx_ds.json")
 )
 

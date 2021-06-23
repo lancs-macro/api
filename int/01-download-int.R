@@ -140,35 +140,22 @@ residuals_ivx <- function(
   tibble(Date = data$Date[-1], price = y, bubble = res, fundamentals = fitted2)
 }
 
-# res_ivx <- function(formula, data, train_split = "2019-01-01") {
-#   train_data <- filter(data, Date <= train_split)
-#   res <- cumsum(residuals(ivx(formula, data = train_data)))
-#   tibble(Date = data$Date[-1], residuals = res)
-# }
-# formula = gptr ~ ltrate + log_rent
-# data = tbl_data[[1]]
-# predictor = "log_ptr"
-# train_split = "2019-01-01"
-
 ivx_data <- map(tbl_data, ~ residuals_ivx(gptr ~ ltrate + log_rent, .x))
-
-# ivx_data[[1]] %>%
-#   ggplot() +
-#   geom_line(aes(Date, fundamentals), col = "red") +
-#   geom_line(aes(Date, price))
 
 suppressMessages({
   radf_ivx <- ivx_data %>% 
-    map(~ radf(.x[,c(1,2)], lag = 1))
+    map(~ radf(.x[,c("Date", "bubble")], lag = 1))
   
   ptr_ds <- map(tbl_data, ~ radf(.x[,c("Date", "log_ptr")], lag = 1)) %>% 
-    map(safe_ds_fun) %>% map("result") %>% 
+    map(safe_ds_fun) %>% 
+    map("result") %>% 
     bind_rows(.id = "name") %>% 
     select(name, Start, Peak, End, Duration, Signal)
   
   ivx_ds <-  map(radf_ivx, safe_ds_fun) %>% 
     map("result") %>% 
     bind_rows(.id = "name") %>% 
+    select(name, Start, Peak, End, Duration, Signal) %>% 
     select(name, Start, Peak, End, Duration, Signal)
 })
 
@@ -176,7 +163,6 @@ suppressMessages({
 # data export -------------------------------------------------------------
 
 release <- as.character(zoo::as.yearqtr(tail(rhpi,1)$Date))
-
 
 # * stats ----
 
@@ -229,7 +215,8 @@ estimation_pti_dummy <- datestamp(radf_pti, mc_cv) %>%
 
 # * psyivx datestamping ----
 
-psyivx_ds <- bind_rows(list(ptr = ptr_ds, psyivx = ivx_ds), .id = "type")
+psyivx_ds <- bind_rows(list(ptr = ptr_ds, psyivx = ivx_ds), .id = "type") %>% 
+  
 
 # * psyivx data ----
 
