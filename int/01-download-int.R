@@ -215,7 +215,7 @@ estimation_pti_dummy <- datestamp(radf_pti, mc_cv) %>%
 
 # * psyivx datestamping ----
 
-psyivx_ds <- bind_rows(list(ptr = ptr_ds, psyivx = ivx_ds), .id = "type") %>% 
+psyivx_ds <- bind_rows(list(ptr = ptr_ds, psyivx = ivx_ds), .id = "type")
   
 
 # * psyivx data ----
