@@ -1,1 +1,497 @@
-["function (n, rule = 1, delta = 1) ", "{", "    if (!is_n(n)) {", "        n <- NROW(n)", "    }", "    stopifnot(rule %in% c(1, 2))", "    stopifnot(delta > 0)", "    if (rule == 1) {", "        round(delta * log(n))", "    }", "    else if (rule == 2) {", "        round(delta * log(n)/n)", "    }", "}"]
+[
+  {
+    "type": "ptr",
+    "name": "Australia",
+    "Start": "1999-10-01",
+    "Peak": "2000-04-01",
+    "End": "2000-07-01",
+    "Duration": 3,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "Australia",
+    "Start": "2000-10-01",
+    "Peak": "2003-07-01",
+    "End": "2004-04-01",
+    "Duration": 14,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "Australia",
+    "Start": "2004-07-01",
+    "Peak": "2004-10-01",
+    "End": "2005-01-01",
+    "Duration": 2,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "Australia",
+    "Start": "2007-07-01",
+    "Peak": "2007-10-01",
+    "End": "2008-01-01",
+    "Duration": 2,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "Belgium",
+    "Start": "1989-10-01",
+    "Peak": "1989-10-01",
+    "End": "1990-04-01",
+    "Duration": 2,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "Belgium",
+    "Start": "1998-07-01",
+    "Peak": "1999-04-01",
+    "End": "2001-07-01",
+    "Duration": 12,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "Belgium",
+    "Start": "2002-04-01",
+    "Peak": "2007-01-01",
+    "End": "2008-10-01",
+    "Duration": 26,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "Canada",
+    "Start": "2002-10-01",
+    "Peak": "2004-04-01",
+    "End": "2008-10-01",
+    "Duration": 24,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "Canada",
+    "Start": "2016-04-01",
+    "Peak": "2017-04-01",
+    "End": "2018-07-01",
+    "Duration": 9,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "Denmark",
+    "Start": "1982-01-01",
+    "Peak": "1982-07-01",
+    "End": "1982-10-01",
+    "Duration": 3,
+    "Signal": "negative"
+  },
+  {
+    "type": "ptr",
+    "name": "Denmark",
+    "Start": "2005-01-01",
+    "Peak": "2006-01-01",
+    "End": "2006-10-01",
+    "Duration": 7,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "Finland",
+    "Start": "1983-10-01",
+    "Peak": "1984-01-01",
+    "End": "1984-04-01",
+    "Duration": 2,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "Finland",
+    "Start": "1987-07-01",
+    "Peak": "1988-10-01",
+    "End": "1989-10-01",
+    "Duration": 9,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "France",
+    "Start": "2001-01-01",
+    "Peak": "2005-07-01",
+    "End": "2008-01-01",
+    "Duration": 28,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "Germany",
+    "Start": "1993-01-01",
+    "Peak": "1993-01-01",
+    "End": "1993-07-01",
+    "Duration": 2,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "Germany",
+    "Start": "2015-04-01",
+    "Peak": "2016-04-01",
+    "End": "2020-07-01",
+    "Duration": 22,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "Ireland",
+    "Start": "1998-10-01",
+    "Peak": "1999-10-01",
+    "End": "2000-04-01",
+    "Duration": 6,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "Netherlands",
+    "Start": "1997-07-01",
+    "Peak": "2000-07-01",
+    "End": "2004-10-01",
+    "Duration": 29,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "Netherlands",
+    "Start": "2013-01-01",
+    "Peak": "2013-04-01",
+    "End": "2014-01-01",
+    "Duration": 4,
+    "Signal": "negative"
+  },
+  {
+    "type": "ptr",
+    "name": "New.Zealand",
+    "Start": "2002-10-01",
+    "Peak": "2005-10-01",
+    "End": "2008-04-01",
+    "Duration": 22,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "New.Zealand",
+    "Start": "2016-01-01",
+    "Peak": "2016-04-01",
+    "End": "2016-10-01",
+    "Duration": 3,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "Norway",
+    "Start": "1985-07-01",
+    "Peak": "1986-01-01",
+    "End": "1986-04-01",
+    "Duration": 3,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "Norway",
+    "Start": "2006-07-01",
+    "Peak": "2007-04-01",
+    "End": "2008-01-01",
+    "Duration": 6,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "Spain",
+    "Start": "2003-01-01",
+    "Peak": "2004-04-01",
+    "End": "2007-04-01",
+    "Duration": 17,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "UK",
+    "Start": "1988-07-01",
+    "Peak": "1988-07-01",
+    "End": "1989-01-01",
+    "Duration": 2,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "UK",
+    "Start": "2002-01-01",
+    "Peak": "2002-10-01",
+    "End": "2005-01-01",
+    "Duration": 12,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "name": "US",
+    "Start": "2000-01-01",
+    "Peak": "2005-07-01",
+    "End": "2007-07-01",
+    "Duration": 30,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "Australia",
+    "Start": "1999-10-01",
+    "Peak": "2000-04-01",
+    "End": "2000-07-01",
+    "Duration": 3,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "Australia",
+    "Start": "2000-10-01",
+    "Peak": "2003-07-01",
+    "End": "2004-04-01",
+    "Duration": 14,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "Australia",
+    "Start": "2004-07-01",
+    "Peak": "2004-10-01",
+    "End": "2005-01-01",
+    "Duration": 2,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "Australia",
+    "Start": "2007-07-01",
+    "Peak": "2007-10-01",
+    "End": "2008-01-01",
+    "Duration": 2,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "Belgium",
+    "Start": "1989-10-01",
+    "Peak": "1989-10-01",
+    "End": "1990-04-01",
+    "Duration": 2,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "Belgium",
+    "Start": "1998-07-01",
+    "Peak": "1999-04-01",
+    "End": "2001-07-01",
+    "Duration": 12,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "Belgium",
+    "Start": "2002-04-01",
+    "Peak": "2007-01-01",
+    "End": "2008-10-01",
+    "Duration": 26,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "Canada",
+    "Start": "2002-10-01",
+    "Peak": "2004-04-01",
+    "End": "2008-10-01",
+    "Duration": 24,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "Canada",
+    "Start": "2016-04-01",
+    "Peak": "2017-04-01",
+    "End": "2018-07-01",
+    "Duration": 9,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "Denmark",
+    "Start": "1982-04-01",
+    "Peak": "1982-07-01",
+    "End": "1982-10-01",
+    "Duration": 2,
+    "Signal": "negative"
+  },
+  {
+    "type": "psyivx",
+    "name": "Denmark",
+    "Start": "2005-01-01",
+    "Peak": "2006-01-01",
+    "End": "2006-10-01",
+    "Duration": 7,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "Finland",
+    "Start": "1983-10-01",
+    "Peak": "1984-01-01",
+    "End": "1984-04-01",
+    "Duration": 2,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "Finland",
+    "Start": "1987-07-01",
+    "Peak": "1988-10-01",
+    "End": "1989-10-01",
+    "Duration": 9,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "France",
+    "Start": "2001-01-01",
+    "Peak": "2005-07-01",
+    "End": "2008-01-01",
+    "Duration": 28,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "Germany",
+    "Start": "1993-01-01",
+    "Peak": "1993-01-01",
+    "End": "1993-07-01",
+    "Duration": 2,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "Germany",
+    "Start": "2015-04-01",
+    "Peak": "2016-04-01",
+    "End": "2020-07-01",
+    "Duration": 22,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "Ireland",
+    "Start": "1998-10-01",
+    "Peak": "1999-10-01",
+    "End": "2000-04-01",
+    "Duration": 6,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "Netherlands",
+    "Start": "1997-07-01",
+    "Peak": "2000-07-01",
+    "End": "2004-10-01",
+    "Duration": 29,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "Netherlands",
+    "Start": "2013-01-01",
+    "Peak": "2013-04-01",
+    "End": "2014-01-01",
+    "Duration": 4,
+    "Signal": "negative"
+  },
+  {
+    "type": "psyivx",
+    "name": "New.Zealand",
+    "Start": "2002-10-01",
+    "Peak": "2005-10-01",
+    "End": "2008-04-01",
+    "Duration": 22,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "New.Zealand",
+    "Start": "2016-01-01",
+    "Peak": "2016-04-01",
+    "End": "2016-10-01",
+    "Duration": 3,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "Norway",
+    "Start": "1985-10-01",
+    "Peak": "1986-01-01",
+    "End": "1986-07-01",
+    "Duration": 3,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "Norway",
+    "Start": "2006-07-01",
+    "Peak": "2007-04-01",
+    "End": "2008-01-01",
+    "Duration": 6,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "Spain",
+    "Start": "1983-07-01",
+    "Peak": "1983-10-01",
+    "End": "1984-01-01",
+    "Duration": 2,
+    "Signal": "negative"
+  },
+  {
+    "type": "psyivx",
+    "name": "Spain",
+    "Start": "2003-01-01",
+    "Peak": "2004-04-01",
+    "End": "2007-04-01",
+    "Duration": 17,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "UK",
+    "Start": "1988-07-01",
+    "Peak": "1988-07-01",
+    "End": "1989-01-01",
+    "Duration": 2,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "UK",
+    "Start": "2002-01-01",
+    "Peak": "2002-10-01",
+    "End": "2005-01-01",
+    "Duration": 12,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "name": "US",
+    "Start": "2000-01-01",
+    "Peak": "2005-07-01",
+    "End": "2007-07-01",
+    "Duration": 30,
+    "Signal": "positive"
+  }
+]
