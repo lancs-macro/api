@@ -1,0 +1,1 @@
+["function (n, rule = 1, delta = 1) ", "{", "    if (!is_n(n)) {", "        n <- NROW(n)", "    }", "    stopifnot(rule %in% c(1, 2))", "    stopifnot(delta > 0)", "    if (rule == 1) {", "        round(delta * log(n))", "    }", "    else if (rule == 2) {", "        round(delta * log(n)/n)", "    }", "}"]

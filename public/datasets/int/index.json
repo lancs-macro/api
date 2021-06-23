@@ -32,9 +32,17 @@
     {
       "Description": "BSADF Critical Value Sequence Statistics",
       "ID": "stat"
+    },
+    {
+      "Description": "PSYIVX Data",
+      "ID": "psyivx_data"
+    },
+    {
+      "Description": "PSYIVX Datestamping",
+      "ID": "psy_ds"
     }
   ],
   "meta": {
-    "count": [8]
+    "count": [10]
   }
 }
