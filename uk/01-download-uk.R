@@ -7,55 +7,43 @@ library(readxl)
 # Naming  -----------------------------------------------------------------
 
 nms <- tibble::tribble(
-  ~num,   ~abbr,             ~ntwd,                   ~names,
-  1,   "EA",      "East Anglia",               "East Anglia",
-  2,   "EM",        "East Mids",              "East Midlands",
-  3,   "GL",           "London",           "Greater London",
-  4,   "NT",            "North",                    "North",
-  5,   "NW",       "North West",               "North West",
-  4,   "NI",        "N Ireland",         "Northern Ireland",
-  7,   "OM",        "Outer Met",       "Outer Metropolitan",
-  8,  "OSE",     "Outer S East",         "Outer South East",
-  9,   "SC",         "Scotland",                 "Scotland",
-  10,   "SW",       "South West",               "South West",
-  11,   "UK",               "UK",           "United Kingdom",
-  12,   "WW",            "Wales",                    "Wales",
-  13,   "WM",        "West Mids",            "West Midlands",
-  14,   "YH",    "Yorks & Hside",   "Yorkshire & Humberside",
+  ~num,  ~abbr,             ~ntwd,                  ~names,         
+  1L,      "EA",      "East Anglia",              "East Anglia",
+  2L,      "EM",        "East Mids",            "East Midlands",
+  3L,      "GL",           "London",           "Greater London",
+  4L,      "NT",            "North",                    "North",
+  5L,      "NW",       "North West",               "North West",
+  4L,      "NI",        "N Ireland",         "Northern Ireland",
+  7L,      "OM",        "Outer Met",       "Outer Metropolitan",
+  8L,      "OSE",     "Outer S East",         "Outer South East",
+  9L,       "SC",         "Scotland",                 "Scotland",
+  10L,      "SW",       "South West",               "South West",
+  11L,      "UK",               "UK",           "United Kingdom",
+  12L,      "WW",            "Wales",                    "Wales",
+  13L,      "WM",        "West Mids",            "West Midlands",
+  14L,      "YH",    "Yorks & Hside",   "Yorkshire & Humberside"
 )
 
-abbr_to_names <- c(
-  "EA" = "East Anglia", 
-  "EM" = "East Midlands", 
-  "GL" = "Greater London",
-  "NI" = "Northern Ireland", 
-  "NT" = "North",
-  "NW" = "North West",
-  "OM" = "Outer Metropolitan",
-  "OSE" = "Outer South East",
-  "SC" = "Scotland",
-  "SW" = "South West",
-  "UK" = "United Kingdom",
-  "WM" = "West Midlands",
-  "WW" =  "Wales",                 
-  "YH" =  "Yorkshire & Humberside"
-)
+abbr_to_names <- pull(nms, names) %>% 
+  set_names(pull(nms, abbr))
 
-ntwd_to_names <- c(
-  "East Anglia" = "East Anglia", 
-  "East Mids" = "East Midlands", 
-  "London" = "Greater London",
-  "N Ireland" = "Northern Ireland", 
-  "North" = "North",
-  "North West" = "North West",
-  "Outer Met" = "Outer Metropolitan",
-  "Outer S East" = "Outer South East",
-  "Scotland" = "Scotland",
-  "South West" = "South West",
-  "UK" = "United Kingdom",
-  "West Mids" = "West Midlands",
-  "Wales" =  "Wales",                 
-  "Yorks & Hside" =  "Yorkshire & Humberside"
+ntwd_to_names <- pull(nms, names) %>% 
+  set_names(pull(nms, ntwd))
+
+# uklr to hopi regions ----------------------------------------------------
+
+hp_nms <- tibble::tribble(
+  ~num,                     ~names,                      ~hopi,                        ~lr,
+  1L,          "East of England",          "East of England",          "east-of-england",
+  2L,            "West Midlands",  "West Midlands (England)",            "west-midlands",
+  3L,               "South West",     "South West (England)",               "south-west",
+  4L,               "North West",     "North West (England)",               "north-west",
+  5L, "Yorkshire and The Humber", "Yorkshire and The Humber", "yorkshire-and-the-humber",
+  6L,               "South East",     "South East (England)",               "south-east",
+  7L,                   "London",                   "London",                   "london",
+  8L,               "North East",     "North East (England)",               "north-east",
+  9L,                    "Wales",                    "Wales",                    "wales",
+  10L,            "East Midlands",  "East Midlands (England)",            "east-midlands"
 )
 
 # Download CPI index ------------------------------------------------------

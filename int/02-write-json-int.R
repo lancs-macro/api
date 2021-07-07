@@ -21,7 +21,7 @@ desc <- c(
   "PSYIVX Data",
   "PSYIVX Datestamping"
 )
-ids <- c("rhpi", "pti", "seq-rhpi", "dummy-rhpi","seq-pti", "dummy-pti", "seq-cv", "stat", "psyivx_data", "psyivx_ds")
+ids <- c("rhpi", "pti", "seq-rhpi", "dummy-rhpi", "seq-pti", "dummy-pti", "seq-cv", "stat", "psyivx_data", "psyivx_ds")
 
 write_json2(
   list(

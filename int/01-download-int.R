@@ -11,7 +11,7 @@ suppressMessages({
 })
 
 
-# download ----------------------------------------------------------------
+# Download ----------------------------------------------------------------
 
 full_data <- ihpdr::ihpd_get()
 
@@ -52,16 +52,16 @@ suppressMessages({
 
 nms <-
   c("Australia", "Belgium", "Canada", "Denmark", "Finland", "France",
-    "Germany", "Ireland", "Netherlands", "New.Zealand", "Norway", "Spain",
-    "UK", "US")
+    "Germany", "Ireland", "New Zealand", "Norway", "Spain", "UK", "US")
 
 vars <- c("hpi", "rent", "ltrate", "credit", "ngdp", "pdi", "un", "resi", "rgdp", "cpi", "pop", "permits")
-hdata_raw <- map2(lsheets, vars, ~ pivot_longer(.x, -Date, values_to = .y)) %>%
-  reduce(full_join, by = c("Date", "name"))
+hdata_raw <- map2(lsheets, vars, ~ pivot_longer(.x, -Date, values_to = .y, names_to = "country")) %>%
+  reduce(full_join, by = c("Date", "country")) %>% 
+  mutate(country = recode(country,  "New.Zealand" = "New Zealand"))
 
 hdata <- hdata_raw %>%
-  filter(name %in% nms) %>% 
-  group_by(name) %>%
+  filter(country %in% nms) %>% 
+  group_by(country) %>%
   mutate(
     rhpi = hpi/cpi*100,
     pti = hpi/pdi*100,
@@ -100,22 +100,8 @@ names(tbl_data) <- nms
 
 # * helpers ----
 
-ds_fun <- function(x) datestamp(x, min_duration = 2, nonrejected = T)[[1]]
+ds_fun <- function(x) datestamp(x, min_duration = 2, nonrejected = T)
 safe_ds_fun <- safely(ds_fun)
-
-# * price-to-rent ----
-suppressMessages({
-  radf_ptr <- map(tbl_data, ~ select(.x, Date, log_ptr) %>% radf(lag = 1))
-  ds_ptr <-  map(radf_ptr, safe_ds_fun) %>% 
-    map("result") %>% 
-    bind_rows(.id = "name") %>% 
-    select(Coucntry = name, Start, Peak, End, Duration)
-})
-
-
-
-suppressMessages({})
-
 
 # * estimation ----
 
@@ -137,28 +123,71 @@ residuals_ivx <- function(
   fitted2 <- y[1] + cumsum(fitted)
   res <- y - fitted2
   
-  tibble(Date = data$Date[-1], price = y, bubble = res, fundamentals = fitted2)
+  tibble(Date = data$Date[-1], price = y, bubble = res, fundamental = fitted2)
 }
 
 ivx_data <- map(tbl_data, ~ residuals_ivx(gptr ~ ltrate + log_rent, .x))
 
 suppressMessages({
-  radf_ivx <- ivx_data %>% 
+  
+  radf_bubble <- ivx_data %>% 
     map(~ radf(.x[,c("Date", "bubble")], lag = 1))
+  nn <- map_dbl(ivx_data, nrow)
   
-  ptr_ds <- map(tbl_data, ~ radf(.x[,c("Date", "log_ptr")], lag = 1)) %>% 
-    map(safe_ds_fun) %>% 
-    map("result") %>% 
-    bind_rows(.id = "name") %>% 
-    select(name, Start, Peak, End, Duration, Signal)
+  bsadf_bubble <- radf_bubble %>% 
+    map(~ augment_join(.x) %>% filter(stat == "bsadf", sig == 95) %>% select(index, tstat, crit)) %>% 
+    bind_rows(.id = "country") %>% 
+    set_names(c("country", "Date", "bsadf_bubble", "bsadf_cv"))
   
-  ivx_ds <-  map(radf_ivx, safe_ds_fun) %>% 
-    map("result") %>% 
-    bind_rows(.id = "name") %>% 
-    select(name, Start, Peak, End, Duration, Signal) %>% 
-    select(name, Start, Peak, End, Duration, Signal)
-})
+  ds_bubble <-  map(radf_bubble, safe_ds_fun) %>% 
+    map("result")
+  is_nonrejected <- map_lgl(ds_bubble, is.null)
+  extra_dummy_bubble <- list()
+  for(i in names(ds_bubble)[is_nonrejected]) {
+    ni <- nn[i]
+    extra_dummy_bubble[[i]] <- tibble(index(radf_bubble[[i]]), rep(0, ni)) %>% 
+      set_names(c("Date", i))
+  }
+  extra_dummy_bubble <- reduce(extra_dummy_bubble, full_join, by = "Date")
+  
+  ds_bubble <- compact(ds_bubble)
+  dummy_bubble <- map(ds_bubble, ~ attr(.x, "dummy")) %>% 
+    map2(ds_bubble, ~ as_tibble(.x) %>% mutate(Date = index(.y))) %>% 
+    reduce(full_join, by = "Date") %>% 
+    relocate(Date) %>% 
+    set_names(c("Date", names(ds_bubble))) %>%
+    full_join(extra_dummy_bubble, by = "Date") %>% 
+    pivot_longer(-Date, names_to = "country" , values_to = "dummy_bubble")
+  
+  datestamp_bubble <- ds_bubble %>%
+    map(~ .x[[1]]) %>% 
+    bind_rows(.id = "country") %>% 
+    select(country, Start, Peak, End, Duration, Signal) 
+  
+  radf_ptr <- map(tbl_data, ~ radf(.x[,c("Date", "log_ptr")], lag = 1))
+  
+  bsadf_ptr <- radf_ptr %>% 
+    map(~ augment_join(.x) %>% filter(stat == "bsadf", sig == 95) %>% select(index, tstat)) %>% 
+    bind_rows(.id = "country") %>% 
+    set_names(c("country", "Date", "bsadf_price"))
+  
+  ds_ptr <- map(radf_ptr, safe_ds_fun) %>% 
+    map("result")
+  
+  dummy_ptr <-  compact(ds_ptr)
+  dummy_ptr <- map(dummy_ptr, ~ attr(.x, "dummy")) %>% 
+    map2(dummy_ptr, ~ as_tibble(.x) %>% mutate(Date = index(.y))) %>% 
+    reduce(full_join, by = "Date") %>% 
+    relocate(Date) %>% 
+    set_names(c("Date", names(dummy_ptr))) %>%
+    pivot_longer(-Date, names_to = "country" , values_to = "dummy_ptr")
+  
+  datestamp_ptr <- ds_ptr %>%
+    map(~ .x[[1]]) %>% 
+    bind_rows(.id = "country") %>% 
+    select(country, Start, Peak, End, Duration, Signal) 
 
+})
 
 # data export -------------------------------------------------------------
 
@@ -215,14 +244,18 @@ estimation_pti_dummy <- datestamp(radf_pti, mc_cv) %>%
 
 # * psyivx datestamping ----
 
-psyivx_ds <- bind_rows(list(ptr = ptr_ds, psyivx = ivx_ds), .id = "type")
-  
+psyivx_ds <- bind_rows(list(ptr = datestamp_ptr, psyivx = datestamp_bubble), .id = "type")
 
 # * psyivx data ----
 
 psyivx_data <- full_join(
-  bind_rows(ivx_data, .id = "name"),
+  bind_rows(ivx_data, .id = "country"),
   select(hdata, Date, log_rent, ltrate),
-  by = c("Date", "name")
-) 
+  by = c("Date", "country")
+) %>% 
+  full_join(
+    list(bsadf_ptr, bsadf_bubble, dummy_ptr, dummy_bubble) %>% 
+      reduce(full_join, by = c("country", "Date")),
+    by = c("Date", "country")
+  )
 

@@ -1,7 +1,7 @@
 [
   {
     "type": "ptr",
-    "name": "Australia",
+    "country": "Australia",
     "Start": "1999-10-01",
     "Peak": "2000-04-01",
     "End": "2000-07-01",
@@ -10,7 +10,7 @@
   },
   {
     "type": "ptr",
-    "name": "Australia",
+    "country": "Australia",
     "Start": "2000-10-01",
     "Peak": "2003-07-01",
     "End": "2004-04-01",
@@ -19,7 +19,7 @@
   },
   {
     "type": "ptr",
-    "name": "Australia",
+    "country": "Australia",
     "Start": "2004-07-01",
     "Peak": "2004-10-01",
     "End": "2005-01-01",
@@ -28,7 +28,7 @@
   },
   {
     "type": "ptr",
-    "name": "Australia",
+    "country": "Australia",
     "Start": "2007-07-01",
     "Peak": "2007-10-01",
     "End": "2008-01-01",
@@ -37,7 +37,7 @@
   },
   {
     "type": "ptr",
-    "name": "Belgium",
+    "country": "Belgium",
     "Start": "1989-10-01",
     "Peak": "1989-10-01",
     "End": "1990-04-01",
@@ -46,7 +46,7 @@
   },
   {
     "type": "ptr",
-    "name": "Belgium",
+    "country": "Belgium",
     "Start": "1998-07-01",
     "Peak": "1999-04-01",
     "End": "2001-07-01",
@@ -55,7 +55,7 @@
   },
   {
     "type": "ptr",
-    "name": "Belgium",
+    "country": "Belgium",
     "Start": "2002-04-01",
     "Peak": "2007-01-01",
     "End": "2008-10-01",
@@ -64,7 +64,7 @@
   },
   {
     "type": "ptr",
-    "name": "Canada",
+    "country": "Canada",
     "Start": "2002-10-01",
     "Peak": "2004-04-01",
     "End": "2008-10-01",
@@ -73,7 +73,7 @@
   },
   {
     "type": "ptr",
-    "name": "Canada",
+    "country": "Canada",
     "Start": "2016-04-01",
     "Peak": "2017-04-01",
     "End": "2018-07-01",
@@ -82,7 +82,7 @@
   },
   {
     "type": "ptr",
-    "name": "Denmark",
+    "country": "Denmark",
     "Start": "1982-01-01",
     "Peak": "1982-07-01",
     "End": "1982-10-01",
@@ -91,7 +91,7 @@
   },
   {
     "type": "ptr",
-    "name": "Denmark",
+    "country": "Denmark",
     "Start": "2005-01-01",
     "Peak": "2006-01-01",
     "End": "2006-10-01",
@@ -100,7 +100,7 @@
   },
   {
     "type": "ptr",
-    "name": "Finland",
+    "country": "Finland",
     "Start": "1983-10-01",
     "Peak": "1984-01-01",
     "End": "1984-04-01",
@@ -109,7 +109,7 @@
   },
   {
     "type": "ptr",
-    "name": "Finland",
+    "country": "Finland",
     "Start": "1987-07-01",
     "Peak": "1988-10-01",
     "End": "1989-10-01",
@@ -118,7 +118,7 @@
   },
   {
     "type": "ptr",
-    "name": "France",
+    "country": "France",
     "Start": "2001-01-01",
     "Peak": "2005-07-01",
     "End": "2008-01-01",
@@ -127,7 +127,7 @@
   },
   {
     "type": "ptr",
-    "name": "Germany",
+    "country": "Germany",
     "Start": "1993-01-01",
     "Peak": "1993-01-01",
     "End": "1993-07-01",
@@ -136,7 +136,7 @@
   },
   {
     "type": "ptr",
-    "name": "Germany",
+    "country": "Germany",
     "Start": "2015-04-01",
     "Peak": "2016-04-01",
     "End": "2020-07-01",
@@ -145,7 +145,7 @@
   },
   {
     "type": "ptr",
-    "name": "Ireland",
+    "country": "Ireland",
     "Start": "1998-10-01",
     "Peak": "1999-10-01",
     "End": "2000-04-01",
@@ -154,25 +154,7 @@
   },
   {
     "type": "ptr",
-    "name": "Netherlands",
-    "Start": "1997-07-01",
-    "Peak": "2000-07-01",
-    "End": "2004-10-01",
-    "Duration": 29,
-    "Signal": "positive"
-  },
-  {
-    "type": "ptr",
-    "name": "Netherlands",
-    "Start": "2013-01-01",
-    "Peak": "2013-04-01",
-    "End": "2014-01-01",
-    "Duration": 4,
-    "Signal": "negative"
-  },
-  {
-    "type": "ptr",
-    "name": "New.Zealand",
+    "country": "New Zealand",
     "Start": "2002-10-01",
     "Peak": "2005-10-01",
     "End": "2008-04-01",
@@ -181,7 +163,7 @@
   },
   {
     "type": "ptr",
-    "name": "New.Zealand",
+    "country": "New Zealand",
     "Start": "2016-01-01",
     "Peak": "2016-04-01",
     "End": "2016-10-01",
@@ -190,7 +172,7 @@
   },
   {
     "type": "ptr",
-    "name": "Norway",
+    "country": "Norway",
     "Start": "1985-07-01",
     "Peak": "1986-01-01",
     "End": "1986-04-01",
@@ -199,7 +181,7 @@
   },
   {
     "type": "ptr",
-    "name": "Norway",
+    "country": "Norway",
     "Start": "2006-07-01",
     "Peak": "2007-04-01",
     "End": "2008-01-01",
@@ -208,7 +190,7 @@
   },
   {
     "type": "ptr",
-    "name": "Spain",
+    "country": "Spain",
     "Start": "2003-01-01",
     "Peak": "2004-04-01",
     "End": "2007-04-01",
@@ -217,7 +199,7 @@
   },
   {
     "type": "ptr",
-    "name": "UK",
+    "country": "UK",
     "Start": "1988-07-01",
     "Peak": "1988-07-01",
     "End": "1989-01-01",
@@ -226,7 +208,7 @@
   },
   {
     "type": "ptr",
-    "name": "UK",
+    "country": "UK",
     "Start": "2002-01-01",
     "Peak": "2002-10-01",
     "End": "2005-01-01",
@@ -235,7 +217,7 @@
   },
   {
     "type": "ptr",
-    "name": "US",
+    "country": "US",
     "Start": "2000-01-01",
     "Peak": "2005-07-01",
     "End": "2007-07-01",
@@ -244,7 +226,7 @@
   },
   {
     "type": "psyivx",
-    "name": "Australia",
+    "country": "Australia",
     "Start": "2002-04-01",
     "Peak": "2002-07-01",
     "End": "2003-01-01",
@@ -253,7 +235,7 @@
   },
   {
     "type": "psyivx",
-    "name": "Australia",
+    "country": "Australia",
     "Start": "2003-04-01",
     "Peak": "2003-07-01",
     "End": "2004-01-01",
@@ -262,7 +244,7 @@
   },
   {
     "type": "psyivx",
-    "name": "Belgium",
+    "country": "Belgium",
     "Start": "1989-04-01",
     "Peak": "1990-01-01",
     "End": "1990-10-01",
@@ -271,7 +253,7 @@
   },
   {
     "type": "psyivx",
-    "name": "Belgium",
+    "country": "Belgium",
     "Start": "2005-01-01",
     "Peak": "2005-01-01",
     "End": "2005-07-01",
@@ -280,7 +262,7 @@
   },
   {
     "type": "psyivx",
-    "name": "Belgium",
+    "country": "Belgium",
     "Start": "2015-04-01",
     "Peak": "2015-10-01",
     "End": "2016-04-01",
@@ -289,7 +271,7 @@
   },
   {
     "type": "psyivx",
-    "name": "Canada",
+    "country": "Canada",
     "Start": "2006-01-01",
     "Peak": "2006-04-01",
     "End": "2006-10-01",
@@ -298,7 +280,7 @@
   },
   {
     "type": "psyivx",
-    "name": "Canada",
+    "country": "Canada",
     "Start": "2007-01-01",
     "Peak": "2007-04-01",
     "End": "2007-10-01",
@@ -307,7 +289,7 @@
   },
   {
     "type": "psyivx",
-    "name": "Denmark",
+    "country": "Denmark",
     "Start": "2005-04-01",
     "Peak": "2005-07-01",
     "End": "2006-07-01",
@@ -316,7 +298,7 @@
   },
   {
     "type": "psyivx",
-    "name": "Finland",
+    "country": "Finland",
     "Start": "1988-04-01",
     "Peak": "1988-10-01",
     "End": "1989-07-01",
@@ -325,7 +307,7 @@
   },
   {
     "type": "psyivx",
-    "name": "France",
+    "country": "France",
     "Start": "2003-04-01",
     "Peak": "2005-07-01",
     "End": "2007-07-01",
@@ -334,7 +316,7 @@
   },
   {
     "type": "psyivx",
-    "name": "Ireland",
+    "country": "Ireland",
     "Start": "1999-07-01",
     "Peak": "1999-10-01",
     "End": "2000-01-01",
@@ -343,34 +325,7 @@
   },
   {
     "type": "psyivx",
-    "name": "Netherlands",
-    "Start": "1997-04-01",
-    "Peak": "2000-07-01",
-    "End": "2003-10-01",
-    "Duration": 26,
-    "Signal": "positive"
-  },
-  {
-    "type": "psyivx",
-    "name": "Netherlands",
-    "Start": "2009-04-01",
-    "Peak": "2009-07-01",
-    "End": "2010-04-01",
-    "Duration": 4,
-    "Signal": "negative"
-  },
-  {
-    "type": "psyivx",
-    "name": "Netherlands",
-    "Start": "2010-10-01",
-    "Peak": "2013-01-01",
-    "End": "2015-07-01",
-    "Duration": 19,
-    "Signal": "negative"
-  },
-  {
-    "type": "psyivx",
-    "name": "Spain",
+    "country": "Spain",
     "Start": "2003-01-01",
     "Peak": "2004-04-01",
     "End": "2007-01-01",
@@ -379,7 +334,7 @@
   },
   {
     "type": "psyivx",
-    "name": "UK",
+    "country": "UK",
     "Start": "1988-04-01",
     "Peak": "1988-07-01",
     "End": "1989-07-01",
@@ -388,7 +343,7 @@
   },
   {
     "type": "psyivx",
-    "name": "UK",
+    "country": "UK",
     "Start": "2002-07-01",
     "Peak": "2002-10-01",
     "End": "2003-07-01",
@@ -397,7 +352,7 @@
   },
   {
     "type": "psyivx",
-    "name": "UK",
+    "country": "UK",
     "Start": "2004-04-01",
     "Peak": "2004-04-01",
     "End": "2004-10-01",
@@ -406,7 +361,7 @@
   },
   {
     "type": "psyivx",
-    "name": "UK",
+    "country": "UK",
     "Start": "2019-01-01",
     "Peak": "2020-04-01",
     "End": "2020-07-01",
@@ -415,7 +370,7 @@
   },
   {
     "type": "psyivx",
-    "name": "US",
+    "country": "US",
     "Start": "2000-01-01",
     "Peak": "2005-07-01",
     "End": "2007-07-01",
