@@ -199,24 +199,6 @@
   },
   {
     "type": "ptr",
-    "country": "UK",
-    "Start": "1988-07-01",
-    "Peak": "1988-07-01",
-    "End": "1989-01-01",
-    "Duration": 2,
-    "Signal": "positive"
-  },
-  {
-    "type": "ptr",
-    "country": "UK",
-    "Start": "2002-01-01",
-    "Peak": "2002-10-01",
-    "End": "2005-01-01",
-    "Duration": 12,
-    "Signal": "positive"
-  },
-  {
-    "type": "ptr",
     "country": "US",
     "Start": "2000-01-01",
     "Peak": "2005-07-01",
@@ -331,42 +313,6 @@
     "End": "2007-01-01",
     "Duration": 16,
     "Signal": "positive"
-  },
-  {
-    "type": "psyivx",
-    "country": "UK",
-    "Start": "1988-04-01",
-    "Peak": "1988-07-01",
-    "End": "1989-07-01",
-    "Duration": 5,
-    "Signal": "positive"
-  },
-  {
-    "type": "psyivx",
-    "country": "UK",
-    "Start": "2002-07-01",
-    "Peak": "2002-10-01",
-    "End": "2003-07-01",
-    "Duration": 4,
-    "Signal": "positive"
-  },
-  {
-    "type": "psyivx",
-    "country": "UK",
-    "Start": "2004-04-01",
-    "Peak": "2004-04-01",
-    "End": "2004-10-01",
-    "Duration": 2,
-    "Signal": "positive"
-  },
-  {
-    "type": "psyivx",
-    "country": "UK",
-    "Start": "2019-01-01",
-    "Peak": "2020-04-01",
-    "End": "2020-07-01",
-    "Duration": 7,
-    "Signal": "negative"
   },
   {
     "type": "psyivx",

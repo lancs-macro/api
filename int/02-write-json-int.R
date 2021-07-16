@@ -1,6 +1,4 @@
 
-
-
 library(jsonlite)
 
 write_json2 <- function(...) {

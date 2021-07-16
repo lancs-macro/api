@@ -52,7 +52,7 @@ suppressMessages({
 
 nms <-
   c("Australia", "Belgium", "Canada", "Denmark", "Finland", "France",
-    "Germany", "Ireland", "New Zealand", "Norway", "Spain", "UK", "US")
+    "Germany", "Ireland", "New Zealand", "Norway", "Spain", "US")
 
 vars <- c("hpi", "rent", "ltrate", "credit", "ngdp", "pdi", "un", "resi", "rgdp", "cpi", "pop", "permits")
 hdata_raw <- map2(lsheets, vars, ~ pivot_longer(.x, -Date, values_to = .y, names_to = "country")) %>%
