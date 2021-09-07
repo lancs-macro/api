@@ -38,28 +38,19 @@
   {
     "type": "ptr",
     "country": "Belgium",
-    "Start": "1989-10-01",
-    "Peak": "1989-10-01",
-    "End": "1990-04-01",
-    "Duration": 2,
-    "Signal": "positive"
-  },
-  {
-    "type": "ptr",
-    "country": "Belgium",
-    "Start": "1998-07-01",
+    "Start": "1998-01-01",
     "Peak": "1999-04-01",
     "End": "2001-07-01",
-    "Duration": 12,
+    "Duration": 14,
     "Signal": "positive"
   },
   {
     "type": "ptr",
     "country": "Belgium",
     "Start": "2002-04-01",
-    "Peak": "2007-01-01",
-    "End": "2008-10-01",
-    "Duration": 26,
+    "Peak": "2005-01-01",
+    "End": "2008-04-01",
+    "Duration": 24,
     "Signal": "positive"
   },
   {
@@ -78,6 +69,15 @@
     "Peak": "2017-04-01",
     "End": "2018-07-01",
     "Duration": 9,
+    "Signal": "positive"
+  },
+  {
+    "type": "ptr",
+    "country": "Canada",
+    "Start": "2020-07-01",
+    "Peak": "2021-01-01",
+    "End": "2021-01-01",
+    "Duration": 3,
     "Signal": "positive"
   },
   {
@@ -138,9 +138,9 @@
     "type": "ptr",
     "country": "Germany",
     "Start": "2015-04-01",
-    "Peak": "2016-04-01",
-    "End": "2020-07-01",
-    "Duration": 22,
+    "Peak": "2020-10-01",
+    "End": "2021-01-01",
+    "Duration": 24,
     "Signal": "positive"
   },
   {
@@ -155,10 +155,10 @@
   {
     "type": "ptr",
     "country": "New Zealand",
-    "Start": "2002-10-01",
+    "Start": "2003-01-01",
     "Peak": "2005-10-01",
     "End": "2008-04-01",
-    "Duration": 22,
+    "Duration": 21,
     "Signal": "positive"
   },
   {
@@ -173,9 +173,9 @@
   {
     "type": "ptr",
     "country": "Norway",
-    "Start": "1985-07-01",
+    "Start": "1985-10-01",
     "Peak": "1986-01-01",
-    "End": "1986-04-01",
+    "End": "1986-07-01",
     "Duration": 3,
     "Signal": "positive"
   },
@@ -191,10 +191,10 @@
   {
     "type": "ptr",
     "country": "Spain",
-    "Start": "2003-01-01",
+    "Start": "2002-10-01",
     "Peak": "2004-04-01",
-    "End": "2007-04-01",
-    "Duration": 17,
+    "End": "2005-04-01",
+    "Duration": 10,
     "Signal": "positive"
   },
   {
@@ -228,28 +228,28 @@
     "type": "psyivx",
     "country": "Belgium",
     "Start": "1989-04-01",
-    "Peak": "1990-01-01",
-    "End": "1990-10-01",
-    "Duration": 6,
+    "Peak": "1989-10-01",
+    "End": "1990-07-01",
+    "Duration": 5,
     "Signal": "positive"
   },
   {
     "type": "psyivx",
     "country": "Belgium",
-    "Start": "2005-01-01",
-    "Peak": "2005-01-01",
-    "End": "2005-07-01",
-    "Duration": 2,
+    "Start": "2004-10-01",
+    "Peak": "2004-10-01",
+    "End": "2006-01-01",
+    "Duration": 5,
     "Signal": "positive"
   },
   {
     "type": "psyivx",
     "country": "Belgium",
-    "Start": "2015-04-01",
-    "Peak": "2015-10-01",
-    "End": "2016-04-01",
-    "Duration": 4,
-    "Signal": "negative"
+    "Start": "2006-04-01",
+    "Peak": "2006-04-01",
+    "End": "2007-07-01",
+    "Duration": 5,
+    "Signal": "positive"
   },
   {
     "type": "psyivx",
@@ -298,6 +298,15 @@
   },
   {
     "type": "psyivx",
+    "country": "Germany",
+    "Start": "2020-10-01",
+    "Peak": "2021-01-01",
+    "End": "2021-01-01",
+    "Duration": 2,
+    "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
     "country": "Ireland",
     "Start": "1999-07-01",
     "Peak": "1999-10-01",
@@ -308,11 +317,20 @@
   {
     "type": "psyivx",
     "country": "Spain",
-    "Start": "2003-01-01",
+    "Start": "2002-10-01",
     "Peak": "2004-04-01",
-    "End": "2007-01-01",
-    "Duration": 16,
+    "End": "2005-01-01",
+    "Duration": 9,
     "Signal": "positive"
+  },
+  {
+    "type": "psyivx",
+    "country": "Spain",
+    "Start": "2020-01-01",
+    "Peak": "2020-04-01",
+    "End": "2021-01-01",
+    "Duration": 5,
+    "Signal": "negative"
   },
   {
     "type": "psyivx",
