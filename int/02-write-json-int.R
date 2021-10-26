@@ -11,7 +11,12 @@ create_new_version <- function(release) {
   rel <- gsub(" ", "", tolower(release))
   fs::dir_create("public/datasets/int/", rel)
   all_rel <- fs::path_file(fs::dir_ls("public/datasets/int", type = "directory")) 
-  write_json2(list(releases = list(sort(all_rel))), path = here("public", "datasets", "int", "index.json"))
+  write_json2(
+    list(
+      releases = list(sort(all_rel))
+    ), 
+    path = here("public", "datasets", "int", "index.json")
+  )
 }
 create_new_version(release)
 
@@ -30,7 +35,6 @@ desc <- c(
 ids <- c("rhpi", "pti", "seq-rhpi", "dummy-rhpi", "seq-pti", "dummy-pti", "seq-cv", "stat", "psyivx_data", "psyivx_ds")
 
 rel <- gsub(" ", "", tolower(release))
-
 
 write_json2(
   list(
