@@ -1,0 +1,218 @@
+[
+  {
+    "Countries": "Australia",
+    "Real House Prices": 5.5931,
+    "House-Price-Income": 3.2144,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "Belgium",
+    "Real House Prices": 3.903,
+    "House-Price-Income": 3.3062,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "Canada",
+    "Real House Prices": 5.078,
+    "House-Price-Income": 2.7865,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "Switzerland",
+    "Real House Prices": 4.336,
+    "House-Price-Income": 3.1599,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "Germany",
+    "Real House Prices": 4.7368,
+    "House-Price-Income": 4.3668,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "Denmark",
+    "Real House Prices": 3.8798,
+    "House-Price-Income": 3.3286,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "Spain",
+    "Real House Prices": 3.5425,
+    "House-Price-Income": 2.738,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "Finland",
+    "Real House Prices": 2.9072,
+    "House-Price-Income": 1.2056,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "France",
+    "Real House Prices": 5.8117,
+    "House-Price-Income": 5.4165,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "UK",
+    "Real House Prices": 4.8836,
+    "House-Price-Income": 4.7692,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "Ireland",
+    "Real House Prices": 6.4157,
+    "House-Price-Income": 3.0451,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "Italy",
+    "Real House Prices": 2.705,
+    "House-Price-Income": 3.2111,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "Japan",
+    "Real House Prices": 6.6484,
+    "House-Price-Income": 5.0421,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "S. Korea",
+    "Real House Prices": 2.442,
+    "House-Price-Income": 1.2879,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "Luxembourg",
+    "Real House Prices": 5.164,
+    "House-Price-Income": 3.6002,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "Netherlands",
+    "Real House Prices": 5.6279,
+    "House-Price-Income": 3.7944,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "Norway",
+    "Real House Prices": 3.6552,
+    "House-Price-Income": 1.8265,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "New Zealand",
+    "Real House Prices": 2.7933,
+    "House-Price-Income": 1.8912,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "Sweden",
+    "Real House Prices": 3.2108,
+    "House-Price-Income": 1.8931,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "US",
+    "Real House Prices": 6.0318,
+    "House-Price-Income": 4.5711,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "S. Africa",
+    "Real House Prices": 4.3125,
+    "House-Price-Income": 3.5466,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "Croatia",
+    "Real House Prices": 3.3197,
+    "House-Price-Income": 5.1854,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "Israel",
+    "Real House Prices": 2.0323,
+    "House-Price-Income": 1.01,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "Slovenia",
+    "Real House Prices": 3.6708,
+    "House-Price-Income": 5.1566,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "Colombia",
+    "Real House Prices": 1.2254,
+    "House-Price-Income": 1.9945,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "Aggregate - 2005 Fixed Weights",
+    "Real House Prices": 6.8465,
+    "House-Price-Income": 3.6272,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  },
+  {
+    "Countries": "Aggregate - Dynamic Weights",
+    "Real House Prices": 5.9665,
+    "House-Price-Income": 3.3285,
+    "90% Critical Values": 1.8499,
+    "95% Critical Values": 2.1141,
+    "99% Critical Values": 2.6112
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "release": ["2021 Q2"],
+  "results": [
+    {
+      "Description": "Real House Prices",
+      "ID": "rhpi"
+    },
+    {
+      "Description": "House-Price-to-Income-Ratio",
+      "ID": "pti"
+    },
+    {
+      "Description": "Exuberance Statistics and Critical Values (GSADF)",
+      "ID": "seq-rhpi"
+    },
+    {
+      "Description": "Real House Prices Exuberance Statistics (BSADF)",
+      "ID": "dummy-rhpi"
+    },
+    {
+      "Description": "Real House Prices Exuberance Statistics (Dummy)",
+      "ID": "seq-pti"
+    },
+    {
+      "Description": "House-Price-to-Income Exuberance Statistics (BSADF)",
+      "ID": "dummy-pti"
+    },
+    {
+      "Description": "Real House Prices Exuberance Statistics (Dummy)",
+      "ID": "seq-cv"
+    },
+    {
+      "Description": "BSADF Critical Value Sequence Statistics",
+      "ID": "stat"
+    },
+    {
+      "Description": "PSYIVX Data",
+      "ID": "psyivx_data"
+    },
+    {
+      "Description": "PSYIVX Datestamping",
+      "ID": "psyivx_ds"
+    }
+  ],
+  "meta": {
+    "count": [10]
+  }
+}
