@@ -54,11 +54,11 @@ plot_index_uk <- function(data, returns = FALSE, save = FALSE) {
 }
 
 rhpi %>% 
-  plot_index_uk(save = T)
+  plot_index_uk(save = TRUE)
 rhpi %>% 
   mutate(across(-Date, ldiffx, 4)*100) %>% 
   drop_na() %>% 
-  plot_index_uk(returns = TRUE, save = F)
+  plot_index_uk(returns = TRUE, save = TRUE)
 
 
 # uklr-hopi ---------------------------------------------------------------
