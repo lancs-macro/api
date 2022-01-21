@@ -37,7 +37,7 @@ mc_cv <- radf_crit[[NROW(rhpi)]]
 
 # psyivx q1 ---------------------------------------------------------------
 
-datafile <- here::here("data-raw", "int", "psyivx-2021q2.xlsx")
+datafile <- here::here("data-raw", "int", "psyivx-2021q3.xlsx")
 nms0 <- gsub("\\.\\.", "\\.", names(readxl::read_excel(datafile)))[-1]
 sheets <- excel_sheets(datafile)
 suppressMessages({
@@ -167,7 +167,8 @@ suppressMessages({
 
 })
 
-# data export -------------------------------------------------------------
+# EXPORT ------------------------------------------------------------------
+
 
 release <- as.character(zoo::as.yearqtr(tail(rhpi,1)$Date))
 
@@ -220,6 +221,10 @@ estimation_pti_dummy <- datestamp(radf_pti, mc_cv) %>%
   add_column(Date = index(radf_pti)) %>% 
   select(Date, everything())
 
+
+# PSYIVX ------------------------------------------------------------------
+
+
 # * psyivx datestamping ----
 
 psyivx_ds <- bind_rows(list(ptr = datestamp_ptr, psyivx = datestamp_bubble), .id = "type")
@@ -236,4 +241,3 @@ psyivx_data <- full_join(
       reduce(full_join, by = c("country", "Date")),
     by = c("Date", "country")
   )
-

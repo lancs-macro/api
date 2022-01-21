@@ -6,19 +6,27 @@
       "ID": "rhpi"
     },
     {
-      "Description": "House-Price-to-Income-Ratio",
+      "Description": "RADF Real House Price (exuber)",
       "ID": "pti"
     },
     {
       "Description": "Exuberance Statistics and Critical Values (GSADF)",
-      "ID": "seq-rhpi"
+      "ID": "exuber-rhpi"
     },
     {
       "Description": "Real House Prices Exuberance Statistics (BSADF)",
-      "ID": "dummy-rhpi"
+      "ID": "seq-rhpi"
     },
     {
       "Description": "Real House Prices Exuberance Statistics (Dummy)",
+      "ID": "dummy-rhpi"
+    },
+    {
+      "Description": "House-Price-to-Income-Ratio",
+      "ID": "exuber-pti"
+    },
+    {
+      "Description": "RADF House-Price-to-Income-Ratio (exuber)",
       "ID": "seq-pti"
     },
     {
@@ -43,6 +51,6 @@
     }
   ],
   "meta": {
-    "count": [10]
+    "count": [12]
   }
 }
