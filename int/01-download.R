@@ -37,7 +37,7 @@ mc_cv <- radf_crit[[NROW(rhpi)]]
 
 # psyivx q1 ---------------------------------------------------------------
 
-datafile <- here::here("data-raw", "int", "psyivx-2021q3.xlsx")
+datafile <- here::here("data-raw", "int", "psyivx-2021q4.xlsx")
 nms0 <- gsub("\\.\\.", "\\.", names(readxl::read_excel(datafile)))[-1]
 sheets <- excel_sheets(datafile)
 suppressMessages({
