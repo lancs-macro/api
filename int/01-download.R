@@ -35,9 +35,16 @@ suppressMessages({
 })
 mc_cv <- radf_crit[[NROW(rhpi)]]
 
+
+# Release -----------------------------------------------------------------
+
+release <- as.character(zoo::as.yearqtr(tail(rhpi,1)$Date))
+
+rel <- tolower(gsub(" ", "", release))
+
 # psyivx q1 ---------------------------------------------------------------
 
-datafile <- here::here("data-raw", "int", "psyivx-2021q4.xlsx")
+datafile <- here::here("data-raw", "int", glue::glue("psyivx-{rel}.xlsx"))
 nms0 <- gsub("\\.\\.", "\\.", names(readxl::read_excel(datafile)))[-1]
 sheets <- excel_sheets(datafile)
 suppressMessages({
@@ -170,7 +177,6 @@ suppressMessages({
 # EXPORT ------------------------------------------------------------------
 
 
-release <- as.character(zoo::as.yearqtr(tail(rhpi,1)$Date))
 
 # * stats ----
 
@@ -272,3 +278,4 @@ psyivx_data <- full_join(
       reduce(full_join, by = c("country", "Date")),
     by = c("Date", "country")
   )
+

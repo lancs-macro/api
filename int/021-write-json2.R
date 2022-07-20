@@ -5,7 +5,7 @@ source(here("int/01-download.R"))
 
 rel <- create_new_version(release)
 
-desc <- c(
+description <- c(
   
   "Real House Prices - Data",
   "Real House Prices - radf object (exuber)",
@@ -37,7 +37,7 @@ ids <- c(
 write_json2(
   list(
     release = release,
-    results = data.frame(Description = desc, ID = ids),
+    results = data.frame(Description = description, ID = ids),
     meta = list(
       count = length(ids)
     )
