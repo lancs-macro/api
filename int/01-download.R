@@ -224,7 +224,7 @@ adf_table <- stat_table("adf")
 sadf_table <- stat_table("sadf")
 gsadf_table <- stat_table("gsadf")
 
-augment(radf_rhpi, mc_cv)
+# augment(radf_rhpi, mc_cv)
 
 
 # * series ----

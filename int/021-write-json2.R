@@ -53,7 +53,7 @@ write_json2(
   rhpi,
   here("public/datasets/int", rel, "rhpi.json")
 )
-serialize_json2(
+write_serial_json2(
   radf_rhpi,
   here("public/datasets/int", rel, "rhpi-radf.json")
 )
@@ -78,7 +78,7 @@ write_json2(
   pti, 
   here("public/datasets/int", rel, "pti.json")
 )
-serialize_json2(
+write_serial_json2(
   radf_pti,
   here("public/datasets/int", rel, "pti-radf.json")
 )
