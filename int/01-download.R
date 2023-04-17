@@ -2,11 +2,11 @@
 suppressMessages({
   library(tidyverse)
   library(readxl)
-  library(ihpdr)
+  library(ihpdr) #github
   library(here)
   library(exuber)
-  library(ivx)
-  library(transx)
+  library(ivx) # github
+  library(transx) # github
   options(transx.display = FALSE)
 })
 
@@ -90,6 +90,12 @@ safe_ds_fun <- safely(ds_fun)
 
 # * estimation ----
 
+data = tbl_data[[1]]
+formula = gptr ~ ltrate + log_rent
+predictor = "log_ptr"
+train_split = "2019-01-01"
+
+
 residuals_ivx <- function(
   formula, 
   data, 
@@ -126,7 +132,10 @@ suppressMessages({
   
   ds_bubble <-  map(radf_bubble, safe_ds_fun) %>% 
     map("result")
-  is_nonrejected <- map_lgl(ds_bubble, is.null)
+  # TODO this breaks here
+  is_zero_length <- function(x) length(x) != 0
+  is_nonrejected <- map_lgl(ds_bubble, is_zero_length)
+  
   extra_dummy_bubble <- list()
   for(i in names(ds_bubble)[is_nonrejected]) {
     ni <- nn[i]
