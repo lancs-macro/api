@@ -1,4 +1,3 @@
-
 library(jsonlite)
 
 write_json2 <- function(...) {
@@ -15,11 +14,11 @@ write_serial_json2 <- function(x, path, ...) {
 create_new_version <- function(release) {
   rel <- gsub(" ", "", tolower(release))
   fs::dir_create("public/datasets/int/", rel)
-  all_rel <- fs::path_file(fs::dir_ls("public/datasets/int", type = "directory")) 
+  all_rel <- fs::path_file(fs::dir_ls("public/datasets/int", type = "directory"))
   write_json2(
     list(
       releases = list(sort(all_rel, decreasing = TRUE))
-    ), 
+    ),
     path = here("public", "datasets", "int", "index.json")
   )
   rel
