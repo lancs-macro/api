@@ -133,9 +133,10 @@ suppressMessages({
   ds_bubble <-  map(radf_bubble, safe_ds_fun) %>% 
     map("result")
   # TODO this breaks here
-  is_zero_length <- function(x) length(x) != 0
+  is_zero_length <- function(x) length(x) == 0
   is_nonrejected <- map_lgl(ds_bubble, is_zero_length)
   
+  # what is that?
   extra_dummy_bubble <- list()
   for(i in names(ds_bubble)[is_nonrejected]) {
     ni <- nn[i]
@@ -145,12 +146,13 @@ suppressMessages({
   extra_dummy_bubble <- reduce(extra_dummy_bubble, full_join, by = "Date")
   
   ds_bubble <- compact(ds_bubble)
-  dummy_bubble <- map(ds_bubble, ~ attr(.x, "dummy")) %>% 
+  dummy_bubble <-
+    map(ds_bubble, ~ attr(.x, "dummy")) %>% 
     map2(ds_bubble, ~ as_tibble(.x) %>% mutate(Date = index(.y))) %>% 
-    reduce(full_join, by = "Date") %>% 
-    relocate(Date) %>% 
-    set_names(c("Date", names(ds_bubble))) %>%
-    full_join(extra_dummy_bubble, by = "Date") %>% 
+    reduce(full_join, by = "Date") %>%
+    relocate(Date) %>%
+    set_names(c("Date", names(ds_bubble))) %>% 
+    # full_join(extra_dummy_bubble, by = "Date") %>%
     pivot_longer(-Date, names_to = "country" , values_to = "dummy_bubble")
   
   datestamp_bubble <- ds_bubble %>%
