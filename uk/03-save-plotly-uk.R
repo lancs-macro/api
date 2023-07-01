@@ -53,6 +53,7 @@ plot_index_uk <- function(data, returns = FALSE, save = FALSE) {
   plt
 }
 
+
 rhpi %>% 
   plot_index_uk(save = TRUE)
 rhpi %>% 
