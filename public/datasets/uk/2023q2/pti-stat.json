@@ -1,0 +1,884 @@
+[
+  {
+    "id": "East Anglia",
+    "stat": "adf",
+    "tstat": -1.3931,
+    "sig": "90",
+    "crit": -0.5001
+  },
+  {
+    "id": "East Anglia",
+    "stat": "adf",
+    "tstat": -1.3931,
+    "sig": "95",
+    "crit": -0.2279
+  },
+  {
+    "id": "East Anglia",
+    "stat": "adf",
+    "tstat": -1.3931,
+    "sig": "99",
+    "crit": 0.414
+  },
+  {
+    "id": "East Anglia",
+    "stat": "sadf",
+    "tstat": -0.3192,
+    "sig": "90",
+    "crit": 1.0389
+  },
+  {
+    "id": "East Anglia",
+    "stat": "sadf",
+    "tstat": -0.3192,
+    "sig": "95",
+    "crit": 1.3111
+  },
+  {
+    "id": "East Anglia",
+    "stat": "sadf",
+    "tstat": -0.3192,
+    "sig": "99",
+    "crit": 1.9212
+  },
+  {
+    "id": "East Anglia",
+    "stat": "gsadf",
+    "tstat": 3.1378,
+    "sig": "90",
+    "crit": 1.6192
+  },
+  {
+    "id": "East Anglia",
+    "stat": "gsadf",
+    "tstat": 3.1378,
+    "sig": "95",
+    "crit": 1.892
+  },
+  {
+    "id": "East Anglia",
+    "stat": "gsadf",
+    "tstat": 3.1378,
+    "sig": "99",
+    "crit": 2.4461
+  },
+  {
+    "id": "East Midlands",
+    "stat": "adf",
+    "tstat": -0.5552,
+    "sig": "90",
+    "crit": -0.5001
+  },
+  {
+    "id": "East Midlands",
+    "stat": "adf",
+    "tstat": -0.5552,
+    "sig": "95",
+    "crit": -0.2279
+  },
+  {
+    "id": "East Midlands",
+    "stat": "adf",
+    "tstat": -0.5552,
+    "sig": "99",
+    "crit": 0.414
+  },
+  {
+    "id": "East Midlands",
+    "stat": "sadf",
+    "tstat": 2.2764,
+    "sig": "90",
+    "crit": 1.0389
+  },
+  {
+    "id": "East Midlands",
+    "stat": "sadf",
+    "tstat": 2.2764,
+    "sig": "95",
+    "crit": 1.3111
+  },
+  {
+    "id": "East Midlands",
+    "stat": "sadf",
+    "tstat": 2.2764,
+    "sig": "99",
+    "crit": 1.9212
+  },
+  {
+    "id": "East Midlands",
+    "stat": "gsadf",
+    "tstat": 3.9065,
+    "sig": "90",
+    "crit": 1.6192
+  },
+  {
+    "id": "East Midlands",
+    "stat": "gsadf",
+    "tstat": 3.9065,
+    "sig": "95",
+    "crit": 1.892
+  },
+  {
+    "id": "East Midlands",
+    "stat": "gsadf",
+    "tstat": 3.9065,
+    "sig": "99",
+    "crit": 2.4461
+  },
+  {
+    "id": "Greater London",
+    "stat": "adf",
+    "tstat": 0.3761,
+    "sig": "90",
+    "crit": -0.5001
+  },
+  {
+    "id": "Greater London",
+    "stat": "adf",
+    "tstat": 0.3761,
+    "sig": "95",
+    "crit": -0.2279
+  },
+  {
+    "id": "Greater London",
+    "stat": "adf",
+    "tstat": 0.3761,
+    "sig": "99",
+    "crit": 0.414
+  },
+  {
+    "id": "Greater London",
+    "stat": "sadf",
+    "tstat": 1.7651,
+    "sig": "90",
+    "crit": 1.0389
+  },
+  {
+    "id": "Greater London",
+    "stat": "sadf",
+    "tstat": 1.7651,
+    "sig": "95",
+    "crit": 1.3111
+  },
+  {
+    "id": "Greater London",
+    "stat": "sadf",
+    "tstat": 1.7651,
+    "sig": "99",
+    "crit": 1.9212
+  },
+  {
+    "id": "Greater London",
+    "stat": "gsadf",
+    "tstat": 1.8116,
+    "sig": "90",
+    "crit": 1.6192
+  },
+  {
+    "id": "Greater London",
+    "stat": "gsadf",
+    "tstat": 1.8116,
+    "sig": "95",
+    "crit": 1.892
+  },
+  {
+    "id": "Greater London",
+    "stat": "gsadf",
+    "tstat": 1.8116,
+    "sig": "99",
+    "crit": 2.4461
+  },
+  {
+    "id": "North",
+    "stat": "adf",
+    "tstat": -1.0928,
+    "sig": "90",
+    "crit": -0.5001
+  },
+  {
+    "id": "North",
+    "stat": "adf",
+    "tstat": -1.0928,
+    "sig": "95",
+    "crit": -0.2279
+  },
+  {
+    "id": "North",
+    "stat": "adf",
+    "tstat": -1.0928,
+    "sig": "99",
+    "crit": 0.414
+  },
+  {
+    "id": "North",
+    "stat": "sadf",
+    "tstat": 1.7803,
+    "sig": "90",
+    "crit": 1.0389
+  },
+  {
+    "id": "North",
+    "stat": "sadf",
+    "tstat": 1.7803,
+    "sig": "95",
+    "crit": 1.3111
+  },
+  {
+    "id": "North",
+    "stat": "sadf",
+    "tstat": 1.7803,
+    "sig": "99",
+    "crit": 1.9212
+  },
+  {
+    "id": "North",
+    "stat": "gsadf",
+    "tstat": 3.7641,
+    "sig": "90",
+    "crit": 1.6192
+  },
+  {
+    "id": "North",
+    "stat": "gsadf",
+    "tstat": 3.7641,
+    "sig": "95",
+    "crit": 1.892
+  },
+  {
+    "id": "North",
+    "stat": "gsadf",
+    "tstat": 3.7641,
+    "sig": "99",
+    "crit": 2.4461
+  },
+  {
+    "id": "North West",
+    "stat": "adf",
+    "tstat": -0.711,
+    "sig": "90",
+    "crit": -0.5001
+  },
+  {
+    "id": "North West",
+    "stat": "adf",
+    "tstat": -0.711,
+    "sig": "95",
+    "crit": -0.2279
+  },
+  {
+    "id": "North West",
+    "stat": "adf",
+    "tstat": -0.711,
+    "sig": "99",
+    "crit": 0.414
+  },
+  {
+    "id": "North West",
+    "stat": "sadf",
+    "tstat": 1.9623,
+    "sig": "90",
+    "crit": 1.0389
+  },
+  {
+    "id": "North West",
+    "stat": "sadf",
+    "tstat": 1.9623,
+    "sig": "95",
+    "crit": 1.3111
+  },
+  {
+    "id": "North West",
+    "stat": "sadf",
+    "tstat": 1.9623,
+    "sig": "99",
+    "crit": 1.9212
+  },
+  {
+    "id": "North West",
+    "stat": "gsadf",
+    "tstat": 3.7743,
+    "sig": "90",
+    "crit": 1.6192
+  },
+  {
+    "id": "North West",
+    "stat": "gsadf",
+    "tstat": 3.7743,
+    "sig": "95",
+    "crit": 1.892
+  },
+  {
+    "id": "North West",
+    "stat": "gsadf",
+    "tstat": 3.7743,
+    "sig": "99",
+    "crit": 2.4461
+  },
+  {
+    "id": "Northern Ireland",
+    "stat": "adf",
+    "tstat": -1.5329,
+    "sig": "90",
+    "crit": -0.5001
+  },
+  {
+    "id": "Northern Ireland",
+    "stat": "adf",
+    "tstat": -1.5329,
+    "sig": "95",
+    "crit": -0.2279
+  },
+  {
+    "id": "Northern Ireland",
+    "stat": "adf",
+    "tstat": -1.5329,
+    "sig": "99",
+    "crit": 0.414
+  },
+  {
+    "id": "Northern Ireland",
+    "stat": "sadf",
+    "tstat": 5.3626,
+    "sig": "90",
+    "crit": 1.0389
+  },
+  {
+    "id": "Northern Ireland",
+    "stat": "sadf",
+    "tstat": 5.3626,
+    "sig": "95",
+    "crit": 1.3111
+  },
+  {
+    "id": "Northern Ireland",
+    "stat": "sadf",
+    "tstat": 5.3626,
+    "sig": "99",
+    "crit": 1.9212
+  },
+  {
+    "id": "Northern Ireland",
+    "stat": "gsadf",
+    "tstat": 6.8918,
+    "sig": "90",
+    "crit": 1.6192
+  },
+  {
+    "id": "Northern Ireland",
+    "stat": "gsadf",
+    "tstat": 6.8918,
+    "sig": "95",
+    "crit": 1.892
+  },
+  {
+    "id": "Northern Ireland",
+    "stat": "gsadf",
+    "tstat": 6.8918,
+    "sig": "99",
+    "crit": 2.4461
+  },
+  {
+    "id": "Outer Metropolitan",
+    "stat": "adf",
+    "tstat": -0.2738,
+    "sig": "90",
+    "crit": -0.5001
+  },
+  {
+    "id": "Outer Metropolitan",
+    "stat": "adf",
+    "tstat": -0.2738,
+    "sig": "95",
+    "crit": -0.2279
+  },
+  {
+    "id": "Outer Metropolitan",
+    "stat": "adf",
+    "tstat": -0.2738,
+    "sig": "99",
+    "crit": 0.414
+  },
+  {
+    "id": "Outer Metropolitan",
+    "stat": "sadf",
+    "tstat": 2.5013,
+    "sig": "90",
+    "crit": 1.0389
+  },
+  {
+    "id": "Outer Metropolitan",
+    "stat": "sadf",
+    "tstat": 2.5013,
+    "sig": "95",
+    "crit": 1.3111
+  },
+  {
+    "id": "Outer Metropolitan",
+    "stat": "sadf",
+    "tstat": 2.5013,
+    "sig": "99",
+    "crit": 1.9212
+  },
+  {
+    "id": "Outer Metropolitan",
+    "stat": "gsadf",
+    "tstat": 3.1277,
+    "sig": "90",
+    "crit": 1.6192
+  },
+  {
+    "id": "Outer Metropolitan",
+    "stat": "gsadf",
+    "tstat": 3.1277,
+    "sig": "95",
+    "crit": 1.892
+  },
+  {
+    "id": "Outer Metropolitan",
+    "stat": "gsadf",
+    "tstat": 3.1277,
+    "sig": "99",
+    "crit": 2.4461
+  },
+  {
+    "id": "Outer South East",
+    "stat": "adf",
+    "tstat": -0.4945,
+    "sig": "90",
+    "crit": -0.5001
+  },
+  {
+    "id": "Outer South East",
+    "stat": "adf",
+    "tstat": -0.4945,
+    "sig": "95",
+    "crit": -0.2279
+  },
+  {
+    "id": "Outer South East",
+    "stat": "adf",
+    "tstat": -0.4945,
+    "sig": "99",
+    "crit": 0.414
+  },
+  {
+    "id": "Outer South East",
+    "stat": "sadf",
+    "tstat": 2.8393,
+    "sig": "90",
+    "crit": 1.0389
+  },
+  {
+    "id": "Outer South East",
+    "stat": "sadf",
+    "tstat": 2.8393,
+    "sig": "95",
+    "crit": 1.3111
+  },
+  {
+    "id": "Outer South East",
+    "stat": "sadf",
+    "tstat": 2.8393,
+    "sig": "99",
+    "crit": 1.9212
+  },
+  {
+    "id": "Outer South East",
+    "stat": "gsadf",
+    "tstat": 4.043,
+    "sig": "90",
+    "crit": 1.6192
+  },
+  {
+    "id": "Outer South East",
+    "stat": "gsadf",
+    "tstat": 4.043,
+    "sig": "95",
+    "crit": 1.892
+  },
+  {
+    "id": "Outer South East",
+    "stat": "gsadf",
+    "tstat": 4.043,
+    "sig": "99",
+    "crit": 2.4461
+  },
+  {
+    "id": "Scotland",
+    "stat": "adf",
+    "tstat": -1.0761,
+    "sig": "90",
+    "crit": -0.5001
+  },
+  {
+    "id": "Scotland",
+    "stat": "adf",
+    "tstat": -1.0761,
+    "sig": "95",
+    "crit": -0.2279
+  },
+  {
+    "id": "Scotland",
+    "stat": "adf",
+    "tstat": -1.0761,
+    "sig": "99",
+    "crit": 0.414
+  },
+  {
+    "id": "Scotland",
+    "stat": "sadf",
+    "tstat": 1.6414,
+    "sig": "90",
+    "crit": 1.0389
+  },
+  {
+    "id": "Scotland",
+    "stat": "sadf",
+    "tstat": 1.6414,
+    "sig": "95",
+    "crit": 1.3111
+  },
+  {
+    "id": "Scotland",
+    "stat": "sadf",
+    "tstat": 1.6414,
+    "sig": "99",
+    "crit": 1.9212
+  },
+  {
+    "id": "Scotland",
+    "stat": "gsadf",
+    "tstat": 2.9806,
+    "sig": "90",
+    "crit": 1.6192
+  },
+  {
+    "id": "Scotland",
+    "stat": "gsadf",
+    "tstat": 2.9806,
+    "sig": "95",
+    "crit": 1.892
+  },
+  {
+    "id": "Scotland",
+    "stat": "gsadf",
+    "tstat": 2.9806,
+    "sig": "99",
+    "crit": 2.4461
+  },
+  {
+    "id": "South West",
+    "stat": "adf",
+    "tstat": -0.2728,
+    "sig": "90",
+    "crit": -0.5001
+  },
+  {
+    "id": "South West",
+    "stat": "adf",
+    "tstat": -0.2728,
+    "sig": "95",
+    "crit": -0.2279
+  },
+  {
+    "id": "South West",
+    "stat": "adf",
+    "tstat": -0.2728,
+    "sig": "99",
+    "crit": 0.414
+  },
+  {
+    "id": "South West",
+    "stat": "sadf",
+    "tstat": 0.8041,
+    "sig": "90",
+    "crit": 1.0389
+  },
+  {
+    "id": "South West",
+    "stat": "sadf",
+    "tstat": 0.8041,
+    "sig": "95",
+    "crit": 1.3111
+  },
+  {
+    "id": "South West",
+    "stat": "sadf",
+    "tstat": 0.8041,
+    "sig": "99",
+    "crit": 1.9212
+  },
+  {
+    "id": "South West",
+    "stat": "gsadf",
+    "tstat": 3.0618,
+    "sig": "90",
+    "crit": 1.6192
+  },
+  {
+    "id": "South West",
+    "stat": "gsadf",
+    "tstat": 3.0618,
+    "sig": "95",
+    "crit": 1.892
+  },
+  {
+    "id": "South West",
+    "stat": "gsadf",
+    "tstat": 3.0618,
+    "sig": "99",
+    "crit": 2.4461
+  },
+  {
+    "id": "United Kingdom",
+    "stat": "adf",
+    "tstat": -1.4607,
+    "sig": "90",
+    "crit": -0.5001
+  },
+  {
+    "id": "United Kingdom",
+    "stat": "adf",
+    "tstat": -1.4607,
+    "sig": "95",
+    "crit": -0.2279
+  },
+  {
+    "id": "United Kingdom",
+    "stat": "adf",
+    "tstat": -1.4607,
+    "sig": "99",
+    "crit": 0.414
+  },
+  {
+    "id": "United Kingdom",
+    "stat": "sadf",
+    "tstat": 0.261,
+    "sig": "90",
+    "crit": 1.0389
+  },
+  {
+    "id": "United Kingdom",
+    "stat": "sadf",
+    "tstat": 0.261,
+    "sig": "95",
+    "crit": 1.3111
+  },
+  {
+    "id": "United Kingdom",
+    "stat": "sadf",
+    "tstat": 0.261,
+    "sig": "99",
+    "crit": 1.9212
+  },
+  {
+    "id": "United Kingdom",
+    "stat": "gsadf",
+    "tstat": 1.9551,
+    "sig": "90",
+    "crit": 1.6192
+  },
+  {
+    "id": "United Kingdom",
+    "stat": "gsadf",
+    "tstat": 1.9551,
+    "sig": "95",
+    "crit": 1.892
+  },
+  {
+    "id": "United Kingdom",
+    "stat": "gsadf",
+    "tstat": 1.9551,
+    "sig": "99",
+    "crit": 2.4461
+  },
+  {
+    "id": "Wales",
+    "stat": "adf",
+    "tstat": -0.9769,
+    "sig": "90",
+    "crit": -0.5001
+  },
+  {
+    "id": "Wales",
+    "stat": "adf",
+    "tstat": -0.9769,
+    "sig": "95",
+    "crit": -0.2279
+  },
+  {
+    "id": "Wales",
+    "stat": "adf",
+    "tstat": -0.9769,
+    "sig": "99",
+    "crit": 0.414
+  },
+  {
+    "id": "Wales",
+    "stat": "sadf",
+    "tstat": 1.3974,
+    "sig": "90",
+    "crit": 1.0389
+  },
+  {
+    "id": "Wales",
+    "stat": "sadf",
+    "tstat": 1.3974,
+    "sig": "95",
+    "crit": 1.3111
+  },
+  {
+    "id": "Wales",
+    "stat": "sadf",
+    "tstat": 1.3974,
+    "sig": "99",
+    "crit": 1.9212
+  },
+  {
+    "id": "Wales",
+    "stat": "gsadf",
+    "tstat": 4.4013,
+    "sig": "90",
+    "crit": 1.6192
+  },
+  {
+    "id": "Wales",
+    "stat": "gsadf",
+    "tstat": 4.4013,
+    "sig": "95",
+    "crit": 1.892
+  },
+  {
+    "id": "Wales",
+    "stat": "gsadf",
+    "tstat": 4.4013,
+    "sig": "99",
+    "crit": 2.4461
+  },
+  {
+    "id": "West Midlands",
+    "stat": "adf",
+    "tstat": -0.4925,
+    "sig": "90",
+    "crit": -0.5001
+  },
+  {
+    "id": "West Midlands",
+    "stat": "adf",
+    "tstat": -0.4925,
+    "sig": "95",
+    "crit": -0.2279
+  },
+  {
+    "id": "West Midlands",
+    "stat": "adf",
+    "tstat": -0.4925,
+    "sig": "99",
+    "crit": 0.414
+  },
+  {
+    "id": "West Midlands",
+    "stat": "sadf",
+    "tstat": 1.4081,
+    "sig": "90",
+    "crit": 1.0389
+  },
+  {
+    "id": "West Midlands",
+    "stat": "sadf",
+    "tstat": 1.4081,
+    "sig": "95",
+    "crit": 1.3111
+  },
+  {
+    "id": "West Midlands",
+    "stat": "sadf",
+    "tstat": 1.4081,
+    "sig": "99",
+    "crit": 1.9212
+  },
+  {
+    "id": "West Midlands",
+    "stat": "gsadf",
+    "tstat": 3.5411,
+    "sig": "90",
+    "crit": 1.6192
+  },
+  {
+    "id": "West Midlands",
+    "stat": "gsadf",
+    "tstat": 3.5411,
+    "sig": "95",
+    "crit": 1.892
+  },
+  {
+    "id": "West Midlands",
+    "stat": "gsadf",
+    "tstat": 3.5411,
+    "sig": "99",
+    "crit": 2.4461
+  },
+  {
+    "id": "Yorkshire & Humberside",
+    "stat": "adf",
+    "tstat": -1.3238,
+    "sig": "90",
+    "crit": -0.5001
+  },
+  {
+    "id": "Yorkshire & Humberside",
+    "stat": "adf",
+    "tstat": -1.3238,
+    "sig": "95",
+    "crit": -0.2279
+  },
+  {
+    "id": "Yorkshire & Humberside",
+    "stat": "adf",
+    "tstat": -1.3238,
+    "sig": "99",
+    "crit": 0.414
+  },
+  {
+    "id": "Yorkshire & Humberside",
+    "stat": "sadf",
+    "tstat": 0.157,
+    "sig": "90",
+    "crit": 1.0389
+  },
+  {
+    "id": "Yorkshire & Humberside",
+    "stat": "sadf",
+    "tstat": 0.157,
+    "sig": "95",
+    "crit": 1.3111
+  },
+  {
+    "id": "Yorkshire & Humberside",
+    "stat": "sadf",
+    "tstat": 0.157,
+    "sig": "99",
+    "crit": 1.9212
+  },
+  {
+    "id": "Yorkshire & Humberside",
+    "stat": "gsadf",
+    "tstat": 2.9011,
+    "sig": "90",
+    "crit": 1.6192
+  },
+  {
+    "id": "Yorkshire & Humberside",
+    "stat": "gsadf",
+    "tstat": 2.9011,
+    "sig": "95",
+    "crit": 1.892
+  },
+  {
+    "id": "Yorkshire & Humberside",
+    "stat": "gsadf",
+    "tstat": 2.9011,
+    "sig": "99",
+    "crit": 2.4461
+  }
+]
