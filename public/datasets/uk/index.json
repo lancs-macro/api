@@ -1,51 +1,8 @@
 {
-  "results": [
-    {
-      "Description": "Real House Prices",
-      "ID": "rhpi"
-    },
-    {
-      "Description": "House-Price-to-Income-Ratio",
-      "ID": "pti"
-    },
-    {
-      "Description": "Exuberance Statistics and Critical Values (GSADF)",
-      "ID": "seq-rhpi"
-    },
-    {
-      "Description": "Real House Prices Exuberance Statistics (BSADF)",
-      "ID": "seq-pti"
-    },
-    {
-      "Description": "House-Price-to-Income Exuberance Statistics (BSADF)",
-      "ID": "seq-cv"
-    },
-    {
-      "Description": "BSADF Critical Value Sequence Statistics",
-      "ID": "stat"
-    },
-    {
-      "Description": "House Price Uncertainty",
-      "ID": "hpu"
-    },
-    {
-      "Description": "Housing Observatory Price Indices - Aggregate",
-      "ID": "hopi-aggregate"
-    },
-    {
-      "Description": "Housing Observatory Price Indices - NUTS 1",
-      "ID": "hopi-nuts1"
-    },
-    {
-      "Description": "Housing Observatory Price Indices - NUTS 2",
-      "ID": "hopi-nuts2"
-    },
-    {
-      "Description": "Housing Observatory Price Indices - NUTS 3",
-      "ID": "hopi-nuts3"
-    }
-  ],
-  "meta": {
-    "count": [11]
-  }
+  "releases": [
+    [
+      "2023q2",
+      "2022q4"
+    ]
+  ]
 }
