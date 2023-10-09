@@ -1,10 +1,14 @@
 # uk ----------------------------------------------------------------------
 
-1
+
+source("uk/02-write-json.R")
+source("uk/03-write-plotly.R")
+
 
 # int --------------------------------------------------------------------
 
-source("int/01-download-int.R")
-source("int/02-write-json-int.R")
+# source("int/01-download-int.R")
+source("int/02-write-json.R")
+source("int/03-write-plotly.R")
 
 # get all ----------------------------------------------------------------

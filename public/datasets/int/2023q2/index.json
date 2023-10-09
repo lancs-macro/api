@@ -1,0 +1,60 @@
+{
+  "release": ["2023 Q2"],
+  "results": [
+    {
+      "Description": "Real House Prices - Data",
+      "ID": "rhpi"
+    },
+    {
+      "Description": "Real House Prices - radf object (exuber)",
+      "ID": "rhpi-radf"
+    },
+    {
+      "Description": "Real House Prices - Exuberance Statistics",
+      "ID": "rhpi-stat"
+    },
+    {
+      "Description": "Real House Prices - Exuberance Sequence Statistics",
+      "ID": "rhpi-seqstat"
+    },
+    {
+      "Description": "Real House Prices - Dummy Variable",
+      "ID": "rhpi-dummy"
+    },
+    {
+      "Description": "House-Price-to-Income-Ratio - Data",
+      "ID": "pti"
+    },
+    {
+      "Description": "House-Price-to-Income-Ratio - radf object (exuber)",
+      "ID": "pti-radf"
+    },
+    {
+      "Description": "House-Price-to-Income-Ratio - Exuberance Statistics",
+      "ID": "pti-stat"
+    },
+    {
+      "Description": "House-Price-to-Income-Ratio - Exuberance Sequence Statistics",
+      "ID": "pti-seqstat"
+    },
+    {
+      "Description": "House-Price-to-Income-Ratio - Dummy Variable",
+      "ID": "pti-dummy"
+    },
+    {
+      "Description": "Monte Carlo Critical Values (exuber)",
+      "ID": "crit-mc"
+    },
+    {
+      "Description": "PSYIVX - Data",
+      "ID": "psyivx-data"
+    },
+    {
+      "Description": "PSYIVX - Datestamping",
+      "ID": "psyivx-ds"
+    }
+  ],
+  "meta": {
+    "count": [13]
+  }
+}
