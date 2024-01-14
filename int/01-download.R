@@ -16,6 +16,7 @@ suppressMessages({
 full_data <- ihpdr::ihpd_get()
 
 cnames <- ihpdr::ihpd_countries()
+# cnames <- unique(ihpd_get("raw", version = version, verbose = FALSE)$country)
 
 rhpi <- select(full_data, Date, country, rhpi) %>% 
   pivot_wider(names_from = country, values_from = rhpi)
@@ -110,10 +111,10 @@ residuals_ivx <- function(
   mod <- ivx(formula, data)
   X <- mod$data$X
   y <- data[[predictor]][-1]
+ 
   fitted <- cbind(constant = 1, X) %*% train_coefs  
   fitted2 <- y[1] + cumsum(fitted)
   res <- y - fitted2
-  
   tibble(Date = data$Date[-1], price = y, bubble = res, fundamental = fitted2)
 }
 
