@@ -8,6 +8,7 @@ suppressMessages({
   library(ivx) # github
   library(transx) # github
   options(transx.display = FALSE)
+  options(timeout = 120)
 })
 
 
@@ -56,6 +57,9 @@ suppressMessages({
       mutate(Date = zoo::as.Date(zoo::as.yearqtr(Date, format = "Q%q/%Y")))
   )
 })
+lsheets <- lsheets[1:3]
+
+
 
 nms <- c("Australia", "Belgium", "Canada", "Denmark", "Finland", "France",
     "Germany", "Ireland", "New Zealand", "Norway", "Spain", "US")
