@@ -20,10 +20,12 @@ cnames <- ihpdr::ihpd_countries()
 # cnames <- unique(ihpd_get("raw", version = version, verbose = FALSE)$country)
 
 rhpi <- select(full_data, Date, country, rhpi) %>% 
+  mutate(rhpi = as.numeric(rhpi)) %>% 
   pivot_wider(names_from = country, values_from = rhpi)
 
 pti <- full_data %>% 
   group_by(country) %>% 
+  mutate_at(vars(-Date, -country), ~ as.numeric(.x)) %>%
   mutate(price_income = rhpi/rpdi) %>% 
   select(Date, country, price_income) %>% 
   pivot_wider(names_from = country, values_from = price_income)
@@ -66,8 +68,14 @@ nms <- c("Australia", "Belgium", "Canada", "Denmark", "Finland", "France",
 
 vars <- c("hpi", "rent", "ltrate")
 hdata_raw <- map2(lsheets, vars, ~ pivot_longer(.x, -Date, values_to = .y, names_to = "country")) %>%
-  reduce(full_join, by = c("Date", "country")) %>% 
-  mutate(country = recode(country,  "New.Zealand" = "New Zealand"))
+  reduce(full_join, by = c("Date", "country")) #%>% 
+  # mutate(
+  #   country = recode(country,  "New.Zealand" = "New Zealand"),
+  # )
+
+# unique(hdata_raw$country)
+# unique(hdata$country)
+# map(tbl_data, ~ .x$country[1])
 
 hdata <- hdata_raw %>%
   filter(country %in% nms) %>% 
@@ -85,7 +93,13 @@ hdata <- hdata_raw %>%
     log_ptr = log(ptr)
   ) 
 
+
+
 tbl_data <- group_split(drop_na(hdata))
+if (length(tbl_data) != length(nms)) {
+  stop("Data not split correctly")
+}
+
 names(tbl_data) <- nms
 
 # * helpers ----
@@ -95,10 +109,10 @@ safe_ds_fun <- safely(ds_fun)
 
 # * estimation ----
 
-data = tbl_data[[1]]
-formula = gptr ~ ltrate + log_rent
-predictor = "log_ptr"
-train_split = "2019-01-01"
+# data = tbl_data[[1]]
+# formula = gptr ~ ltrate + log_rent
+# predictor = "log_ptr"
+# train_split = "2019-01-01"
 
 
 residuals_ivx <- function(
@@ -142,13 +156,13 @@ suppressMessages({
   is_nonrejected <- map_lgl(ds_bubble, is_zero_length)
   
   # what is that?
-  extra_dummy_bubble <- list()
-  for(i in names(ds_bubble)[is_nonrejected]) {
-    ni <- nn[i]
-    extra_dummy_bubble[[i]] <- tibble(index(radf_bubble[[i]]), rep(0, ni)) %>% 
-      set_names(c("Date", i))
-  }
-  extra_dummy_bubble <- reduce(extra_dummy_bubble, full_join, by = "Date")
+  # extra_dummy_bubble <- list()
+  # for(i in names(ds_bubble)[is_nonrejected]) {
+  #   ni <- nn[i]
+  #   extra_dummy_bubble[[i]] <- tibble(index(radf_bubble[[i]]), rep(0, ni)) %>% 
+  #     set_names(c("Date", i))
+  # }
+  # extra_dummy_bubble <- reduce(extra_dummy_bubble, full_join, by = "Date")
   
   ds_bubble <- compact(ds_bubble)
   dummy_bubble <-
