@@ -1,9 +1,12 @@
 
-pkgs <- c('exuber','here')
+pkgs <- c('exuber','here', "imputeTS", "transx")
+install.packages(pkgs)
+
 remote_pkgs <- c('kvasilopoulos/ihdpr','kvasilopoulos/ivx','kvasilopoulos/nationwider')
-remotes::install_github('kvasilopoulos/ihdpr')
-remotes::install_github('kvasilopoulos/ivx')
-remotes::install_github('kvasilopoulos/nationwider')
+for (pkg in remote_pkgs){
+  remotes::install_github('kvasilopoulos/nationwider')
+}
+  
 
 # uk ----------------------------------------------------------------------
 

@@ -9,6 +9,7 @@ diff4 <- function(x) (log(x) - dplyr::lag(log(x), n = 4L)) * 100
 
 main <- ihpd_get("raw") %>%
   select(Date, country, hpi) %>%
+  mutate(hpi = as.numeric(hpi)) %>%
   pivot_wider(names_from = country, values_from = hpi)
 
 rhpi_int <- main %>%

@@ -46,12 +46,6 @@ hp_nms <- tibble::tribble(
   10L, "East Midlands", "East Midlands (England)", "east-midlands"
 )
 
-# Download CPI index ------------------------------------------------------
-
-download.file(
-  "https://stats.oecd.org/sdmx-json/data/DP_LIVE/.CPI.TOT.IDX2015.Q/OECD?contentType=csv&detail=code&separator=comma&csv-lang=en&startPeriod=1973-Q1",
-  "data-raw/uk/cpi.csv"
-)
 
 # Reading ntwd ------------------------------------------------------------
 
@@ -62,10 +56,56 @@ hpi <-
   mutate(region = recode(region, "Uk" = "United Kingdom")) %>%
   mutate(region = recode(region, !!!ntwd_to_names))
 
-
-
 last_obs <- select(hpi, Date, region)
 
+
+# Download CPI index ------------------------------------------------------
+
+library(httr2)
+
+url <- "https://sdmx.oecd.org/archive/rest/data/OECD,DF_DP_LIVE,1.0/GBR.CPI..IDX2015.Q?startPeriod=1973-Q1"
+
+req <- request(url) %>% 
+  req_headers("Accept" = "application/vnd.sdmx.data+csv; charset=utf-8; version=2") %>%
+  req_perform()
+
+
+cpi_raw <- req %>% resp_body_string() %>% readr::read_csv()
+
+cpi <- cpi_raw %>% 
+  filter(SUBJECT == "TOT") %>% 
+  select(TIME_PERIOD, OBS_VALUE) %>% 
+  rename(Date = TIME_PERIOD, cpi = OBS_VALUE) %>% 
+  mutate(Date = Date %>% zoo::as.yearqtr(format = "%Y-Q%q") %>% zoo::as.Date()) %>% 
+  arrange(Date) 
+
+
+# Check if the release dates of the HPI and CPI data match ----------------
+
+
+# release <- as.character(zoo::as.yearqtr(tail(rhpi,1)$Date))
+release_check <- as.character(zoo::as.yearqtr(tail(hpi,1)$Date))
+release_cpi <- as.character(zoo::as.yearqtr(tail(cpi,1)$Date))
+
+if (release_check != release_cpi) {
+  warning("The release dates of the HPI and CPI data do not match. I will interpolate the CPI data.")
+  cpi <- hpi %>% 
+    filter(region == "United Kingdom") %>%
+    select(Date, hpi) %>%
+    full_join(cpi, by = "Date") %>% 
+    select(Date, hpi, cpi) %>% 
+    arrange(Date) %>% 
+    mutate(cpi = imputeTS::na_interpolation(cpi, option = "linear")) %>% 
+    select(Date, cpi)
+}
+
+
+
+# download.file(
+#   "https://stats.oecd.org/sdmx-json/data/DP_LIVE/.CPI.TOT.IDX2015.Q/OECD?contentType=csv&detail=code&separator=comma&csv-lang=en&startPeriod=1973-Q1",
+#   "data-raw/uk/cpi.csv"
+# )
+# https://db.nomics.world/OECD/DP_LIVE/GBR.CPI.TOT.IDX2015.Q?tab=metadata
 
 # read_csv(
 #   "data-raw/uk/cpi.csv",
@@ -76,14 +116,14 @@ last_obs <- select(hpi, Date, region)
 #   )
 # ) 
 
-cpi <- read.csv("data-raw/uk/cpi.csv" )%>%
-  tibble::tibble() %>% 
-  dplyr::filter(LOCATION == "GBR") %>%
-  dplyr::select(TIME, Value) %>%
-  dplyr::rename(Date = TIME, cpi = Value) %>%
-  mutate(Date = Date %>%
-    zoo::as.yearqtr(format = "%Y-Q%q") %>%
-    zoo::as.Date())
+# cpi <- read.csv("data-raw/uk/cpi.csv" )%>%
+#   tibble::tibble() %>% 
+#   dplyr::filter(LOCATION == "GBR") %>%
+#   dplyr::select(TIME, Value) %>%
+#   dplyr::rename(Date = TIME, cpi = Value) %>%
+#   mutate(Date = Date %>%
+#     zoo::as.yearqtr(format = "%Y-Q%q") %>%
+#     zoo::as.Date())
 
 rpdi <- read_excel("data-raw/uk/rpdi.xlsx") %>%
   mutate(Date = Date %>%
@@ -110,8 +150,6 @@ rhpi <- ntwd_data %>%
 pti <- ntwd_data %>%
   select(Date, region, pti) %>%
   spread(region, pti)
-
-
 
 release <- as.character(zoo::as.yearqtr(tail(rhpi,1)$Date))
 
@@ -146,24 +184,48 @@ radf_pti_dummy <- datestamp(radf_pti, mc_cv) %>%
 
 # hopi --------------------------------------------------------------------
 
-# TODO fetch from own calculations
+latest <- tail(hpi, 1) %>%
+  pull(Date) %>% 
+  zoo::as.yearqtr() %>% 
+  str_replace_all(" ", "-")
+  
 
-latest <- fs::dir_ls("data-raw/uk/data_hopi", type = "dir") %>% 
-  fs::path_file() %>% 
-  tail(1)
+ukhp_get <- function(release = "2020-Q3", frequency = "monthly", classification = "nuts1") {
+  endpoint <- "https://raw.githubusercontent.com/lancs-macro/hopi/master/data"
+  query <- paste(endpoint, release, frequency, paste0(classification, ".csv"), sep = "/")
+  readr::read_csv(query)
+} 
 
-hopi_aggregate <- readr::read_csv(here("data-raw/uk/data_hopi", latest, "quarterly", "aggregate.csv")) %>% 
+hopi_aggregate <- ukhp_get(latest, frequency = "quarterly", classification = "aggregate") %>% 
   select(Date, `England and Wales` = `United Kingdom`) %>% 
   mutate(Date = lubridate::yq(Date))
 
-hopi_nuts1 <- readr::read_csv(here("data-raw/uk/data_hopi", latest, "quarterly", "nuts1.csv")) %>% 
+hopi_nuts1 <- ukhp_get(latest, frequency = "quarterly", classification = "nuts1") %>% 
   mutate(Date = lubridate::yq(Date))
 
-hopi_nuts2 <- readr::read_csv(here("data-raw/uk/data_hopi", latest, "quarterly", "nuts2.csv")) %>% 
+hopi_nuts2 <- ukhp_get(latest, frequency = "quarterly", classification = "nuts2") %>% 
   mutate(Date = lubridate::yq(Date))
 
-hopi_nuts3 <- readr::read_csv(here("data-raw/uk/data_hopi", latest, "quarterly", "nuts3.csv")) %>% 
+hopi_nuts3 <- ukhp_get(latest, frequency = "quarterly", classification = "nuts3") %>% 
   mutate(Date = lubridate::yq(Date))
+
+
+# latest <- fs::dir_ls("data-raw/uk/data_hopi", type = "dir") %>% 
+#   fs::path_file() %>% 
+#   tail(1)
+
+# hopi_aggregate <- readr::read_csv(here("data-raw/uk/data_hopi", latest, "quarterly", "aggregate.csv")) %>% 
+#   select(Date, `England and Wales` = `United Kingdom`) %>% 
+#   mutate(Date = lubridate::yq(Date))
+# 
+# hopi_nuts1 <- readr::read_csv(here("data-raw/uk/data_hopi", latest, "quarterly", "nuts1.csv")) %>% 
+#   mutate(Date = lubridate::yq(Date))
+# 
+# hopi_nuts2 <- readr::read_csv(here("data-raw/uk/data_hopi", latest, "quarterly", "nuts2.csv")) %>% 
+#   mutate(Date = lubridate::yq(Date))
+# 
+# hopi_nuts3 <- readr::read_csv(here("data-raw/uk/data_hopi", latest, "quarterly", "nuts3.csv")) %>% 
+#   mutate(Date = lubridate::yq(Date))
 
 
 # Download EPU Index ------------------------------------------------------
