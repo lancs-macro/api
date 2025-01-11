@@ -73,7 +73,7 @@ hdata_raw <- map2(lsheets, vars, ~ pivot_longer(.x, -Date, values_to = .y, names
   #   country = recode(country,  "New.Zealand" = "New Zealand"),
   # )
 
-# unique(hdata_raw$country)
+unique(hdata_raw$country)
 # unique(hdata$country)
 # map(tbl_data, ~ .x$country[1])
 
