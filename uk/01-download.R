@@ -49,12 +49,19 @@ hp_nms <- tibble::tribble(
 
 # Reading ntwd ------------------------------------------------------------
 
+int_realeses <- jsonlite::read_json("https://raw.githubusercontent.com/lancs-macro/api/refs/heads/main/public/datasets/int/index.json")
+latest_int_release <- int_realeses$releases[[1]][[1]]
+
+latest_date <- zoo::as.Date(zoo::as.yearqtr(latest_int_release))
+latest_version <- zoo::as.yearqtr(latest_int_release) %>% str_replace_all(" ", "-")
+
 hpi <-
   nationwider::ntwd_get("seasonal_regional", verbose = FALSE) %>%
   dplyr::filter(type == "Index", Date >= "1975-01-01") %>%
   select(-type, hpi = value) %>%
   mutate(region = recode(region, "Uk" = "United Kingdom")) %>%
-  mutate(region = recode(region, !!!ntwd_to_names))
+  mutate(region = recode(region, !!!ntwd_to_names)) %>% 
+  filter(Date <= latest_date)
 
 last_obs <- select(hpi, Date, region)
 
@@ -184,48 +191,28 @@ radf_pti_dummy <- datestamp(radf_pti, mc_cv) %>%
 
 # hopi --------------------------------------------------------------------
 
-latest <- tail(hpi, 1) %>%
-  pull(Date) %>% 
-  zoo::as.yearqtr() %>% 
-  str_replace_all(" ", "-")
+
   
 
 ukhp_get <- function(release = "2020-Q3", frequency = "monthly", classification = "nuts1") {
   endpoint <- "https://raw.githubusercontent.com/lancs-macro/hopi/master/data"
   query <- paste(endpoint, release, frequency, paste0(classification, ".csv"), sep = "/")
+  print(query)
   readr::read_csv(query)
 } 
 
-hopi_aggregate <- ukhp_get(latest, frequency = "quarterly", classification = "aggregate") %>% 
+hopi_aggregate <- ukhp_get(latest_version, frequency = "quarterly", classification = "aggregate") %>% 
   select(Date, `England and Wales` = `United Kingdom`) %>% 
   mutate(Date = lubridate::yq(Date))
 
-hopi_nuts1 <- ukhp_get(latest, frequency = "quarterly", classification = "nuts1") %>% 
+hopi_nuts1 <- ukhp_get(latest_version, frequency = "quarterly", classification = "nuts1") %>% 
   mutate(Date = lubridate::yq(Date))
 
-hopi_nuts2 <- ukhp_get(latest, frequency = "quarterly", classification = "nuts2") %>% 
+hopi_nuts2 <- ukhp_get(latest_version, frequency = "quarterly", classification = "nuts2") %>% 
   mutate(Date = lubridate::yq(Date))
 
-hopi_nuts3 <- ukhp_get(latest, frequency = "quarterly", classification = "nuts3") %>% 
+hopi_nuts3 <- ukhp_get(latest_version, frequency = "quarterly", classification = "nuts3") %>% 
   mutate(Date = lubridate::yq(Date))
-
-
-# latest <- fs::dir_ls("data-raw/uk/data_hopi", type = "dir") %>% 
-#   fs::path_file() %>% 
-#   tail(1)
-
-# hopi_aggregate <- readr::read_csv(here("data-raw/uk/data_hopi", latest, "quarterly", "aggregate.csv")) %>% 
-#   select(Date, `England and Wales` = `United Kingdom`) %>% 
-#   mutate(Date = lubridate::yq(Date))
-# 
-# hopi_nuts1 <- readr::read_csv(here("data-raw/uk/data_hopi", latest, "quarterly", "nuts1.csv")) %>% 
-#   mutate(Date = lubridate::yq(Date))
-# 
-# hopi_nuts2 <- readr::read_csv(here("data-raw/uk/data_hopi", latest, "quarterly", "nuts2.csv")) %>% 
-#   mutate(Date = lubridate::yq(Date))
-# 
-# hopi_nuts3 <- readr::read_csv(here("data-raw/uk/data_hopi", latest, "quarterly", "nuts3.csv")) %>% 
-#   mutate(Date = lubridate::yq(Date))
 
 
 # Download EPU Index ------------------------------------------------------
