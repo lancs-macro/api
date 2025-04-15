@@ -1,4 +1,6 @@
 
+source(here("int", "00-functions-ihpdr-local.R"))
+
 suppressMessages({
   library(tidyverse)
   library(readxl)
@@ -11,10 +13,18 @@ suppressMessages({
   options(timeout = 120)
 })
 
+DOWNLOAD_TYPE = "local"
+
 
 # Download ----------------------------------------------------------------
 
-full_data <- ihpdr::ihpd_get()
+if (DOWNLOAD_TYPE == "local") {
+  path <- here("data-raw", "int", "hp2404.xlsx")
+  full_data <- ihpd_get_local(path)
+} else {
+  full_data <- ihpdr::ihpd_get()
+}
+
 
 cnames <- ihpdr::ihpd_countries()
 # cnames <- unique(ihpd_get("raw", version = version, verbose = FALSE)$country)
