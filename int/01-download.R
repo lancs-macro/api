@@ -13,7 +13,7 @@ suppressMessages({
   options(timeout = 120)
 })
 
-DOWNLOAD_TYPE = "local"
+DOWNLOAD_TYPE = "remote"
 
 
 # Download ----------------------------------------------------------------
