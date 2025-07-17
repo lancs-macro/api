@@ -56,7 +56,7 @@ latest_date <- zoo::as.Date(zoo::as.yearqtr(latest_int_release))
 latest_version <- zoo::as.yearqtr(latest_int_release) %>% str_replace_all(" ", "-")
 
 hpi <-
-  nationwider::ntwd_get("seasonal_regional", verbose = FALSE) %>%
+  nationwider::ntwd_get("seasonal-regional", verbose = TRUE) %>%
   dplyr::filter(type == "Index", Date >= "1975-01-01") %>%
   select(-type, hpi = value) %>%
   mutate(region = recode(region, "Uk" = "United Kingdom")) %>%
