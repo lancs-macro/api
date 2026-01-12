@@ -1,6 +1,8 @@
 library(tidyverse)
 library(readxl)
 library(here)
+library(httr2)
+library(zoo)
 
 source(here("uk/00-functions.R"))
 
@@ -68,25 +70,24 @@ last_obs <- select(hpi, Date, region)
 
 # Download CPI index ------------------------------------------------------
 
-library(httr2)
+url <- "https://sdmx.oecd.org/public/rest/data/OECD.SDD.TPS,DSD_PRICES@DF_PRICES_ALL/GBR.Q.N.CPI.IX._T.N.?startPeriod=1973-Q1&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
 
-url <- "https://sdmx.oecd.org/archive/rest/data/OECD,DF_DP_LIVE,1.0/GBR.CPI..IDX2015.Q?startPeriod=1973-Q1"
+req <- request(url) %>% req_perform()
 
-req <- request(url) %>% 
-  req_headers("Accept" = "application/vnd.sdmx.data+csv; charset=utf-8; version=2") %>%
-  req_perform()
+cpi_raw <- resp_body_string(req) %>%
+  read_csv(show_col_types = FALSE)
 
-
-cpi_raw <- req %>% resp_body_string() %>% readr::read_csv()
-
-cpi <- cpi_raw %>% 
-  filter(SUBJECT == "TOT") %>% 
-  select(TIME_PERIOD, OBS_VALUE) %>% 
-  rename(Date = TIME_PERIOD, cpi = OBS_VALUE) %>% 
-  mutate(Date = Date %>% zoo::as.yearqtr(format = "%Y-Q%q") %>% zoo::as.Date()) %>% 
-  arrange(Date) 
-
-
+cpi <- cpi_raw %>%
+  select(TIME_PERIOD, OBS_VALUE) %>%
+  rename(
+    Date = TIME_PERIOD,
+    cpi  = OBS_VALUE
+  ) %>%
+  mutate(
+    Date = as.Date(as.yearqtr(Date, format = "%Y-Q%q"))
+  ) %>%
+  arrange(Date)
+cpi
 # Check if the release dates of the HPI and CPI data match ----------------
 
 
