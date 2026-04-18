@@ -208,6 +208,7 @@ suppressMessages({
     pivot_longer(-Date, names_to = "country" , values_to = "dummy_ptr")
   
   datestamp_ptr <- ds_ptr %>%
+    keep(~ length(.x) > 0) %>%     
     map(~ .x[[1]]) %>% 
     bind_rows(.id = "country") %>% 
     select(country, Start, Peak, End, Duration, Signal) 

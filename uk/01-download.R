@@ -70,6 +70,21 @@ last_obs <- select(hpi, Date, region)
 
 # Download CPI index ------------------------------------------------------
 
+
+# * OECD.SDD.TPS → OECD statistics domain
+# * DSD_PRICES → Data Structure Definition for prices
+# * DF_PRICES_ALL → The actual dataflow (consumer price indices, PPI, etc.)
+# 
+# Position	Value	Meaning
+# 1	GBR	Country = United Kingdom
+# 2	Q	Frequency = Quarterly
+# 3	N	Price base = National (not HICP)
+# 4	CPI	Subject = Consumer Price Index
+# 5	IX	Measure = Index (level, not % change)
+# 6	_T	Item = Total / All items
+# 7	N	Seasonal adjustment = Not seasonally adjusted
+# 8	.	Wildcard → “any value” (required to reach 8 dimensions)
+
 url <- "https://sdmx.oecd.org/public/rest/data/OECD.SDD.TPS,DSD_PRICES@DF_PRICES_ALL/GBR.Q.N.CPI.IX._T.N.?startPeriod=1973-Q1&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
 
 req <- request(url) %>% req_perform()
@@ -179,13 +194,13 @@ mc_cv <- radf_mc_cv(NROW(rhpi), minw = 37)
 radf_rhpi_dummy <- datestamp(radf_rhpi, mc_cv) %>%
   attr("dummy") %>%
   as_tibble() %>%
-  add_column(Date = index(radf_rhpi)) %>%
+  add_column(Date = attr(radf_pti, "index")) %>%
   select(Date, everything())
 
-radf_pti_dummy <- datestamp(radf_pti, mc_cv) %>%
+radf_pti_dummy <- datestamp(radf_rhpi, mc_cv) %>%
   attr("dummy") %>%
   as_tibble() %>%
-  add_column(Date = index(radf_pti)) %>%
+  add_column(Date = attr(radf_pti, "index")) %>%
   select(Date, everything())
 
 
@@ -255,7 +270,7 @@ rhpi_seqstat <- augment_join(radf_rhpi, mc_cv)
 rhpi_dummy <- datestamp(radf_rhpi, mc_cv) %>%
   attr("dummy") %>%
   as_tibble() %>%
-  add_column(index = index(radf_rhpi)) %>%
+  add_column(index = attr(radf_rhpi, "index")) %>%
   select(index, everything()) %>%
   pivot_longer(-index, names_to = c("id"), values_to = "dummy")
 
@@ -266,7 +281,7 @@ pti_seqstat <- augment_join(radf_pti, mc_cv)
 pti_dummy <- datestamp(radf_pti, mc_cv) %>%
   attr("dummy") %>%
   as_tibble() %>%
-  add_column(index = index(radf_pti)) %>%
+  add_column(index = attr(radf_pti, "index")) %>%
   select(index, everything()) %>%
   pivot_longer(-index, names_to = c("id"), values_to = "dummy")
 
@@ -285,20 +300,23 @@ cv_bsadf <- mc_cv %>%
   .$bsadf_cv %>%
   as_tibble() %>%
   "["(-1, ) %>%
-  bind_cols(Date = index(radf_rhpi, trunc = TRUE)) %>%
+  bind_cols(
+    Date = attr(radf_rhpi, "index")[-c(1:(exuber:::get_minw(radf_rhpi) + exuber:::get_lag(radf_rhpi)))]
+      ) %>%
   select(Date, everything())
+
 
 # * dummies ----
 
 rhpi_dummy <- datestamp(radf_rhpi, mc_cv) %>%
   attr("dummy") %>%
   as_tibble() %>%
-  add_column(Date = index(radf_rhpi)) %>%
+  add_column(Date = attr(radf_rhpi, "index")) %>%
   select(Date, everything())
 
 pti_dummy <- datestamp(radf_pti, mc_cv) %>%
   attr("dummy") %>%
   as_tibble() %>%
-  add_column(Date = index(radf_pti)) %>%
+  add_column(Date = attr(radf_pti, "index")) %>%
   select(Date, everything())
 

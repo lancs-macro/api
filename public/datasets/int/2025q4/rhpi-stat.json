@@ -1,0 +1,1766 @@
+[
+  {
+    "id": "Australia",
+    "stat": "adf",
+    "tstat": 0.3094,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Australia",
+    "stat": "adf",
+    "tstat": 0.3094,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Australia",
+    "stat": "adf",
+    "tstat": 0.3094,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Australia",
+    "stat": "sadf",
+    "tstat": 2.875,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Australia",
+    "stat": "sadf",
+    "tstat": 2.875,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Australia",
+    "stat": "sadf",
+    "tstat": 2.875,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Australia",
+    "stat": "gsadf",
+    "tstat": 5.6079,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Australia",
+    "stat": "gsadf",
+    "tstat": 5.6079,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Australia",
+    "stat": "gsadf",
+    "tstat": 5.6079,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Belgium",
+    "stat": "adf",
+    "tstat": -0.4966,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Belgium",
+    "stat": "adf",
+    "tstat": -0.4966,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Belgium",
+    "stat": "adf",
+    "tstat": -0.4966,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Belgium",
+    "stat": "sadf",
+    "tstat": 0.7459,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Belgium",
+    "stat": "sadf",
+    "tstat": 0.7459,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Belgium",
+    "stat": "sadf",
+    "tstat": 0.7459,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Belgium",
+    "stat": "gsadf",
+    "tstat": 4.7386,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Belgium",
+    "stat": "gsadf",
+    "tstat": 4.7386,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Belgium",
+    "stat": "gsadf",
+    "tstat": 4.7386,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Canada",
+    "stat": "adf",
+    "tstat": -0.6401,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Canada",
+    "stat": "adf",
+    "tstat": -0.6401,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Canada",
+    "stat": "adf",
+    "tstat": -0.6401,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Canada",
+    "stat": "sadf",
+    "tstat": 3.1928,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Canada",
+    "stat": "sadf",
+    "tstat": 3.1928,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Canada",
+    "stat": "sadf",
+    "tstat": 3.1928,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Canada",
+    "stat": "gsadf",
+    "tstat": 5.0773,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Canada",
+    "stat": "gsadf",
+    "tstat": 5.0773,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Canada",
+    "stat": "gsadf",
+    "tstat": 5.0773,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Switzerland",
+    "stat": "adf",
+    "tstat": -1.2346,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Switzerland",
+    "stat": "adf",
+    "tstat": -1.2346,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Switzerland",
+    "stat": "adf",
+    "tstat": -1.2346,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Switzerland",
+    "stat": "sadf",
+    "tstat": 2.2429,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Switzerland",
+    "stat": "sadf",
+    "tstat": 2.2429,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Switzerland",
+    "stat": "sadf",
+    "tstat": 2.2429,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Switzerland",
+    "stat": "gsadf",
+    "tstat": 4.1519,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Switzerland",
+    "stat": "gsadf",
+    "tstat": 4.1519,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Switzerland",
+    "stat": "gsadf",
+    "tstat": 4.1519,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Germany",
+    "stat": "adf",
+    "tstat": -1.8209,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Germany",
+    "stat": "adf",
+    "tstat": -1.8209,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Germany",
+    "stat": "adf",
+    "tstat": -1.8209,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Germany",
+    "stat": "sadf",
+    "tstat": 1.7264,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Germany",
+    "stat": "sadf",
+    "tstat": 1.7264,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Germany",
+    "stat": "sadf",
+    "tstat": 1.7264,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Germany",
+    "stat": "gsadf",
+    "tstat": 5.4072,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Germany",
+    "stat": "gsadf",
+    "tstat": 5.4072,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Germany",
+    "stat": "gsadf",
+    "tstat": 5.4072,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Denmark",
+    "stat": "adf",
+    "tstat": -0.8265,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Denmark",
+    "stat": "adf",
+    "tstat": -0.8265,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Denmark",
+    "stat": "adf",
+    "tstat": -0.8265,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Denmark",
+    "stat": "sadf",
+    "tstat": 2.0228,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Denmark",
+    "stat": "sadf",
+    "tstat": 2.0228,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Denmark",
+    "stat": "sadf",
+    "tstat": 2.0228,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Denmark",
+    "stat": "gsadf",
+    "tstat": 4.2566,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Denmark",
+    "stat": "gsadf",
+    "tstat": 4.2566,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Denmark",
+    "stat": "gsadf",
+    "tstat": 4.2566,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Spain",
+    "stat": "adf",
+    "tstat": -1.6607,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Spain",
+    "stat": "adf",
+    "tstat": -1.6607,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Spain",
+    "stat": "adf",
+    "tstat": -1.6607,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Spain",
+    "stat": "sadf",
+    "tstat": 0.681,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Spain",
+    "stat": "sadf",
+    "tstat": 0.681,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Spain",
+    "stat": "sadf",
+    "tstat": 0.681,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Spain",
+    "stat": "gsadf",
+    "tstat": 3.6268,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Spain",
+    "stat": "gsadf",
+    "tstat": 3.6268,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Spain",
+    "stat": "gsadf",
+    "tstat": 3.6268,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Finland",
+    "stat": "adf",
+    "tstat": -1.4916,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Finland",
+    "stat": "adf",
+    "tstat": -1.4916,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Finland",
+    "stat": "adf",
+    "tstat": -1.4916,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Finland",
+    "stat": "sadf",
+    "tstat": 2.9712,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Finland",
+    "stat": "sadf",
+    "tstat": 2.9712,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Finland",
+    "stat": "sadf",
+    "tstat": 2.9712,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Finland",
+    "stat": "gsadf",
+    "tstat": 3.0058,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Finland",
+    "stat": "gsadf",
+    "tstat": 3.0058,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Finland",
+    "stat": "gsadf",
+    "tstat": 3.0058,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "France",
+    "stat": "adf",
+    "tstat": -0.9865,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "France",
+    "stat": "adf",
+    "tstat": -0.9865,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "France",
+    "stat": "adf",
+    "tstat": -0.9865,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "France",
+    "stat": "sadf",
+    "tstat": 3.2923,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "France",
+    "stat": "sadf",
+    "tstat": 3.2923,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "France",
+    "stat": "sadf",
+    "tstat": 3.2923,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "France",
+    "stat": "gsadf",
+    "tstat": 5.9407,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "France",
+    "stat": "gsadf",
+    "tstat": 5.9407,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "France",
+    "stat": "gsadf",
+    "tstat": 5.9407,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "UK",
+    "stat": "adf",
+    "tstat": -0.8693,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "UK",
+    "stat": "adf",
+    "tstat": -0.8693,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "UK",
+    "stat": "adf",
+    "tstat": -0.8693,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "UK",
+    "stat": "sadf",
+    "tstat": 2.8587,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "UK",
+    "stat": "sadf",
+    "tstat": 2.8587,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "UK",
+    "stat": "sadf",
+    "tstat": 2.8587,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "UK",
+    "stat": "gsadf",
+    "tstat": 4.938,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "UK",
+    "stat": "gsadf",
+    "tstat": 4.938,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "UK",
+    "stat": "gsadf",
+    "tstat": 4.938,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Ireland",
+    "stat": "adf",
+    "tstat": -0.508,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Ireland",
+    "stat": "adf",
+    "tstat": -0.508,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Ireland",
+    "stat": "adf",
+    "tstat": -0.508,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Ireland",
+    "stat": "sadf",
+    "tstat": 4.445,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Ireland",
+    "stat": "sadf",
+    "tstat": 4.445,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Ireland",
+    "stat": "sadf",
+    "tstat": 4.445,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Ireland",
+    "stat": "gsadf",
+    "tstat": 6.3018,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Ireland",
+    "stat": "gsadf",
+    "tstat": 6.3018,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Ireland",
+    "stat": "gsadf",
+    "tstat": 6.3018,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Italy",
+    "stat": "adf",
+    "tstat": -1.6973,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Italy",
+    "stat": "adf",
+    "tstat": -1.6973,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Italy",
+    "stat": "adf",
+    "tstat": -1.6973,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Italy",
+    "stat": "sadf",
+    "tstat": -0.6123,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Italy",
+    "stat": "sadf",
+    "tstat": -0.6123,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Italy",
+    "stat": "sadf",
+    "tstat": -0.6123,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Italy",
+    "stat": "gsadf",
+    "tstat": 2.7556,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Italy",
+    "stat": "gsadf",
+    "tstat": 2.7556,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Italy",
+    "stat": "gsadf",
+    "tstat": 2.7556,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Japan",
+    "stat": "adf",
+    "tstat": -0.5763,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Japan",
+    "stat": "adf",
+    "tstat": -0.5763,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Japan",
+    "stat": "adf",
+    "tstat": -0.5763,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Japan",
+    "stat": "sadf",
+    "tstat": 1.5708,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Japan",
+    "stat": "sadf",
+    "tstat": 1.5708,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Japan",
+    "stat": "sadf",
+    "tstat": 1.5708,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Japan",
+    "stat": "gsadf",
+    "tstat": 6.9795,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Japan",
+    "stat": "gsadf",
+    "tstat": 6.9795,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Japan",
+    "stat": "gsadf",
+    "tstat": 6.9795,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "S. Korea",
+    "stat": "adf",
+    "tstat": -1.8067,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "S. Korea",
+    "stat": "adf",
+    "tstat": -1.8067,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "S. Korea",
+    "stat": "adf",
+    "tstat": -1.8067,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "S. Korea",
+    "stat": "sadf",
+    "tstat": -0.3105,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "S. Korea",
+    "stat": "sadf",
+    "tstat": -0.3105,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "S. Korea",
+    "stat": "sadf",
+    "tstat": -0.3105,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "S. Korea",
+    "stat": "gsadf",
+    "tstat": 3.6565,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "S. Korea",
+    "stat": "gsadf",
+    "tstat": 3.6565,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "S. Korea",
+    "stat": "gsadf",
+    "tstat": 3.6565,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Luxembourg",
+    "stat": "adf",
+    "tstat": -0.1339,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Luxembourg",
+    "stat": "adf",
+    "tstat": -0.1339,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Luxembourg",
+    "stat": "adf",
+    "tstat": -0.1339,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Luxembourg",
+    "stat": "sadf",
+    "tstat": 3.9904,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Luxembourg",
+    "stat": "sadf",
+    "tstat": 3.9904,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Luxembourg",
+    "stat": "sadf",
+    "tstat": 3.9904,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Luxembourg",
+    "stat": "gsadf",
+    "tstat": 4.897,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Luxembourg",
+    "stat": "gsadf",
+    "tstat": 4.897,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Luxembourg",
+    "stat": "gsadf",
+    "tstat": 4.897,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Netherlands",
+    "stat": "adf",
+    "tstat": -0.258,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Netherlands",
+    "stat": "adf",
+    "tstat": -0.258,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Netherlands",
+    "stat": "adf",
+    "tstat": -0.258,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Netherlands",
+    "stat": "sadf",
+    "tstat": 0.7988,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Netherlands",
+    "stat": "sadf",
+    "tstat": 0.7988,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Netherlands",
+    "stat": "sadf",
+    "tstat": 0.7988,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Netherlands",
+    "stat": "gsadf",
+    "tstat": 5.4434,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Netherlands",
+    "stat": "gsadf",
+    "tstat": 5.4434,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Netherlands",
+    "stat": "gsadf",
+    "tstat": 5.4434,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Norway",
+    "stat": "adf",
+    "tstat": 0.5021,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Norway",
+    "stat": "adf",
+    "tstat": 0.5021,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Norway",
+    "stat": "adf",
+    "tstat": 0.5021,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Norway",
+    "stat": "sadf",
+    "tstat": 2.1107,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Norway",
+    "stat": "sadf",
+    "tstat": 2.1107,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Norway",
+    "stat": "sadf",
+    "tstat": 2.1107,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Norway",
+    "stat": "gsadf",
+    "tstat": 3.5845,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Norway",
+    "stat": "gsadf",
+    "tstat": 3.5845,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Norway",
+    "stat": "gsadf",
+    "tstat": 3.5845,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "New Zealand",
+    "stat": "adf",
+    "tstat": -0.4962,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "New Zealand",
+    "stat": "adf",
+    "tstat": -0.4962,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "New Zealand",
+    "stat": "adf",
+    "tstat": -0.4962,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "New Zealand",
+    "stat": "sadf",
+    "tstat": 2.7713,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "New Zealand",
+    "stat": "sadf",
+    "tstat": 2.7713,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "New Zealand",
+    "stat": "sadf",
+    "tstat": 2.7713,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "New Zealand",
+    "stat": "gsadf",
+    "tstat": 2.7713,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "New Zealand",
+    "stat": "gsadf",
+    "tstat": 2.7713,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "New Zealand",
+    "stat": "gsadf",
+    "tstat": 2.7713,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Sweden",
+    "stat": "adf",
+    "tstat": -0.6587,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Sweden",
+    "stat": "adf",
+    "tstat": -0.6587,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Sweden",
+    "stat": "adf",
+    "tstat": -0.6587,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Sweden",
+    "stat": "sadf",
+    "tstat": 2.2419,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Sweden",
+    "stat": "sadf",
+    "tstat": 2.2419,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Sweden",
+    "stat": "sadf",
+    "tstat": 2.2419,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Sweden",
+    "stat": "gsadf",
+    "tstat": 3.7069,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Sweden",
+    "stat": "gsadf",
+    "tstat": 3.7069,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Sweden",
+    "stat": "gsadf",
+    "tstat": 3.7069,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "US",
+    "stat": "adf",
+    "tstat": 0.6864,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "US",
+    "stat": "adf",
+    "tstat": 0.6864,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "US",
+    "stat": "adf",
+    "tstat": 0.6864,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "US",
+    "stat": "sadf",
+    "tstat": 3.9763,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "US",
+    "stat": "sadf",
+    "tstat": 3.9763,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "US",
+    "stat": "sadf",
+    "tstat": 3.9763,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "US",
+    "stat": "gsadf",
+    "tstat": 5.8883,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "US",
+    "stat": "gsadf",
+    "tstat": 5.8883,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "US",
+    "stat": "gsadf",
+    "tstat": 5.8883,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "S. Africa",
+    "stat": "adf",
+    "tstat": -2.1149,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "S. Africa",
+    "stat": "adf",
+    "tstat": -2.1149,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "S. Africa",
+    "stat": "adf",
+    "tstat": -2.1149,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "S. Africa",
+    "stat": "sadf",
+    "tstat": -0.1694,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "S. Africa",
+    "stat": "sadf",
+    "tstat": -0.1694,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "S. Africa",
+    "stat": "sadf",
+    "tstat": -0.1694,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "S. Africa",
+    "stat": "gsadf",
+    "tstat": 3.2121,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "S. Africa",
+    "stat": "gsadf",
+    "tstat": 3.2121,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "S. Africa",
+    "stat": "gsadf",
+    "tstat": 3.2121,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Croatia",
+    "stat": "adf",
+    "tstat": -2.7493,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Croatia",
+    "stat": "adf",
+    "tstat": -2.7493,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Croatia",
+    "stat": "adf",
+    "tstat": -2.7493,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Croatia",
+    "stat": "sadf",
+    "tstat": 1.1326,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Croatia",
+    "stat": "sadf",
+    "tstat": 1.1326,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Croatia",
+    "stat": "sadf",
+    "tstat": 1.1326,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Croatia",
+    "stat": "gsadf",
+    "tstat": 3.5663,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Croatia",
+    "stat": "gsadf",
+    "tstat": 3.5663,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Croatia",
+    "stat": "gsadf",
+    "tstat": 3.5663,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Israel",
+    "stat": "adf",
+    "tstat": 1.0079,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Israel",
+    "stat": "adf",
+    "tstat": 1.0079,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Israel",
+    "stat": "adf",
+    "tstat": 1.0079,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Israel",
+    "stat": "sadf",
+    "tstat": 2.399,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Israel",
+    "stat": "sadf",
+    "tstat": 2.399,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Israel",
+    "stat": "sadf",
+    "tstat": 2.399,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Israel",
+    "stat": "gsadf",
+    "tstat": 2.8429,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Israel",
+    "stat": "gsadf",
+    "tstat": 2.8429,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Israel",
+    "stat": "gsadf",
+    "tstat": 2.8429,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Slovenia",
+    "stat": "adf",
+    "tstat": -0.5916,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Slovenia",
+    "stat": "adf",
+    "tstat": -0.5916,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Slovenia",
+    "stat": "adf",
+    "tstat": -0.5916,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Slovenia",
+    "stat": "sadf",
+    "tstat": -0.4063,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Slovenia",
+    "stat": "sadf",
+    "tstat": -0.4063,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Slovenia",
+    "stat": "sadf",
+    "tstat": -0.4063,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Slovenia",
+    "stat": "gsadf",
+    "tstat": 4.1343,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Slovenia",
+    "stat": "gsadf",
+    "tstat": 4.1343,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Slovenia",
+    "stat": "gsadf",
+    "tstat": 4.1343,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Colombia",
+    "stat": "adf",
+    "tstat": -3.0659,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Colombia",
+    "stat": "adf",
+    "tstat": -3.0659,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Colombia",
+    "stat": "adf",
+    "tstat": -3.0659,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Colombia",
+    "stat": "sadf",
+    "tstat": -0.372,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Colombia",
+    "stat": "sadf",
+    "tstat": -0.372,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Colombia",
+    "stat": "sadf",
+    "tstat": -0.372,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Colombia",
+    "stat": "gsadf",
+    "tstat": 1.1117,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Colombia",
+    "stat": "gsadf",
+    "tstat": 1.1117,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Colombia",
+    "stat": "gsadf",
+    "tstat": 1.1117,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Portugal",
+    "stat": "adf",
+    "tstat": 2.9057,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Portugal",
+    "stat": "adf",
+    "tstat": 2.9057,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Portugal",
+    "stat": "adf",
+    "tstat": 2.9057,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Portugal",
+    "stat": "sadf",
+    "tstat": 2.9057,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Portugal",
+    "stat": "sadf",
+    "tstat": 2.9057,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Portugal",
+    "stat": "sadf",
+    "tstat": 2.9057,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Portugal",
+    "stat": "gsadf",
+    "tstat": 3.9481,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Portugal",
+    "stat": "gsadf",
+    "tstat": 3.9481,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Portugal",
+    "stat": "gsadf",
+    "tstat": 3.9481,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Aggregate - 2005 Fixed Weights",
+    "stat": "adf",
+    "tstat": -0.4317,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Aggregate - 2005 Fixed Weights",
+    "stat": "adf",
+    "tstat": -0.4317,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Aggregate - 2005 Fixed Weights",
+    "stat": "adf",
+    "tstat": -0.4317,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Aggregate - 2005 Fixed Weights",
+    "stat": "sadf",
+    "tstat": 1.2453,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Aggregate - 2005 Fixed Weights",
+    "stat": "sadf",
+    "tstat": 1.2453,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Aggregate - 2005 Fixed Weights",
+    "stat": "sadf",
+    "tstat": 1.2453,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Aggregate - 2005 Fixed Weights",
+    "stat": "gsadf",
+    "tstat": 7.4995,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Aggregate - 2005 Fixed Weights",
+    "stat": "gsadf",
+    "tstat": 7.4995,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Aggregate - 2005 Fixed Weights",
+    "stat": "gsadf",
+    "tstat": 7.4995,
+    "sig": "99",
+    "crit": 2.6106
+  },
+  {
+    "id": "Aggregate - Dynamic Weights",
+    "stat": "adf",
+    "tstat": -0.3938,
+    "sig": "90",
+    "crit": -0.4192
+  },
+  {
+    "id": "Aggregate - Dynamic Weights",
+    "stat": "adf",
+    "tstat": -0.3938,
+    "sig": "95",
+    "crit": -0.0233
+  },
+  {
+    "id": "Aggregate - Dynamic Weights",
+    "stat": "adf",
+    "tstat": -0.3938,
+    "sig": "99",
+    "crit": 0.6912
+  },
+  {
+    "id": "Aggregate - Dynamic Weights",
+    "stat": "sadf",
+    "tstat": 1.059,
+    "sig": "90",
+    "crit": 1.0944
+  },
+  {
+    "id": "Aggregate - Dynamic Weights",
+    "stat": "sadf",
+    "tstat": 1.059,
+    "sig": "95",
+    "crit": 1.3915
+  },
+  {
+    "id": "Aggregate - Dynamic Weights",
+    "stat": "sadf",
+    "tstat": 1.059,
+    "sig": "99",
+    "crit": 1.9502
+  },
+  {
+    "id": "Aggregate - Dynamic Weights",
+    "stat": "gsadf",
+    "tstat": 6.8147,
+    "sig": "90",
+    "crit": 1.877
+  },
+  {
+    "id": "Aggregate - Dynamic Weights",
+    "stat": "gsadf",
+    "tstat": 6.8147,
+    "sig": "95",
+    "crit": 2.1313
+  },
+  {
+    "id": "Aggregate - Dynamic Weights",
+    "stat": "gsadf",
+    "tstat": 6.8147,
+    "sig": "99",
+    "crit": 2.6106
+  }
+]

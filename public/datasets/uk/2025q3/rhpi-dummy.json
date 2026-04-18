@@ -932,7 +932,7 @@
     "United Kingdom": 1,
     "Wales": 0,
     "West Midlands": 1,
-    "Yorkshire & Humberside": 1
+    "Yorkshire & Humberside": 0
   },
   {
     "Date": "1988-10-01",
@@ -1787,7 +1787,7 @@
   {
     "Date": "2001-04-01",
     "East Anglia": 1,
-    "East Midlands": 1,
+    "East Midlands": 0,
     "Greater London": 1,
     "North": 0,
     "North West": 0,
@@ -1962,7 +1962,7 @@
     "North": 1,
     "North West": 1,
     "Northern Ireland": 1,
-    "Outer Metropolitan": 1,
+    "Outer Metropolitan": 0,
     "Outer South East": 1,
     "Scotland": 1,
     "South West": 1,
@@ -2031,7 +2031,7 @@
     "North West": 1,
     "Northern Ireland": 1,
     "Outer Metropolitan": 0,
-    "Outer South East": 1,
+    "Outer South East": 0,
     "Scotland": 1,
     "South West": 1,
     "United Kingdom": 0,
@@ -2043,7 +2043,7 @@
     "Date": "2005-01-01",
     "East Anglia": 1,
     "East Midlands": 1,
-    "Greater London": 1,
+    "Greater London": 0,
     "North": 1,
     "North West": 1,
     "Northern Ireland": 1,
@@ -2092,7 +2092,7 @@
   },
   {
     "Date": "2005-10-01",
-    "East Anglia": 1,
+    "East Anglia": 0,
     "East Midlands": 0,
     "Greater London": 0,
     "North": 0,
@@ -2111,7 +2111,7 @@
     "Date": "2006-01-01",
     "East Anglia": 0,
     "East Midlands": 0,
-    "Greater London": 1,
+    "Greater London": 0,
     "North": 1,
     "North West": 1,
     "Northern Ireland": 1,
@@ -2121,7 +2121,7 @@
     "South West": 0,
     "United Kingdom": 0,
     "Wales": 1,
-    "West Midlands": 1,
+    "West Midlands": 0,
     "Yorkshire & Humberside": 1
   },
   {
@@ -2137,7 +2137,7 @@
     "Scotland": 1,
     "South West": 0,
     "United Kingdom": 0,
-    "Wales": 1,
+    "Wales": 0,
     "West Midlands": 0,
     "Yorkshire & Humberside": 1
   },
@@ -2145,7 +2145,7 @@
     "Date": "2006-07-01",
     "East Anglia": 0,
     "East Midlands": 0,
-    "Greater London": 1,
+    "Greater London": 0,
     "North": 0,
     "North West": 0,
     "Northern Ireland": 1,
@@ -2160,7 +2160,7 @@
   },
   {
     "Date": "2006-10-01",
-    "East Anglia": 1,
+    "East Anglia": 0,
     "East Midlands": 0,
     "Greater London": 1,
     "North": 1,
@@ -2186,7 +2186,7 @@
     "Outer Metropolitan": 0,
     "Outer South East": 0,
     "Scotland": 1,
-    "South West": 1,
+    "South West": 0,
     "United Kingdom": 1,
     "Wales": 0,
     "West Midlands": 0,
@@ -2198,14 +2198,14 @@
     "East Midlands": 0,
     "Greater London": 1,
     "North": 1,
-    "North West": 1,
+    "North West": 0,
     "Northern Ireland": 1,
     "Outer Metropolitan": 0,
     "Outer South East": 0,
     "Scotland": 1,
     "South West": 0,
     "United Kingdom": 0,
-    "Wales": 1,
+    "Wales": 0,
     "West Midlands": 0,
     "Yorkshire & Humberside": 0
   },
@@ -2224,7 +2224,7 @@
     "United Kingdom": 0,
     "Wales": 0,
     "West Midlands": 0,
-    "Yorkshire & Humberside": 1
+    "Yorkshire & Humberside": 0
   },
   {
     "Date": "2007-10-01",
@@ -3157,7 +3157,7 @@
     "Scotland": 0,
     "South West": 0,
     "United Kingdom": 0,
-    "Wales": 1,
+    "Wales": 0,
     "West Midlands": 0,
     "Yorkshire & Humberside": 0
   },
@@ -3176,7 +3176,7 @@
     "United Kingdom": 0,
     "Wales": 1,
     "West Midlands": 0,
-    "Yorkshire & Humberside": 1
+    "Yorkshire & Humberside": 0
   },
   {
     "Date": "2021-10-01",
@@ -3193,7 +3193,7 @@
     "United Kingdom": 0,
     "Wales": 1,
     "West Midlands": 0,
-    "Yorkshire & Humberside": 1
+    "Yorkshire & Humberside": 0
   },
   {
     "Date": "2022-01-01",
@@ -3215,7 +3215,7 @@
   {
     "Date": "2022-04-01",
     "East Anglia": 0,
-    "East Midlands": 1,
+    "East Midlands": 0,
     "Greater London": 0,
     "North": 0,
     "North West": 1,
