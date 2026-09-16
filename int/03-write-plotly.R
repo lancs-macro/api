@@ -24,23 +24,46 @@ rhpi_int_yoy <- main %>%
   rename("Aggregate" = `Aggregate - Dynamic Weights`)
 
 
-
-
 plot_index_int <- function(data, returns = FALSE, save = FALSE) {
   ret <- if (returns) ".2f%" else ".2f"
   ret_title <- if (returns) "Year on Year (%)" else "Index"
   ret_filename <- if (returns) "rhpi_yoy" else "rhpi"
 
   plt <- data %>%
-    pivot_longer(c(UK, US, Aggregate), names_to = "vars1", values_to = "vals1") %>%
-    pivot_longer(-c(Date, vars1, vals1), names_to = "vars2", values_to = "vals2") %>%
-    plot_ly(x = ~Date, y = ~vals1, color = ~vars1, type = "scatter", mode = "line", colors = "viridis") %>%
-    add_trace(y = ~vals2, color = ~vars2, mode = "line", visible = "legendonly") %>%
+    pivot_longer(
+      c(UK, US, Aggregate),
+      names_to = "vars1",
+      values_to = "vals1"
+    ) %>%
+    pivot_longer(
+      -c(Date, vars1, vals1),
+      names_to = "vars2",
+      values_to = "vals2"
+    ) %>%
+    plot_ly(
+      x = ~Date,
+      y = ~vals1,
+      color = ~vars1,
+      type = "scatter",
+      mode = "line",
+      colors = "viridis"
+    ) %>%
+    add_trace(
+      y = ~vals2,
+      color = ~vars2,
+      mode = "line",
+      visible = "legendonly"
+    ) %>%
     plotly::layout(
-      title = "Real House Prices",
+      title = "Nominal House Prices",
       hovermode = "x unified",
       yaxis = list(hoverformat = ret, title = ret_title),
-      xaxis = list(type = "date", tickformat = "%Y-Q%q", title = "", showgrid = FALSE),
+      xaxis = list(
+        type = "date",
+        tickformat = "%Y-Q%q",
+        title = "",
+        showgrid = FALSE
+      ),
       hoverlabel = list(namelength = -1),
       legend = list(orientation = "h", xanchor = "center", x = 0.5)
     ) %>%
