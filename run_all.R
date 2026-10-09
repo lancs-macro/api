@@ -15,8 +15,8 @@ source("uk/03-write-plotly.R")
 
 
 # int --------------------------------------------------------------------
+# (int/01-download.R is sourced by 02-write-json.R)
 
-# source("int/01-download-int.R")
 source("int/02-write-json.R")
 source("int/03-write-plotly.R")
 

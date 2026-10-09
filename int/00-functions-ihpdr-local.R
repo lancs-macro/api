@@ -1,9 +1,5 @@
 library(here)
 
-
-
-path <-  here("data-raw", "int", "hp2404.xlsx")
-
 ihpd_get_raw <- function(tf) {
   
   list(

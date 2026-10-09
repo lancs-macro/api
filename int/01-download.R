@@ -13,21 +13,27 @@ suppressMessages({
   options(timeout = 120)
 })
 
+# "remote" queries the ihpdr package's online source directly; "local" uses
+# the newest hp*.xlsx dropped in data-raw/int instead, for when a release
+# file arrives before ihpdr's online source is updated.
 DOWNLOAD_TYPE = "remote"
 
 
 # Download ----------------------------------------------------------------
 
+latest_local_file <- function() {
+  files <- fs::dir_ls(here("data-raw", "int"), regexp = "hp[0-9]{4}\\.xlsx$")
+  if (length(files) == 0) stop("No local hp*.xlsx file found in data-raw/int")
+  sort(files)[length(files)]
+}
+
 if (DOWNLOAD_TYPE == "local") {
-  path <- here("data-raw", "int", "hp2404.xlsx")
+  path <- latest_local_file()
   full_data <- ihpd_get_local(path)
 } else {
   full_data <- ihpdr::ihpd_get()
 }
 
-
-cnames <- ihpdr::ihpd_countries()
-# cnames <- unique(ihpd_get("raw", version = version, verbose = FALSE)$country)
 
 rhpi <- select(full_data, Date, country, rhpi) %>% 
   mutate(rhpi = as.numeric(rhpi)) %>% 
@@ -47,7 +53,9 @@ suppressMessages({
   radf_rhpi <- radf(rhpi, lag = 1)
   radf_pti <- radf(pti, lag = 1)
 })
-mc_cv <- radf_crit[[NROW(rhpi)]]
+# exuber 2.0.0 removed the bundled `radf_crit` lookup table; radf_mc_cv()
+# is its documented offline replacement (own Monte Carlo sim, no network)
+mc_cv <- radf_mc_cv(NROW(rhpi), lag = 1, seed = 42)
 
 
 # Release -----------------------------------------------------------------
@@ -64,8 +72,8 @@ sheets <- excel_sheets(datafile)
 suppressMessages({
   lsheets <- map(
     sheets, ~
-      readxl::read_excel(datafile, sheet = .x, col_names = TRUE) %>% 
-      rename("Date" = ...1) %>% 
+      readxl::read_excel(datafile, sheet = .x, col_names = TRUE) %>%
+      rename(Date = 1) %>%
       mutate(Date = zoo::as.Date(zoo::as.yearqtr(Date, format = "Q%q/%Y")))
   )
 })
@@ -247,45 +255,9 @@ pti_dummy <- datestamp(radf_pti, mc_cv) %>%
   pivot_longer(-index, names_to = c("id"), values_to = "dummy")
 
 
-# -------------------- OLD DATA ---------------------------------
-
-stat_table <- function(stat = "gsadf") {
-  stat_cv <- paste0(stat, "_cv")
-  tibble(
-    Countries = names(rhpi)[-1],
-    `Real House Prices` = radf_rhpi[[stat]],
-    # `House-Price-Income` = radf_pti[[stat]],
-    `90% Critical Values` = mc_cv[[stat_cv]][1],
-    `95% Critical Values` = mc_cv[[stat_cv]][2],
-    `99% Critical Values` = mc_cv[[stat_cv]][3]
-  )
-}
-
-adf_table <- stat_table("adf")
-sadf_table <- stat_table("sadf")
-gsadf_table <- stat_table("gsadf")
-
-# augment(radf_rhpi, mc_cv)
-
-
-# * series ----
-
-rhpi_bsadf <- augment(radf_rhpi) %>% 
-  select(-data, -badf, -key) %>% 
-  pivot_wider(names_from = "id", values_from = "bsadf")
-
-pti_bsadf <- augment(radf_pti) %>% 
-  select(-data, -badf, -key) %>% 
-  pivot_wider(names_from = "id", values_from = "bsadf")
-
-cv_bsadf <- mc_cv %>% 
-  .$bsadf_cv %>% 
-  as_tibble() %>% 
-  "["(-1,) %>% 
-  bind_cols(Date = index(radf_rhpi, trunc = TRUE)) %>% 
-  select(Date, everything())
-
 # * dummies ----
+# (rhpi_dummy/pti_dummy redefined below in wide form - this is what
+# 02-write-json.R actually exports as rhpi-dummy.json/pti-dummy.json)
 
 rhpi_dummy <- datestamp(radf_rhpi, mc_cv) %>%
   attr("dummy") %>% 

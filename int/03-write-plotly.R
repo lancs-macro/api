@@ -1,4 +1,5 @@
 library(tidyverse)
+library(here)
 library(ihpdr)
 
 library(plotly)
@@ -7,7 +8,11 @@ options(transx.display = FALSE)
 
 diff4 <- function(x) (log(x) - dplyr::lag(log(x), n = 4L)) * 100
 
-main <- ihpd_get("raw") %>%
+# reuse full_data from 01-download.R (sourced via 02-write-json.R in run_all.R)
+# so plotly charts come from the same release, local or remote, as the stats
+if (!exists("full_data")) source(here("int", "01-download.R"))
+
+main <- full_data %>%
   select(Date, country, hpi) %>%
   mutate(hpi = as.numeric(hpi)) %>%
   pivot_wider(names_from = country, values_from = hpi)
