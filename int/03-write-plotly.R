@@ -62,7 +62,12 @@ plot_index_int <- function(data, returns = FALSE, save = FALSE) {
       visible = "legendonly"
     ) %>%
     plotly::layout(
-      title = "Nominal House Prices",
+      title = list(
+        text = paste0(
+          "Nominal House Prices",
+          "<br><sup>Click a country in the legend below to add it to the chart</sup>"
+        )
+      ),
       hovermode = "x unified",
       yaxis = list(hoverformat = ret, title = ret_title),
       xaxis = list(
@@ -72,16 +77,7 @@ plot_index_int <- function(data, returns = FALSE, save = FALSE) {
         showgrid = FALSE
       ),
       hoverlabel = list(namelength = -1),
-      legend = list(orientation = "h", xanchor = "center", x = 0.5),
-      annotations = list(
-        x = 0.5,
-        y = 1.08,
-        xref = "paper",
-        yref = "paper",
-        text = "Click a country in the legend below to add it to the chart",
-        showarrow = FALSE,
-        font = list(size = 12, color = "grey40")
-      )
+      legend = list(orientation = "h", xanchor = "center", x = 0.5)
     ) %>%
     config(
       displaylogo = FALSE,
