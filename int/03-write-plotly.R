@@ -20,13 +20,13 @@ main <- full_data %>%
 rhpi_int <- main %>%
   purrr::map_df(round, 2) %>%
   select(-`Aggregate - 2005 Fixed Weights`) %>%
-  rename("Aggregate" = `Aggregate - Dynamic Weights`)
+  rename("Aggregate - 26 countries" = `Aggregate - Dynamic Weights`)
 
 rhpi_int_yoy <- main %>%
   purrr::modify_if(is.numeric, diff4) %>%
   purrr::map_df(round, 2) %>%
   select(-`Aggregate - 2005 Fixed Weights`) %>%
-  rename("Aggregate" = `Aggregate - Dynamic Weights`)
+  rename("Aggregate - 26 countries" = `Aggregate - Dynamic Weights`)
 
 
 plot_index_int <- function(data, returns = FALSE, save = FALSE) {
@@ -36,7 +36,7 @@ plot_index_int <- function(data, returns = FALSE, save = FALSE) {
 
   plt <- data %>%
     pivot_longer(
-      c(UK, US, Aggregate),
+      `Aggregate - 26 countries`,
       names_to = "vars1",
       values_to = "vals1"
     ) %>%
@@ -70,7 +70,13 @@ plot_index_int <- function(data, returns = FALSE, save = FALSE) {
         showgrid = FALSE
       ),
       hoverlabel = list(namelength = -1),
-      legend = list(orientation = "h", xanchor = "center", x = 0.5)
+      legend = list(orientation = "h", xanchor = "center", x = 0.5),
+      annotations = list(
+        x = 0.5, y = 1.08, xref = "paper", yref = "paper",
+        text = "Click a country in the legend below to add it to the chart",
+        showarrow = FALSE,
+        font = list(size = 12, color = "grey40")
+      )
     ) %>%
     config(
       displaylogo = FALSE,
