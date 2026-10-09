@@ -4,11 +4,17 @@ Generates the static JSON/plotly data files served by the site's API (deployed v
 
 ## Environment
 
-Dependencies are pinned with `renv` (installer backend: `pak`, enabled via `.Rprofile`). Includes `uklr` and `ivx` from `kvasilopoulos/*` on GitHub.
+- R version: managed with `rig` (currently 4.6.1 - `rig default 4.6.1`)
+- Dependencies: managed with `rv` (`rproject.toml` + `rv.lock`), not renv. Includes `ivx` from `kvasilopoulos/ivx` on GitHub (no CRAN release).
+  - Setup: `rv sync`
+  - Add a dependency: `rv add <pkg>`
+- Format: `air format .` (check only: `air format --check .`)
+- Lint: `jarl check .` (autofix: `jarl check . --fix`)
 
-- Restore: `Rscript -e 'renv::restore()'`
-- Add a dependency: `Rscript -e 'renv::install("pkg"); renv::snapshot()'`
-- After changing dependencies: `Rscript -e 'renv::snapshot()'`
+### Rules
+- Never use `install.packages()` or `renv::*` - all dependency changes go through `rv add`/`rv remove`. (A past unconditional `install.packages()` call in `run_all.R` is what silently drifted this project off its pinned `exuber` version and caused a half-day of unnecessary debugging - don't reintroduce that pattern.)
+- Run `air format .` then `jarl check .` before committing.
+- No `# nolint` comments - jarl uses `# jarl-ignore <rule>: <reason>` on the line before the flagged code instead.
 
 ## Commands
 
