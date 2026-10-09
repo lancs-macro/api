@@ -72,8 +72,8 @@ plot_index_int <- function(data, returns = FALSE, save = FALSE) {
         showgrid = FALSE
       ),
       hoverlabel = list(namelength = -1),
-      legend = list(orientation = "h", xanchor = "center", x = 0.5, y = -0.35),
-      margin = list(b = 160),
+      legend = list(orientation = "h", xanchor = "center", x = 0.5, y = -0.25),
+      margin = list(b = 130),
       annotations = list(
         x = 0.5, y = -0.18, xref = "paper", yref = "paper",
         text = "Click a country below to add it to the chart",
