@@ -77,7 +77,8 @@ plot_index_int <- function(data, returns = FALSE, save = FALSE) {
         showgrid = FALSE
       ),
       hoverlabel = list(namelength = -1),
-      legend = list(orientation = "h", xanchor = "center", x = 0.5)
+      legend = list(orientation = "h", xanchor = "center", x = 0.5),
+      margin = list(t = 80)
     ) %>%
     config(
       displaylogo = FALSE,
