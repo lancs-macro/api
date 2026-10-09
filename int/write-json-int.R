@@ -1,4 +1,3 @@
-
 library(here)
 source(here("int/00-functions.R"))
 source(here("int/01-download.R"))
@@ -58,27 +57,27 @@ desc <- c(
 )
 
 ids <- c(
-  "stat-adf", 
-  "stat-badf", 
+  "stat-adf",
+  "stat-badf",
   "stat-gsadf",
-  
-  "rhpi", 
+
+  "rhpi",
   "rhpi-stat",
   "rhpi-bsadf",
-  "rhpi-cv", 
+  "rhpi-cv",
   "rhpi-dummy",
-  
-  "pti",  
-  "exuber-pti",  
-  "stat-pti",  
-  "seq-pti",  
+
+  "pti",
+  "exuber-pti",
+  "stat-pti",
+  "seq-pti",
   "dummy-pti",
-  
-  "exuber-cv", 
-  "stat-cv", 
+
+  "exuber-cv",
+  "stat-cv",
   "seq-cv",
-  
-  "psyivx-data", 
+
+  "psyivx-data",
   "psyivx-ds"
 )
 
@@ -113,7 +112,7 @@ write_json2(
 )
 
 write_json2(
-  pti, 
+  pti,
   here("public/datasets/int", rel, "pti.json")
 )
 serialize_json2(
@@ -134,19 +133,15 @@ write_json2(
   here("public", "datasets", "int", rel, "seq-cv.json")
 )
 write_json2(
-  gsadf_table, 
+  gsadf_table,
   here("public", "datasets", "int", rel, "stat.json")
 )
 
 write_json2(
-  psyivx_data, 
+  psyivx_data,
   here("public", "datasets", "int", rel, "psyivx_data.json")
 )
 write_json2(
-  psyivx_ds, 
+  psyivx_ds,
   here("public", "datasets", "int", rel, "psyivx_ds.json")
 )
-
-
-
-

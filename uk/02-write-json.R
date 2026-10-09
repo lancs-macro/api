@@ -2,7 +2,6 @@ source("uk/01-download.R")
 
 # helpers -----------------------------------------------------------------
 
-
 library(jsonlite)
 library(here)
 
@@ -31,7 +30,6 @@ write_serial_json2 <- function(x, path, ...) {
 }
 
 # international -----------------------------------------------------------
-
 
 rel <- create_new_version(release)
 
@@ -89,10 +87,7 @@ write_json2(
 )
 
 
-
-
 # rhpi --------------------------------------------------------------------
-
 
 write_json2(
   rhpi,
@@ -116,7 +111,6 @@ write_json2(
 )
 
 # pti ---------------------------------------------------------------------
-
 
 write_json2(
   pti,
@@ -161,7 +155,7 @@ write_json2(
 
 write_json2(
   hopi_aggregate,
-  here("public", "datasets", "uk", rel,"hopi-aggregate.json")
+  here("public", "datasets", "uk", rel, "hopi-aggregate.json")
 )
 write_json2(
   hopi_nuts1,

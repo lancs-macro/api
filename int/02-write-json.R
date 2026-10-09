@@ -1,4 +1,3 @@
-
 library(here)
 source(here("int/00-functions.R"))
 source(here("int/01-download.R"))
@@ -6,31 +5,39 @@ source(here("int/01-download.R"))
 rel <- create_new_version(release)
 
 description <- c(
-  
   "Real House Prices - Data",
   "Real House Prices - radf object (exuber)",
   "Real House Prices - Exuberance Statistics",
   "Real House Prices - Exuberance Sequence Statistics",
   "Real House Prices - Dummy Variable",
-  
+
   "House-Price-to-Income-Ratio - Data",
   "House-Price-to-Income-Ratio - radf object (exuber)",
   "House-Price-to-Income-Ratio - Exuberance Statistics",
   "House-Price-to-Income-Ratio - Exuberance Sequence Statistics",
   "House-Price-to-Income-Ratio - Dummy Variable",
-  
+
   "Monte Carlo Critical Values (exuber)",
-  
+
   "PSYIVX - Data",
   "PSYIVX - Datestamping"
 )
 
 
 ids <- c(
-  "rhpi", "rhpi-radf", "rhpi-stat", "rhpi-seqstat", "rhpi-dummy",
-  "pti", "pti-radf", "pti-stat", "pti-seqstat", "pti-dummy",
+  "rhpi",
+  "rhpi-radf",
+  "rhpi-stat",
+  "rhpi-seqstat",
+  "rhpi-dummy",
+  "pti",
+  "pti-radf",
+  "pti-stat",
+  "pti-seqstat",
+  "pti-dummy",
   "crit-mc",
-  "psyivx-data", "psyivx-ds"
+  "psyivx-data",
+  "psyivx-ds"
 )
 
 
@@ -47,7 +54,6 @@ write_json2(
 
 
 # rhpi --------------------------------------------------------------------
-
 
 write_json2(
   rhpi,
@@ -73,9 +79,8 @@ write_json2(
 
 # pti ---------------------------------------------------------------------
 
-
 write_json2(
-  pti, 
+  pti,
   here("public/datasets/int", rel, "pti.json")
 )
 write_serial_json2(
@@ -105,17 +110,11 @@ write_json2(
 
 # psyivx ------------------------------------------------------------------
 
-
-
 write_json2(
-  psyivx_data, 
+  psyivx_data,
   here("public", "datasets", "int", rel, "psyivx-data.json")
 )
 write_json2(
-  psyivx_ds, 
+  psyivx_ds,
   here("public", "datasets", "int", rel, "psyivx-ds.json")
 )
-
-
-
-

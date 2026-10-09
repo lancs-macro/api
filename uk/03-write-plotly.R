@@ -10,7 +10,6 @@
 # https://jtr13.github.io/spring19/community_contribution_group17.html
 # https://plotly.com/r/hover-text-and-formatting/
 
-
 # source("uk/01-download.R")
 
 library(tidyverse)
@@ -62,7 +61,6 @@ rhpi %>%
 
 # uklr-hopi ---------------------------------------------------------------
 
-
 lr <- uklr::ukhp_get("england-and-wales") %>%
   mutate(region = str_to_title(region)) %>%
   select(Date = date, region, "Land Registry (HPI)" = housePriceIndex)
@@ -79,7 +77,14 @@ lr_ho <- full_join(lr, ho, by = c("Date", "region")) %>%
 
 
 comparsison_plt <- lr_ho %>%
-  plot_ly(x = ~Date, y = ~`Land Registry (HPI)`, type = "scatter", mode = "lines", name = "Land Registry (HPI)", line = list(color = "#a6d71c")) %>%
+  plot_ly(
+    x = ~Date,
+    y = ~`Land Registry (HPI)`,
+    type = "scatter",
+    mode = "lines",
+    name = "Land Registry (HPI)",
+    line = list(color = "#a6d71c")
+  ) %>%
   add_trace(y = ~`Housing Observatory (HOPI)`, name = "Housing Observatory (HOPI)", line = list(color = "#992F2F")) %>%
   plotly::layout(
     title = "England & Wales",

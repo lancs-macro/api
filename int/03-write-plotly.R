@@ -10,7 +10,9 @@ diff4 <- function(x) (log(x) - dplyr::lag(log(x), n = 4L)) * 100
 
 # reuse full_data from 01-download.R (sourced via 02-write-json.R in run_all.R)
 # so plotly charts come from the same release, local or remote, as the stats
-if (!exists("full_data")) source(here("int", "01-download.R"))
+if (!exists("full_data")) {
+  source(here("int", "01-download.R"))
+}
 
 main <- full_data %>%
   select(Date, country, hpi) %>%
@@ -72,7 +74,10 @@ plot_index_int <- function(data, returns = FALSE, save = FALSE) {
       hoverlabel = list(namelength = -1),
       legend = list(orientation = "h", xanchor = "center", x = 0.5),
       annotations = list(
-        x = 0.5, y = 1.08, xref = "paper", yref = "paper",
+        x = 0.5,
+        y = 1.08,
+        xref = "paper",
+        yref = "paper",
         text = "Click a country in the legend below to add it to the chart",
         showarrow = FALSE,
         font = list(size = 12, color = "grey40")

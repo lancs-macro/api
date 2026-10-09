@@ -9,21 +9,21 @@ source(here("uk/00-functions.R"))
 # Naming  -----------------------------------------------------------------
 
 nms <- tibble::tribble(
-  ~num, ~abbr, ~ntwd, ~names,
-  1L, "EA", "East Anglia", "East Anglia",
-  2L, "EM", "East Mids", "East Midlands",
-  3L, "GL", "London", "Greater London",
-  4L, "NT", "North", "North",
-  5L, "NW", "North West", "North West",
-  4L, "NI", "N Ireland", "Northern Ireland",
-  7L, "OM", "Outer Met", "Outer Metropolitan",
-  8L, "OSE", "Outer S East", "Outer South East",
-  9L, "SC", "Scotland", "Scotland",
-  10L, "SW", "South West", "South West",
-  11L, "UK", "UK", "United Kingdom",
-  12L, "WW", "Wales", "Wales",
-  13L, "WM", "West Mids", "West Midlands",
-  14L, "YH", "Yorks & Hside", "Yorkshire & Humberside"
+  ~num , ~abbr , ~ntwd           , ~names                   ,
+   1L  , "EA"  , "East Anglia"   , "East Anglia"            ,
+   2L  , "EM"  , "East Mids"     , "East Midlands"          ,
+   3L  , "GL"  , "London"        , "Greater London"         ,
+   4L  , "NT"  , "North"         , "North"                  ,
+   5L  , "NW"  , "North West"    , "North West"             ,
+   4L  , "NI"  , "N Ireland"     , "Northern Ireland"       ,
+   7L  , "OM"  , "Outer Met"     , "Outer Metropolitan"     ,
+   8L  , "OSE" , "Outer S East"  , "Outer South East"       ,
+   9L  , "SC"  , "Scotland"      , "Scotland"               ,
+  10L  , "SW"  , "South West"    , "South West"             ,
+  11L  , "UK"  , "UK"            , "United Kingdom"         ,
+  12L  , "WW"  , "Wales"         , "Wales"                  ,
+  13L  , "WM"  , "West Mids"     , "West Midlands"          ,
+  14L  , "YH"  , "Yorks & Hside" , "Yorkshire & Humberside"
 )
 
 abbr_to_names <- pull(nms, names) %>%
@@ -35,23 +35,25 @@ ntwd_to_names <- pull(nms, names) %>%
 # uklr to hopi regions ----------------------------------------------------
 
 hp_nms <- tibble::tribble(
-  ~num, ~names, ~hopi, ~lr,
-  1L, "East of England", "East of England", "east-of-england",
-  2L, "West Midlands", "West Midlands (England)", "west-midlands",
-  3L, "South West", "South West (England)", "south-west",
-  4L, "North West", "North West (England)", "north-west",
-  5L, "Yorkshire and The Humber", "Yorkshire and The Humber", "yorkshire-and-the-humber",
-  6L, "South East", "South East (England)", "south-east",
-  7L, "London", "London", "london",
-  8L, "North East", "North East (England)", "north-east",
-  9L, "Wales", "Wales", "wales",
-  10L, "East Midlands", "East Midlands (England)", "east-midlands"
+  ~num , ~names                     , ~hopi                      , ~lr                        ,
+   1L  , "East of England"          , "East of England"          , "east-of-england"          ,
+   2L  , "West Midlands"            , "West Midlands (England)"  , "west-midlands"            ,
+   3L  , "South West"               , "South West (England)"     , "south-west"               ,
+   4L  , "North West"               , "North West (England)"     , "north-west"               ,
+   5L  , "Yorkshire and The Humber" , "Yorkshire and The Humber" , "yorkshire-and-the-humber" ,
+   6L  , "South East"               , "South East (England)"     , "south-east"               ,
+   7L  , "London"                   , "London"                   , "london"                   ,
+   8L  , "North East"               , "North East (England)"     , "north-east"               ,
+   9L  , "Wales"                    , "Wales"                    , "wales"                    ,
+  10L  , "East Midlands"            , "East Midlands (England)"  , "east-midlands"
 )
 
 
 # Reading ntwd ------------------------------------------------------------
 
-int_realeses <- jsonlite::read_json("https://raw.githubusercontent.com/lancs-macro/api/refs/heads/main/public/datasets/int/index.json")
+int_realeses <- jsonlite::read_json(
+  "https://raw.githubusercontent.com/lancs-macro/api/refs/heads/main/public/datasets/int/index.json"
+)
 latest_int_release <- int_realeses$releases[[1]][[1]]
 
 latest_date <- zoo::as.Date(zoo::as.yearqtr(latest_int_release))
@@ -62,7 +64,7 @@ hpi <-
   dplyr::filter(type == "Index", Date >= "1975-01-01") %>%
   select(-type, hpi = value) %>%
   mutate(region = recode(region, "Uk" = "United Kingdom")) %>%
-  mutate(region = recode(region, !!!ntwd_to_names)) %>% 
+  mutate(region = recode(region, !!!ntwd_to_names)) %>%
   filter(Date <= latest_date)
 
 last_obs <- select(hpi, Date, region)
@@ -70,11 +72,10 @@ last_obs <- select(hpi, Date, region)
 
 # Download CPI index ------------------------------------------------------
 
-
 # * OECD.SDD.TPS → OECD statistics domain
 # * DSD_PRICES → Data Structure Definition for prices
 # * DF_PRICES_ALL → The actual dataflow (consumer price indices, PPI, etc.)
-# 
+#
 # Position	Value	Meaning
 # 1	GBR	Country = United Kingdom
 # 2	Q	Frequency = Quarterly
@@ -96,7 +97,7 @@ cpi <- cpi_raw %>%
   select(TIME_PERIOD, OBS_VALUE) %>%
   rename(
     Date = TIME_PERIOD,
-    cpi  = OBS_VALUE
+    cpi = OBS_VALUE
   ) %>%
   mutate(
     Date = as.Date(as.yearqtr(Date, format = "%Y-Q%q"))
@@ -105,23 +106,21 @@ cpi <- cpi_raw %>%
 cpi
 # Check if the release dates of the HPI and CPI data match ----------------
 
-
 # release <- as.character(zoo::as.yearqtr(tail(rhpi,1)$Date))
-release_check <- as.character(zoo::as.yearqtr(tail(hpi,1)$Date))
-release_cpi <- as.character(zoo::as.yearqtr(tail(cpi,1)$Date))
+release_check <- as.character(zoo::as.yearqtr(tail(hpi, 1)$Date))
+release_cpi <- as.character(zoo::as.yearqtr(tail(cpi, 1)$Date))
 
 if (release_check != release_cpi) {
   warning("The release dates of the HPI and CPI data do not match. I will interpolate the CPI data.")
-  cpi <- hpi %>% 
+  cpi <- hpi %>%
     filter(region == "United Kingdom") %>%
     select(Date, hpi) %>%
-    full_join(cpi, by = "Date") %>% 
-    select(Date, hpi, cpi) %>% 
-    arrange(Date) %>% 
-    mutate(cpi = imputeTS::na_interpolation(cpi, option = "linear")) %>% 
+    full_join(cpi, by = "Date") %>%
+    select(Date, hpi, cpi) %>%
+    arrange(Date) %>%
+    mutate(cpi = imputeTS::na_interpolation(cpi, option = "linear")) %>%
     select(Date, cpi)
 }
-
 
 
 # download.file(
@@ -137,10 +136,10 @@ if (release_check != release_cpi) {
 #     TIME = col_guess(),
 #     Value = col_guess()
 #   )
-# ) 
+# )
 
 # cpi <- read.csv("data-raw/uk/cpi.csv" )%>%
-#   tibble::tibble() %>% 
+#   tibble::tibble() %>%
 #   dplyr::filter(LOCATION == "GBR") %>%
 #   dplyr::select(TIME, Value) %>%
 #   dplyr::rename(Date = TIME, cpi = Value) %>%
@@ -149,9 +148,11 @@ if (release_check != release_cpi) {
 #     zoo::as.Date())
 
 rpdi <- read_excel("data-raw/uk/rpdi.xlsx") %>%
-  mutate(Date = Date %>%
-    zoo::as.yearqtr(format = "Q%q %Y") %>%
-    zoo::as.Date()) %>%
+  mutate(
+    Date = Date %>%
+      zoo::as.yearqtr(format = "Q%q %Y") %>%
+      zoo::as.Date()
+  ) %>%
   gather(region, rpdi, -Date) %>%
   mutate(region = recode(region, !!!abbr_to_names)) %>%
   right_join(last_obs, by = c("Date", "region")) %>%
@@ -174,7 +175,7 @@ pti <- ntwd_data %>%
   select(Date, region, pti) %>%
   spread(region, pti)
 
-release <- as.character(zoo::as.yearqtr(tail(rhpi,1)$Date))
+release <- as.character(zoo::as.yearqtr(tail(rhpi, 1)$Date))
 
 # estmation ---------------------------------------------------------------
 
@@ -204,36 +205,33 @@ radf_pti_dummy <- datestamp(radf_rhpi, mc_cv) %>%
   select(Date, everything())
 
 
-
 # hopi --------------------------------------------------------------------
-
-
-  
 
 ukhp_get <- function(release = "2020-Q3", frequency = "monthly", classification = "nuts1") {
   endpoint <- "https://raw.githubusercontent.com/lancs-macro/hopi/master/data"
   query <- paste(endpoint, release, frequency, paste0(classification, ".csv"), sep = "/")
   print(query)
   readr::read_csv(query)
-} 
+}
 
-hopi_aggregate <- ukhp_get(latest_version, frequency = "quarterly", classification = "aggregate") %>% 
-  select(Date, `England and Wales` = `United Kingdom`) %>% 
+hopi_aggregate <- ukhp_get(latest_version, frequency = "quarterly", classification = "aggregate") %>%
+  select(Date, `England and Wales` = `United Kingdom`) %>%
   mutate(Date = lubridate::yq(Date))
 
-hopi_nuts1 <- ukhp_get(latest_version, frequency = "quarterly", classification = "nuts1") %>% 
+hopi_nuts1 <- ukhp_get(latest_version, frequency = "quarterly", classification = "nuts1") %>%
   mutate(Date = lubridate::yq(Date))
 
-hopi_nuts2 <- ukhp_get(latest_version, frequency = "quarterly", classification = "nuts2") %>% 
+hopi_nuts2 <- ukhp_get(latest_version, frequency = "quarterly", classification = "nuts2") %>%
   mutate(Date = lubridate::yq(Date))
 
-hopi_nuts3 <- ukhp_get(latest_version, frequency = "quarterly", classification = "nuts3") %>% 
+hopi_nuts3 <- ukhp_get(latest_version, frequency = "quarterly", classification = "nuts3") %>%
   mutate(Date = lubridate::yq(Date))
 
 
 # Download EPU Index ------------------------------------------------------
 
-download.file("https://www.policyuncertainty.com/media/UK_Policy_Uncertainty_Data.xlsx",
+download.file(
+  "https://www.policyuncertainty.com/media/UK_Policy_Uncertainty_Data.xlsx",
   "data-raw/uk/epu.xlsx",
   mode = "wb"
 )
@@ -263,7 +261,6 @@ hpu_index <-
 # * stats ----
 
 # rhpi --------------------------------------------------------------------
-
 
 rhpi_stat <- tidy_join(radf_rhpi, mc_cv)
 rhpi_seqstat <- augment_join(radf_rhpi, mc_cv)
@@ -302,7 +299,7 @@ cv_bsadf <- mc_cv %>%
   "["(-1, ) %>%
   bind_cols(
     Date = attr(radf_rhpi, "index")[-c(1:(exuber:::get_minw(radf_rhpi) + exuber:::get_lag(radf_rhpi)))]
-      ) %>%
+  ) %>%
   select(Date, everything())
 
 
@@ -319,4 +316,3 @@ pti_dummy <- datestamp(radf_pti, mc_cv) %>%
   as_tibble() %>%
   add_column(Date = attr(radf_pti, "index")) %>%
   select(Date, everything())
-
