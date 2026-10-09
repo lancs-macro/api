@@ -72,7 +72,7 @@ make_plotly <- function(z, x, y, ctry = snames[i]) {
 }
 
 
-for (i in 1:length(snames)) {
+for (i in seq_along(snames)) {
   aplt <- make_plotly(rhpi, radf_rhpi, mc_cv, snames[i])
   htmlwidgets::saveWidget(
     widget = plotly::partial_bundle(aplt),
@@ -82,7 +82,7 @@ for (i in 1:length(snames)) {
     title = snames[i]
   )
 }
-for (i in 1:length(snames)) {
+for (i in seq_along(snames)) {
   aplt <- make_plotly(pti, radf_pti, mc_cv, snames[i])
   htmlwidgets::saveWidget(
     widget = plotly::partial_bundle(aplt),
@@ -131,7 +131,7 @@ make_autoplotly <- function(x, y, ctry = snames[i]) {
 autoplotly(radf_rhpi, mc_cv)
 
 
-for (i in 1:length(snames)) {
+for (i in seq_along(snames)) {
   aplt <- make_autoplotly(radf_rhpi, mc_cv, snames[i])
   htmlwidgets::saveWidget(
     widget = plotly::partial_bundle(aplt),
@@ -141,7 +141,7 @@ for (i in 1:length(snames)) {
     title = snames[i]
   )
 }
-for (i in 1:length(snames)) {
+for (i in seq_along(snames)) {
   aplt <- make_autoplotly(radf_pti, mc_cv, snames[i])
   htmlwidgets::saveWidget(
     widget = plotly::partial_bundle(aplt),

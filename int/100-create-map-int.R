@@ -7,7 +7,7 @@ countries[c(14, 20, 21)] <- c("South Korea", "USA", "South Africa")
 
 world_map <- map_data('world') %>%
   filter(region != "Antarctica") %>%
-  mutate(is_region = if_else(region %in% countries, TRUE, FALSE))
+  mutate(is_region = region %in% countries)
 
 library(plotly)
 
