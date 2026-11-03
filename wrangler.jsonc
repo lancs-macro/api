@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "housing-observatory-api",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./public"
+  },
+  "routes": [{ "pattern": "api.housing-observatory.com", "custom_domain": true }]
+}
