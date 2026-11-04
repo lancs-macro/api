@@ -2,7 +2,6 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "housing-observatory-api",
   "compatibility_date": "2026-11-01",
-  "workers_dev": true,
   "assets": {
     "directory": "./public"
   },
