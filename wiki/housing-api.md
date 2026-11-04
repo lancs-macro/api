@@ -8,11 +8,11 @@ sources: []
 scope: housing-observatory
 tags: [project, backend]
 verified_commit: 1c5d010f82a4d2e51c23cd28771434c4fcaec5cc
-files: [run_all.R, toc.R, netlify.toml, uk, int, public, rproject.toml]
+files: [run_all.R, toc.R, wrangler.jsonc, uk, int, public, rproject.toml]
 ---
 # housing-api
 
-Generates the static JSON and Plotly files that the observatory sites and dashboards read, published as `api.housing-observatory.com` via Netlify.
+Generates the static JSON and Plotly files that the observatory sites and dashboards read, published as `api.housing-observatory.com` on Cloudflare Workers static assets.
 
 Part of [[concepts/housing-observatory]]. GitHub: `lancs-macro/api`.
 
@@ -27,7 +27,7 @@ R. `uk/` and `int/` each hold numbered pipeline scripts (`01-download.R`, `02-wr
 - `/visualizations/<int|uk>/rhpi` and `rhpi_yoy` ([[projects/housing-site-int/housing-site-int]], [[projects/housing-site-uk/housing-site-uk]])
 
 ## Layout
-`uk/`, `int/` pipelines; `data-raw/`; `public/` served files; `netlify.toml` (publish `public`, redirects from `/` to `index.json`); `news/` a Scrapy project with `uncertainty/` (purpose undocumented).
+`uk/`, `int/` pipelines; `data-raw/`; `public/` served files; `wrangler.jsonc` (serves `public`) and `public/_redirects` (redirects from `/` to `index.json`); `news/` a Scrapy project with `uncertainty/` (purpose undocumented).
 
 ## Unknowns
 - Where raw quarterly inputs come from beyond `01-download.R` (the Dallas Fed IHPD per [[projects/04-technical-report/04-technical-report]]).
